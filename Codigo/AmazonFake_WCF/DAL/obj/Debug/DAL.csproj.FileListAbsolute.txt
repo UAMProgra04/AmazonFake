@@ -1,0 +1,5 @@
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\bin\Debug\DAL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\bin\Debug\DAL.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\obj\Debug\DAL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\obj\Debug\DAL.pdb

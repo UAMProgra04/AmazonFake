@@ -1,0 +1,31 @@
+Loguearse como "SA"
+ir a : Security -> Logins
+Dar Clic derecho sobre Logins
+Seleccionar "New Login"
+##########################################
+ahora trabajamos con los sub_menus:
+General
+	Login Name: UserProg04_Proj02
+	Password: 123456
+	Deshabilitar: Eforce password Expiration
+	Default data base : Prog04_Proj02
+
+Server Roles
+	Seleccionamos: Public
+
+User Mapping
+	Seleccionamos la base de datos: Prog04_Proj02
+	En Database role membership seleccionamos:
+		db_datareader
+		db_datawriter
+		Owner
+		Public
+Securables
+	Connect SQL = Grant
+
+Status
+	verificamos que este seleccionado:
+	Permission to Connect: Grant
+	Login: Enable
+##########################################
+luego de esto presionamos OK.

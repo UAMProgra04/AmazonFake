@@ -1,0 +1,1 @@
+Esta carpeta debe contener la documentación del proyecto como tal además de los Manuales

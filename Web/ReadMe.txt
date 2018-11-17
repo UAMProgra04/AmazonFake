@@ -1,0 +1,1 @@
+Esta carpeta debe contener los binarios del sitio web de consumo.
