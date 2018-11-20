@@ -5,17 +5,81 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/MasterPage/fontello.css">
+<link rel="stylesheet" type="text/css" href="css/MasterPage/AmazonFake_Master.css">
+    <title>AmazonFake</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <header>
+		<input type="checkbox" id="btn-menu">
+		<label for="btn-menu" class="icon-menu"></label>
+
+		<nav class="menu">
+			<ul>
+				<li><a runat="server" id="opcIndex" title="Inicio" href="~/www/Index.aspx" >Inicio</a></li>
+				<li class="submenu"><a href="#">Departamentos<span class="icon-open"></span></a>
+					<ul>
+						<li><a href="#">Sub Item 1</a></li>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="#">Sub Item 3</a></li>
+						<li><a href="#">Sub Item 4</a></li>
+					</ul>
+				</li>
+				<li class="submenu"><a href="#">Item 3 <span class="icon-open"></span></a>
+					<ul>
+						<li><a href="#">Sub Item 1</a></li>
+						<li><a href="#">Sub Item 2</a></li>
+						<li><a href="#">Sub Item 3</a></li>
+						<li><a href="#">Sub Item 4</a></li>
+					</ul>
+				</li>
+				<li>
+                    <a  runat="server" id="opcCarrito" title="Carrito" href ="Index.aspx" >Login
+                        <span class="icon-open"></span>
+                    </a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+   <section>
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
-    </form>
+	</section>
+    <footer>
+        <section id="acerca-de">
+        <article>
+          <h3>Nuestro Principal Objetivo es brindarle:</h3>
+          <p>
+            <ul>
+              <li>Tranferencia de dinero entre usuarios del banco.</li>
+              <li>Transferencia de dinero entre el banco y otras entidades.</li>
+              <li>Pago de Servicios.</li>
+              <li>Consulta de estados de Cuenta.</li>
+              <li>Respaldo y Confidencialidad.</li>
+            </ul>
+          </p>
+        </article>
+      </section>
+
+      <section id="redes-s">
+        <div class="email"><a href="mailto:prueba@gmail.com" target="_blank"></a></div>
+        <div class="twitter"><a href="https://twitter.com/?lang=pt" target="_blank"></a></div>
+        <div class="youtube"><a href="https://www.youtube.com/watch?v=-0WITQeaBLo" target="_blank"></a></div>
+        <div class="facebook"><a href="https://pt-br.facebook.com" target="_blank"></a></div>
+      </section>
+    </footer> 
+    <script>
+        $(".submenu").click(function () {
+            $(this).children("ul").slideToggle();
+        })
+        $("ul").click(function (p) {
+            p.stopPropagation();
+        })
+    </script>	   	
 </body>
 </html>

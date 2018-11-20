@@ -96,11 +96,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\MasterPage\AmazonFake_Master.css" />
+    <Content Include="css\MasterPage\fontello.css" />
+    <Content Include="font\fontello.svg" />
+    <Content Include="Imagenes\MasterPage\Iconos\facebook.png" />
+    <Content Include="Imagenes\MasterPage\Iconos\google.png" />
+    <Content Include="Imagenes\MasterPage\Iconos\twitter2.png" />
+    <Content Include="Imagenes\MasterPage\Iconos\youtube.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AmazonFake.Master" />
+    <Content Include="www\Index.aspx" />
+    <Content Include="font\fontello.eot" />
+    <Content Include="font\fontello.ttf" />
+    <Content Include="font\fontello.woff" />
+    <Content Include="font\fontello.woff2" />
     <None Include="Service References\AmazonFakeService\AmazonFakeService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -145,10 +157,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="www\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
