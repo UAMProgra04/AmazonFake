@@ -61,7 +61,6 @@ C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\bin\Microsoft.ApplicationInsights.xml
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.csprojAssemblyReference.cache
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.csproj.CoreCompileInputs.cache
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.csproj.CopyComplete
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.dll

@@ -22,25 +22,31 @@
 
 		<nav class="menu">
 			<ul>
-				<li><a runat="server" id="opcIndex" title="Inicio" href="~/www/Index.aspx" >Inicio</a></li>
-				<li class="submenu"><a href="#">Departamentos<span class="icon-open"></span></a>
+				<li>
+                    <asp:HyperLink ID="opcIndex" title="Inicio" NavigateUrl="~/www/Index.aspx" runat="server">Inicio</asp:HyperLink>
+				</li>
+				<li class="submenu">
+                    <asp:HyperLink ID="opcDepartamentos" title="Departamentos" runat="server">Departamentos<span class="icon-open"></span></asp:HyperLink>
 					<ul>
-						<li><a href="#">Sub Item 1</a></li>
-						<li><a href="#">Sub Item 2</a></li>
-						<li><a href="#">Sub Item 3</a></li>
-						<li><a href="#">Sub Item 4</a></li>
+						<li><asp:HyperLink ID="HyperLink2" runat="server">Sub Item 1</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink3" runat="server">Sub Item 2</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink4" runat="server">Sub Item 3</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink5" runat="server">Sub Item 4</asp:HyperLink></li>
 					</ul>
 				</li>
-				<li class="submenu"><a href="#">Item 3 <span class="icon-open"></span></a>
+				<li class="submenu">
+                    <asp:HyperLink ID="HyperLink1" title="" runat="server">Item 3<span class="icon-open"></span></asp:HyperLink>
 					<ul>
-						<li><a href="#">Sub Item 1</a></li>
-						<li><a href="#">Sub Item 2</a></li>
-						<li><a href="#">Sub Item 3</a></li>
-						<li><a href="#">Sub Item 4</a></li>
+						<li><asp:HyperLink ID="HyperLink6" runat="server">Sub Item 1</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink7" runat="server">Sub Item 2</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink8" runat="server">Sub Item 3</asp:HyperLink></li>
 					</ul>
+				</li>
+                <li>
+                    <asp:HyperLink ID="opcCarrito" title="Carrito" runat="server">Carrito</asp:HyperLink>
 				</li>
 				<li>
-                    <a  runat="server" id="opcCarrito" title="Carrito" href="~/www/Access/Login.aspx" >Login</a>
+                    <asp:HyperLink ID="opcLogin" title="Login" NavigateUrl="~/www/Access/Login.aspx" runat="server">Login</asp:HyperLink>
 				</li>
 			</ul>
 		</nav>
