@@ -9,11 +9,13 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/MasterPage/fontello.css">
 <link rel="stylesheet" type="text/css" href="css/MasterPage/AmazonFake_Master.css">
+    <link rel="stylesheet" type="text/css" href="css/Access/Access.css">
     <title>AmazonFake</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+<form id="form1" runat="server">
     <header>
 		<input type="checkbox" id="btn-menu">
 		<label for="btn-menu" class="icon-menu"></label>
@@ -38,9 +40,7 @@
 					</ul>
 				</li>
 				<li>
-                    <a  runat="server" id="opcCarrito" title="Carrito" href ="Index.aspx" >Login
-                        <span class="icon-open"></span>
-                    </a>
+                    <a  runat="server" id="opcCarrito" title="Carrito" href="~/www/Access/Login.aspx" >Login</a>
 				</li>
 			</ul>
 		</nav>
@@ -72,7 +72,8 @@
         <div class="youtube"><a href="https://www.youtube.com/watch?v=-0WITQeaBLo" target="_blank"></a></div>
         <div class="facebook"><a href="https://pt-br.facebook.com" target="_blank"></a></div>
       </section>
-    </footer> 
+    </footer>
+</form>
     <script>
         $(".submenu").click(function () {
             $(this).children("ul").slideToggle();

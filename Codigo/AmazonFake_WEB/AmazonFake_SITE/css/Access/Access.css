@@ -1,0 +1,117 @@
+﻿.Contenedor {
+    max-width: 600px;
+    width: 70%;
+    margin: 2% auto;
+    background-color: #fff;
+}
+
+.amazonfake_logo {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+.SectionForm {
+    width: 60%;
+    margin: 25px auto;
+}
+
+.Form {
+    border: solid 2px #e7e7e7;
+    padding: 10px;
+    position: relative;
+    margin-top: 25px;
+}
+
+.SingIn {
+    font-size: 30px;
+}
+
+.divForm {
+    margin-top: 20px;
+    position: relative;
+}
+
+.labelsForm {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.input_Formulario {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+}
+
+.input_Formulario:hover {
+    box-shadow: 0px 0px 10px #CE852A;
+}
+
+.Clave {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 25%;
+}
+
+.BotonSingIn {
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    margin: 10px 0px;
+    font-size: 15px;
+    background-color: #CE852A;
+}
+
+.keep_me {
+    display: inline-block;
+}
+
+.BotonCreateAccount {
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    margin: 10px 0px;
+    font-size: 15px;
+    background-color: rgba(241,242,244, 0.8);
+}
+
+.hr {
+    background-color: #e7e7e7;
+    border: solid 1px #e7e7e7;
+    width: 100%;
+    opacity: .8;
+}
+
+.hr2 {
+    border: solid 1px #e7e7e7;
+    background-color: #e7e7e7;
+    width: 100%;
+    height: 3px;
+    opacity: .5;
+}
+
+.linksFooter {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: #2DAED9;
+}
+.linksFoo1 {
+    margin-left: 29%;
+}
+
+.linksFoo2 {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+/*PasswordAssistance exclusive*/
+.Haschanged {
+    font-weight:bold;
+    font-size: 18px;
+}
+.CustomerService {
+    text-decoration: none;
+}
