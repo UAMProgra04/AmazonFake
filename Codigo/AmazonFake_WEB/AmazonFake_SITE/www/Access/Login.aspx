@@ -32,7 +32,7 @@
 		    </div>
             <div>
                 <center>
-                    <asp:Label ID="lbErrores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="lbl_Errores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
                 </center>
             </div>  
 		</form>

@@ -27,7 +27,7 @@ namespace AmazonFake_SITE.www.Access
             }
             else
             {
-                lbErrores.Text = "Error de usuario o Contraseña";
+                lbl_Errores.Text = "Error de usuario o Contraseña";
                 txt_email.Text = string.Empty;
                 txt_contrasena.Text = string.Empty;
                 txt_email.Focus();
@@ -38,18 +38,18 @@ namespace AmazonFake_SITE.www.Access
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Request.Params["error"] != null)
-            //{
-            //    string error = Request.Params["error"];
-            //    if (error == "1")
-            //    {
-            //        lbErrores.Text = "Debe iniciar Sesion para acceder a...";
-            //    }
-            //    else if (error == "2")
-            //    {
-            //        lbErrores.Text = "Debe iniciar Sesion para acceder a...";
-            //    }
-            //}
+            if (Request.Params["error"] != null)
+            {
+                string error = Request.Params["error"];
+                if (error == "1")
+                {
+                    lbl_Errores.Text = "Debe iniciar Sesion para acceder a Su perfil...";
+                }
+                else if (error == "2")
+                {
+                    lbl_Errores.Text = "Debe iniciar Sesion para acceder a su perfil...";
+                }
+            }
         }
 
         #region Boton_CreateAccount

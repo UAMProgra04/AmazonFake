@@ -23,7 +23,11 @@
 		<nav class="menu">
 			<ul>
                 <li>
-                    <asp:HyperLink ID="opcNombreUsuario" runat="server"><asp:Label ID="lbl_NombreUsuario" title="Name" runat="server" Text="Bienvenido : " Font-Bold="true"></asp:Label></asp:HyperLink>
+                    <asp:HyperLink ID="opcNombreUsuario" runat="server"><asp:Label ID="lbl_NombreUsuario" title="Name" runat="server" Text="Bienvenido : " Font-Bold="true"></asp:Label><span class="icon-open"></span></asp:HyperLink>
+                    <ul>
+						<li><asp:HyperLink ID="opcNombreUsuario_Perfil" NavigateUrl="~/www/Usuario/UserPerfil.aspx" runat="server">Perfil</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="opcNombreUsuario_Payment" NavigateUrl="~/www/Usuario/UserPayment.aspx" runat="server">Medio de pago</asp:HyperLink></li>
+					</ul>
 				</li>
 				<li>
                     <asp:HyperLink ID="opcIndex" title="Inicio" NavigateUrl="~/www/Index.aspx" runat="server">Inicio</asp:HyperLink>
@@ -38,7 +42,7 @@
 					</ul>
 				</li>
 				<li class="submenu">
-                    <asp:HyperLink ID="HyperLink1" title="" runat="server">Item 3<span class="icon-open"></span></asp:HyperLink>
+                    <asp:HyperLink ID="opcAdministrativa" title="" runat="server">Administración<span class="icon-open"></span></asp:HyperLink>
 					<ul>
 						<li><asp:HyperLink ID="HyperLink6" runat="server">Sub Item 1</asp:HyperLink></li>
                         <li><asp:HyperLink ID="HyperLink7" runat="server">Sub Item 2</asp:HyperLink></li>

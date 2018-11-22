@@ -119,6 +119,8 @@
     <Content Include="font\fontello.ttf" />
     <Content Include="font\fontello.woff" />
     <Content Include="font\fontello.woff2" />
+    <Content Include="www\Usuario\UserPayment.aspx" />
+    <Content Include="www\Usuario\UserPerfil.aspx" />
     <None Include="Service References\AmazonFakeService\AmazonFakeService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -190,6 +192,20 @@
     </Compile>
     <Compile Include="www\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Usuario\UserPayment.aspx.cs">
+      <DependentUpon>UserPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Usuario\UserPayment.aspx.designer.cs">
+      <DependentUpon>UserPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Usuario\UserPerfil.aspx.cs">
+      <DependentUpon>UserPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Usuario\UserPerfil.aspx.designer.cs">
+      <DependentUpon>UserPerfil.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

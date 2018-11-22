@@ -49,6 +49,24 @@ namespace AmazonFake_SITE {
         protected global::System.Web.UI.WebControls.Label lbl_NombreUsuario;
         
         /// <summary>
+        /// Control opcNombreUsuario_Perfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink opcNombreUsuario_Perfil;
+        
+        /// <summary>
+        /// Control opcNombreUsuario_Payment.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink opcNombreUsuario_Payment;
+        
+        /// <summary>
         /// Control opcIndex.
         /// </summary>
         /// <remarks>
@@ -103,13 +121,13 @@ namespace AmazonFake_SITE {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
         
         /// <summary>
-        /// Control HyperLink1.
+        /// Control opcAdministrativa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.HyperLink opcAdministrativa;
         
         /// <summary>
         /// Control HyperLink6.

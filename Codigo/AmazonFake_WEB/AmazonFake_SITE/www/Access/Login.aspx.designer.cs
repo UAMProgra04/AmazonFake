@@ -103,13 +103,13 @@ namespace AmazonFake_SITE.www.Access {
         protected global::System.Web.UI.WebControls.Button btn_CreateAccount;
         
         /// <summary>
-        /// Control lbErrores.
+        /// Control lbl_Errores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbErrores;
+        protected global::System.Web.UI.WebControls.Label lbl_Errores;
         
         /// <summary>
         /// Control linksFoo1.

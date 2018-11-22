@@ -15,7 +15,7 @@ namespace AmazonFake_SITE
             this.opcNombreUsuario.Visible = false;
             this.opcIndex.Visible = true;
             this.opcDepartamentos.Visible = false;
-            this.HyperLink1.Visible = false;
+            this.opcAdministrativa.Visible = false;
             this.opcCarrito.Visible = false;
             this.opcLogin.Visible = true;
             this.opcCerrarSesion.Visible = false;
@@ -29,7 +29,7 @@ namespace AmazonFake_SITE
                     this.opcNombreUsuario.Visible = true;
                     this.opcIndex.Visible = true;
                     this.opcDepartamentos.Visible = true;
-                    this.HyperLink1.Visible = false;
+                    this.opcAdministrativa.Visible = false;
                     this.opcCarrito.Visible = true;
                     this.opcLogin.Visible = false;
                     this.opcCerrarSesion.Visible = true;
@@ -41,7 +41,7 @@ namespace AmazonFake_SITE
                     this.opcNombreUsuario.Visible = true;
                     this.opcIndex.Visible = true;
                     this.opcDepartamentos.Visible = true;
-                    this.HyperLink1.Visible = true;
+                    this.opcAdministrativa.Visible = true;
                     this.opcCarrito.Visible = true;
                     this.opcLogin.Visible = false;
                     this.opcCerrarSesion.Visible = true;
