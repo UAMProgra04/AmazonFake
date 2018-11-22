@@ -13,7 +13,7 @@ namespace AmazonFake_SITE.www.Usuario
         {
             if (Session["UsuarioSession"] == null)
             {
-                Response.Redirect("~/www/Index.aspxerror=1");
+                Response.Redirect("~/www/Index.aspx");
             }
         }
     }

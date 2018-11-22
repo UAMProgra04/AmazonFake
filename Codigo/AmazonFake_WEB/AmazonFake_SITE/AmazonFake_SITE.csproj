@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\Access\Access.css" />
+    <Content Include="css\Error\Error.css" />
     <Content Include="css\MasterPage\AmazonFake_Master.css" />
     <Content Include="css\MasterPage\fontello.css" />
     <Content Include="font\fontello.svg" />
@@ -114,6 +115,7 @@
     <Content Include="www\Access\CreateAccount.aspx" />
     <Content Include="www\Access\Login.aspx" />
     <Content Include="www\Access\PasswordAssistance.aspx" />
+    <Content Include="www\Error\Error404.aspx" />
     <Content Include="www\Index.aspx" />
     <Content Include="font\fontello.eot" />
     <Content Include="font\fontello.ttf" />
@@ -185,6 +187,13 @@
     </Compile>
     <Compile Include="www\Access\PasswordAssistance.aspx.designer.cs">
       <DependentUpon>PasswordAssistance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Error\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Error\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
     </Compile>
     <Compile Include="www\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
