@@ -27,6 +27,7 @@
                     <ul>
 						<li><asp:HyperLink ID="opcNombreUsuario_Perfil" NavigateUrl="~/www/Usuario/UserPerfil.aspx" runat="server">Perfil</asp:HyperLink></li>
                         <li><asp:HyperLink ID="opcNombreUsuario_Payment" NavigateUrl="~/www/Usuario/UserPayment.aspx" runat="server">Medio de pago</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="opcNombreUsuario_PerfilAdministrativo" NavigateUrl="~/www/Usuario/UserPayment.aspx" runat="server">Perfil Administrativo</asp:HyperLink></li>
 					</ul>
 				</li>
 				<li>
@@ -44,9 +45,9 @@
 				<li class="submenu">
                     <asp:HyperLink ID="opcAdministrativa" title="" runat="server">Administración<span class="icon-open"></span></asp:HyperLink>
 					<ul>
-						<li><asp:HyperLink ID="HyperLink6" runat="server">Sub Item 1</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink7" runat="server">Sub Item 2</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink8" runat="server">Sub Item 3</asp:HyperLink></li>
+						<li><asp:HyperLink ID="opcAdministrativa_Clientes" NavigateUrl="~/www/Administrador/Adm_Clientes.aspx" runat="server">Clientes</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="opcAdministrativa_Usuarios" NavigateUrl="~/www/Administrador/Adm_Usuarios.aspx" runat="server">Usuarios</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="opcAdministrativa_Productos" NavigateUrl="~/www/Administrador/Adm_Productos.aspx" runat="server">Productos</asp:HyperLink></li>
 					</ul>
 				</li>
                 <li>

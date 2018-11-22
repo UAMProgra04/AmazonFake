@@ -67,6 +67,15 @@ namespace AmazonFake_SITE {
         protected global::System.Web.UI.WebControls.HyperLink opcNombreUsuario_Payment;
         
         /// <summary>
+        /// Control opcNombreUsuario_PerfilAdministrativo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink opcNombreUsuario_PerfilAdministrativo;
+        
+        /// <summary>
         /// Control opcIndex.
         /// </summary>
         /// <remarks>
@@ -130,31 +139,31 @@ namespace AmazonFake_SITE {
         protected global::System.Web.UI.WebControls.HyperLink opcAdministrativa;
         
         /// <summary>
-        /// Control HyperLink6.
+        /// Control opcAdministrativa_Clientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink6;
+        protected global::System.Web.UI.WebControls.HyperLink opcAdministrativa_Clientes;
         
         /// <summary>
-        /// Control HyperLink7.
+        /// Control opcAdministrativa_Usuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink7;
+        protected global::System.Web.UI.WebControls.HyperLink opcAdministrativa_Usuarios;
         
         /// <summary>
-        /// Control HyperLink8.
+        /// Control opcAdministrativa_Productos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink8;
+        protected global::System.Web.UI.WebControls.HyperLink opcAdministrativa_Productos;
         
         /// <summary>
         /// Control opcCarrito.

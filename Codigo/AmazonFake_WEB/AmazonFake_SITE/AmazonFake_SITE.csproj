@@ -115,6 +115,9 @@
     <Content Include="www\Access\CreateAccount.aspx" />
     <Content Include="www\Access\Login.aspx" />
     <Content Include="www\Access\PasswordAssistance.aspx" />
+    <Content Include="www\Administrador\Adm_Clientes.aspx" />
+    <Content Include="www\Administrador\Adm_Productos.aspx" />
+    <Content Include="www\Administrador\Adm_Usuarios.aspx" />
     <Content Include="www\Error\Error404.aspx" />
     <Content Include="www\Index.aspx" />
     <Content Include="font\fontello.eot" />
@@ -188,6 +191,27 @@
     <Compile Include="www\Access\PasswordAssistance.aspx.designer.cs">
       <DependentUpon>PasswordAssistance.aspx</DependentUpon>
     </Compile>
+    <Compile Include="www\Administrador\Adm_Clientes.aspx.cs">
+      <DependentUpon>Adm_Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Clientes.aspx.designer.cs">
+      <DependentUpon>Adm_Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Productos.aspx.cs">
+      <DependentUpon>Adm_Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Productos.aspx.designer.cs">
+      <DependentUpon>Adm_Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Usuarios.aspx.cs">
+      <DependentUpon>Adm_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Usuarios.aspx.designer.cs">
+      <DependentUpon>Adm_Usuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="www\Error\Error404.aspx.cs">
       <DependentUpon>Error404.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,7 +243,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="css\Otros_Forms\" />
     <Folder Include="Models\" />
+    <Folder Include="www\Departamentos\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
