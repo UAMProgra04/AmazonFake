@@ -22,6 +22,9 @@
 
 		<nav class="menu">
 			<ul>
+                <li>
+                    <asp:HyperLink ID="opcNombreUsuario" runat="server"><asp:Label ID="lbl_NombreUsuario" title="Name" runat="server" Text="Bienvenido : " Font-Bold="true"></asp:Label></asp:HyperLink>
+				</li>
 				<li>
                     <asp:HyperLink ID="opcIndex" title="Inicio" NavigateUrl="~/www/Index.aspx" runat="server">Inicio</asp:HyperLink>
 				</li>
@@ -47,6 +50,10 @@
 				</li>
 				<li>
                     <asp:HyperLink ID="opcLogin" title="Login" NavigateUrl="~/www/Access/Login.aspx" runat="server">Login</asp:HyperLink>
+				</li>
+                <li>
+                    <asp:HyperLink ID="opcCerrarSesion" title="Cerrar Sesion" NavigateUrl="~/www/Index.aspx" runat="server">
+                        <asp:Button ID="btnCerrarSesion" BackColor="#CE852A" BorderStyle="None" ForeColor="White" Font-Size="17px" runat="server" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click" /></asp:HyperLink>
 				</li>
 			</ul>
 		</nav>

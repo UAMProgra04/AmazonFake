@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonFake.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AmazonFake_SITE.www.Access.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonFake.Master" enableEventValidation="false" validateRequest="false"  AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AmazonFake_SITE.www.Access.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,7 +19,7 @@
                 <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena" placeholder="Digite su Clave" runat="server"></asp:TextBox>
 			</div>
 			<div >
-                <asp:Button class="BotonSingIn" ID="btn_SingIn" runat="server" Text="Sing in" />
+                <asp:Button class="BotonSingIn" ID="btn_SingIn" runat="server" Text="Sing in" OnClick="btn_SingIn_Click" />
 			</div>
 			<div>
                 <asp:CheckBox Class="keep_me" runat="server" />
@@ -30,6 +30,11 @@
                 <hr class="hr" />
                 <asp:Button class="BotonCreateAccount" ID="btn_CreateAccount" runat="server" Text="Create your Amazon Account" onclick="btn_CreateAccount_Click" />
 		    </div>
+            <div>
+                <center>
+                    <asp:Label ID="lbErrores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
+                </center>
+            </div>  
 		</form>
 	</section>
     <div class="footer">

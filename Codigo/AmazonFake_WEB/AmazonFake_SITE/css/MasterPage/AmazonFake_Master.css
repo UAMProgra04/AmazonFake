@@ -11,8 +11,8 @@ header {
 	height: 50px;
 	background: #CE852A;
 	color: #fff;
-	/*display: flex;
-	justify-content: flex-end;*/
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 }
 #btn-menu {

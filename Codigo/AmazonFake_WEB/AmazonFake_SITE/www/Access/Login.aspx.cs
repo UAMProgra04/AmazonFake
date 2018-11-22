@@ -9,14 +9,61 @@ namespace AmazonFake_SITE.www.Access
 {
     public partial class Login : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        #region Administracion_Accesos
+        private void Administracion_Accesos()
         {
+            string usuario = txt_email.Text;
+            string passwd = txt_contrasena.Text;
+
+            if (usuario == "Test@hotmail.com" && passwd == "1234")
+            {
+                Session["UsuarioSession"] = usuario;
+                Response.Redirect("~/www/Index.aspx");
+            }
+            if (usuario == "Test2@hotmail.com" && passwd == "1234")
+            {
+                Session["UsuarioSession"] = usuario;
+                Response.Redirect("~/www/Index.aspx");
+            }
+            else
+            {
+                lbErrores.Text = "Error de usuario o Contraseña";
+                txt_email.Text = string.Empty;
+                txt_contrasena.Text = string.Empty;
+                txt_email.Focus();
+            }
 
         }
+        #endregion
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //if (Request.Params["error"] != null)
+            //{
+            //    string error = Request.Params["error"];
+            //    if (error == "1")
+            //    {
+            //        lbErrores.Text = "Debe iniciar Sesion para acceder a...";
+            //    }
+            //    else if (error == "2")
+            //    {
+            //        lbErrores.Text = "Debe iniciar Sesion para acceder a...";
+            //    }
+            //}
+        }
+
+        #region Boton_CreateAccount
         protected void btn_CreateAccount_Click(object sender, EventArgs e)
         {
             Response.Redirect("CreateAccount.aspx");
         }
+        #endregion
+
+        #region Boton_SingIn
+        protected void btn_SingIn_Click(object sender, EventArgs e)
+        {
+            this.Administracion_Accesos();
+        }
+        #endregion
     }
 }
