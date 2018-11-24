@@ -1,104 +1,334 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AmazonFake.master.cs" Inherits="AmazonFake_SITE.AmazonFake" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/MasterPage/fontello.css">
-<link rel="stylesheet" type="text/css" href="css/MasterPage/AmazonFake_Master.css">
-<link rel="stylesheet" type="text/css" href="css/Access/Access.css">
-    <title>AmazonFake</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+    <title>FakeAmazon</title>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<form id="form1" runat="server">
+    <!-- HEADER -->
     <header>
-		<input type="checkbox" id="btn-menu">
-		<label for="btn-menu" class="icon-menu"></label>
+	    <!-- TOP HEADER -->
+	    <div id="top-header">
+		    <div class="container">
+			    <ul class="header-links pull-left">
+				    <li><a href="#"><i class="fa fa-phone"></i> 2200 - 00 - 00</a></li>
+				    <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+				    <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+			    </ul>
+			    <ul class="header-links pull-right">
+				    <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+				    <li><a href="#"><i class="fa fa-user-o"></i> Cuenta</a></li>
+			    </ul>
+		    </div>
+	    </div>
+	    <!-- /TOP HEADER -->
 
-		<nav class="menu">
-			<ul>
-                <li>
-                    <asp:HyperLink ID="opcNombreUsuario" runat="server"><asp:Label ID="lbl_NombreUsuario" title="Name" runat="server" Text="Bienvenido : " Font-Bold="true"></asp:Label><span class="icon-open"></span></asp:HyperLink>
-                    <ul>
-						<li><asp:HyperLink ID="opcNombreUsuario_Perfil" NavigateUrl="~/www/Usuario/UserPerfil.aspx" runat="server">Perfil</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="opcNombreUsuario_Payment" NavigateUrl="~/www/Usuario/UserPayment.aspx" runat="server">Medio de pago</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="opcNombreUsuario_PerfilAdministrativo" NavigateUrl="~/www/Usuario/UserPayment.aspx" runat="server">Perfil Administrativo</asp:HyperLink></li>
-					</ul>
-				</li>
-				<li>
-                    <asp:HyperLink ID="opcIndex" title="Inicio" NavigateUrl="~/www/Index.aspx" runat="server">Inicio</asp:HyperLink>
-				</li>
-				<li class="submenu">
-                    <asp:HyperLink ID="opcDepartamentos" title="Departamentos" runat="server">Departamentos<span class="icon-open"></span></asp:HyperLink>
-					<ul>
-						<li><asp:HyperLink ID="HyperLink2" runat="server">Sub Item 1</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink3" runat="server">Sub Item 2</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink4" runat="server">Sub Item 3</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="HyperLink5" runat="server">Sub Item 4</asp:HyperLink></li>
-					</ul>
-				</li>
-				<li class="submenu">
-                    <asp:HyperLink ID="opcAdministrativa" title="" runat="server">Administración<span class="icon-open"></span></asp:HyperLink>
-					<ul>
-						<li><asp:HyperLink ID="opcAdministrativa_Clientes" NavigateUrl="~/www/Administrador/Adm_Clientes.aspx" runat="server">Clientes</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="opcAdministrativa_Usuarios" NavigateUrl="~/www/Administrador/Adm_Usuarios.aspx" runat="server">Usuarios</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="opcAdministrativa_Productos" NavigateUrl="~/www/Administrador/Adm_Productos.aspx" runat="server">Productos</asp:HyperLink></li>
-					</ul>
-				</li>
-                <li>
-                    <asp:HyperLink ID="opcCarrito" title="Carrito" runat="server">Carrito</asp:HyperLink>
-				</li>
-				<li>
-                    <asp:HyperLink ID="opcLogin" title="Login" NavigateUrl="~/www/Access/Login.aspx" runat="server">Login</asp:HyperLink>
-				</li>
-                <li>
-                    <asp:HyperLink ID="opcCerrarSesion" title="Cerrar Sesion" NavigateUrl="~/www/Index.aspx" runat="server">
-                        <asp:Button ID="btnCerrarSesion" BackColor="#CE852A" BorderStyle="None" ForeColor="White" Font-Size="17px" runat="server" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click" /></asp:HyperLink>
-				</li>
-			</ul>
-		</nav>
-	</header>
-   <section>
-		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+	    <!-- MAIN HEADER -->
+	    <div id="header">
+		    <!-- container -->
+		    <div class="container">
+			    <!-- row -->
+			    <div class="row">
+				    <!-- LOGO -->
+				    <div class="col-md-3">
+					    <div class="header-logo">
+						    <a href="#" class="logo">
+							    <img src="./img/logo.png" alt="">
+						    </a>
+					    </div>
+				    </div>
+				    <!-- /LOGO -->
+
+				    <!-- SEARCH BAR -->
+				    <div class="col-md-6">
+					    <div class="header-search">
+						    <form>
+							    <select class="input-select">
+								    <option value="0">Categorías</option>
+								    <option value="1">Category 01</option>
+								    <option value="1">Category 02</option>
+							    </select>
+							    <input class="input" placeholder="Buscar Productos">
+							    <button class="search-btn">Buscar</button>
+						    </form>
+					    </div>
+				    </div>
+				    <!-- /SEARCH BAR -->
+
+				    <!-- ACCOUNT -->
+				    <div class="col-md-3 clearfix">
+					    <div class="header-ctn">
+						    <!-- Wishlist -->
+						    <div>
+							    <a href="#">
+								    <i class="fa fa-heart-o"></i>
+								    <span>Lista de Deseos</span>
+								    <div class="qty">2</div>
+							    </a>
+						    </div>
+						    <!-- /Wishlist -->
+
+						    <!-- Cart -->
+						    <div class="dropdown">
+							    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+								    <i class="fa fa-shopping-cart"></i>
+								    <span>Cesta</span>
+								    <div class="qty">3</div>
+							    </a>
+							    <div class="cart-dropdown">
+								    <div class="cart-list">
+									    <div class="product-widget">
+										    <div class="product-img">
+											    <img src="./img/product01.png" alt=""> 	<!-- /metodo code behind que conecte a bd y traiga imagen y datos del producto basado en variables temporales-->
+										    </div>
+										    <div class="product-body">
+											    <h3 class="product-name"><a href="#">product name goes here</a></h3>
+											    <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+										    </div>
+										    <button class="delete"><i class="fa fa-close"></i></button>
+									    </div>
+
+									    <div class="product-widget">
+										    <div class="product-img">
+											    <img src="./img/product02.png" alt="">
+										    </div>
+										    <div class="product-body">
+											    <h3 class="product-name"><a href="#">product name goes here</a></h3>
+											    <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+										    </div>
+										    <button class="delete"><i class="fa fa-close"></i></button>
+									    </div>
+								    </div>
+								    <div class="cart-summary">
+									    <small>3 Item(s) selected</small>
+									    <h5>SUBTOTAL: $2940.00</h5>
+								    </div>
+								    <div class="cart-btns">
+									    <a href="#">View Cart</a>
+									    <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+								    </div>
+							    </div>
+						    </div>
+						    <!-- /Cart -->
+
+						    <!-- Menu Toogle -->
+						    <div class="menu-toggle">
+							    <a href="#">
+								    <i class="fa fa-bars"></i>
+								    <span>Menu</span>
+							    </a>
+						    </div>
+						    <!-- /Menu Toogle -->
+					    </div>
+				    </div>
+				    <!-- /ACCOUNT -->
+			    </div>
+			    <!-- row -->
+		    </div>
+		    <!-- container -->
+	    </div>
+	    <!-- /MAIN HEADER -->
+    </header>
+    <!-- /HEADER -->
+
+    <!-- NAVIGATION -->
+    <nav id="navigation">
+	    <!-- container -->
+	    <div class="container">
+		    <!-- responsive-nav -->
+		    <div id="responsive-nav">
+			    <!-- NAV -->
+			    <ul class="main-nav nav navbar-nav">
+				    <li class="active"><a href="#">Inicio</a></li>
+				    <li><a href="#">Laptops</a></li>
+				    <li><a href="#">Smartphones</a></li>
+				    <li><a href="#">Cámaras</a></li>
+				    <li><a href="#">Accesorios</a></li>
+			    </ul>
+			    <!-- /NAV -->
+		    </div>
+		    <!-- /responsive-nav -->
+	    </div>
+	    <!-- /container -->
+    </nav>
+    <!-- /NAVIGATION -->
+
+    <!--NO TOCAR-->
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-	</section>
-    <footer>
-        <section id="acerca-de">
-        <article>
-          <h3>Nuestro Principal Objetivo es brindarle:</h3>
-          <p>
-            <ul>
-              <li>Tranferencia de dinero entre usuarios del banco.</li>
-              <li>Transferencia de dinero entre el banco y otras entidades.</li>
-              <li>Pago de Servicios.</li>
-              <li>Consulta de estados de Cuenta.</li>
-              <li>Respaldo y Confidencialidad.</li>
-            </ul>
-          </p>
-        </article>
-      </section>
+    </div>
+    </form>
+    <!--NO TOCAR-->
 
-      <section id="redes-s">
-        <div class="email"><a href="mailto:prueba@gmail.com" target="_blank"></a></div>
-        <div class="twitter"><a href="https://twitter.com/?lang=pt" target="_blank"></a></div>
-        <div class="youtube"><a href="https://www.youtube.com/watch?v=-0WITQeaBLo" target="_blank"></a></div>
-        <div class="facebook"><a href="https://pt-br.facebook.com" target="_blank"></a></div>
-      </section>
+    <!-- NEWSLETTER -->
+    <div id="newsletter" class="section">
+	    <!-- container -->
+	    <div class="container">
+		    <!-- row -->
+		    <div class="row">
+			    <div class="col-md-12">
+				    <div class="newsletter">
+					    <p>Registrate para recibir <strong>Ofertas</strong></p>
+					    <form>
+						    <input class="input" type="email" placeholder="Ingrese su e-mail">
+						    <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribirse</button>
+					    </form>
+					    <ul class="newsletter-follow">
+						    <li>
+							    <a href="#"><i class="fa fa-facebook"></i></a>
+						    </li>
+						    <li>
+							    <a href="#"><i class="fa fa-twitter"></i></a>
+						    </li>
+						    <li>
+							    <a href="#"><i class="fa fa-instagram"></i></a>
+						    </li>
+						    <li>
+							    <a href="#"><i class="fa fa-pinterest"></i></a>
+						    </li>
+					    </ul>
+				    </div>
+			    </div>
+		    </div>
+		    <!-- /row -->
+	    </div>
+	    <!-- /container -->
+    </div>
+    <!-- /NEWSLETTER -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+	    <!-- top footer -->
+	    <div class="section">
+		    <!-- container -->
+		    <div class="container">
+			    <!-- row -->
+			    <div class="row">
+				    <div class="col-md-3 col-xs-6">
+					    <div class="footer">
+						    <h3 class="footer-title">About Us</h3>
+						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+						    <ul class="footer-links">
+							    <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+							    <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+							    <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+						    </ul>
+					    </div>
+				    </div>
+
+				    <div class="col-md-3 col-xs-6">
+					    <div class="footer">
+						    <h3 class="footer-title">Categories</h3>
+						    <ul class="footer-links">
+							    <li><a href="#">Hot deals</a></li>
+							    <li><a href="#">Laptops</a></li>
+							    <li><a href="#">Smartphones</a></li>
+							    <li><a href="#">Cameras</a></li>
+							    <li><a href="#">Accessories</a></li>
+						    </ul>
+					    </div>
+				    </div>
+
+				    <div class="clearfix visible-xs"></div>
+
+				    <div class="col-md-3 col-xs-6">
+					    <div class="footer">
+						    <h3 class="footer-title">Information</h3>
+						    <ul class="footer-links">
+							    <li><a href="#">About Us</a></li>
+							    <li><a href="#">Contact Us</a></li>
+							    <li><a href="#">Privacy Policy</a></li>
+							    <li><a href="#">Orders and Returns</a></li>
+							    <li><a href="#">Terms & Conditions</a></li>
+						    </ul>
+					    </div>
+				    </div>
+
+				    <div class="col-md-3 col-xs-6">
+					    <div class="footer">
+						    <h3 class="footer-title">Service</h3>
+						    <ul class="footer-links">
+							    <li><a href="#">My Account</a></li>
+							    <li><a href="#">View Cart</a></li>
+							    <li><a href="#">Wishlist</a></li>
+							    <li><a href="#">Track My Order</a></li>
+							    <li><a href="#">Help</a></li>
+						    </ul>
+					    </div>
+				    </div>
+			    </div>
+			    <!-- /row -->
+		    </div>
+		    <!-- /container -->
+	    </div>
+	    <!-- /top footer -->
+
+	    <!-- bottom footer -->
+	    <div id="bottom-footer" class="section">
+		    <div class="container">
+			    <!-- row -->
+			    <div class="row">
+				    <div class="col-md-12 text-center">
+					    <ul class="footer-payments">
+						    <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+						    <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+						    <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+						    <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+						    <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+						    <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+					    </ul>
+					    <span class="copyright">
+						    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Derechos Reservados | Proyecto Programación IV. III Cuatrimestre. UAM Sede San Pedro.
+					        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					    </span>
+				    </div>
+			    </div>
+				    <!-- /row -->
+		    </div>
+		    <!-- /container -->
+	    </div>
+	    <!-- /bottom footer -->
     </footer>
-</form>
-    <script>
-        $(".submenu").click(function () {
-            $(this).children("ul").slideToggle();
-        })
-        $("ul").click(function (p) {
-            p.stopPropagation();
-        })
-    </script>	   	
+    <!-- /FOOTER -->
+
+    <!-- jQuery Plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
