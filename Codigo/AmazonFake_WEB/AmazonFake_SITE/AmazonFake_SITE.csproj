@@ -144,7 +144,6 @@
     <Content Include="www\Error\Error404.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Store.aspx" />
-    <Content Include="www\Usuario\UserPayment.aspx" />
     <Content Include="www\Usuario\UserPerfil.aspx" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -275,13 +274,6 @@
     <Compile Include="Store.aspx.designer.cs">
       <DependentUpon>Store.aspx</DependentUpon>
     </Compile>
-    <Compile Include="www\Usuario\UserPayment.aspx.cs">
-      <DependentUpon>UserPayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="www\Usuario\UserPayment.aspx.designer.cs">
-      <DependentUpon>UserPayment.aspx</DependentUpon>
-    </Compile>
     <Compile Include="www\Usuario\UserPerfil.aspx.cs">
       <DependentUpon>UserPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,7 +285,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="www\Departamentos\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

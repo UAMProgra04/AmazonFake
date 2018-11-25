@@ -92,21 +92,6 @@
     height: 3px;
     opacity: .5;
 }
-
-.linksFooter {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 14px;
-    color: #2DAED9;
-}
-.linksFoo1 {
-    margin-left: 29%;
-}
-
-.linksFoo2 {
-    margin-left: 3%;
-    margin-right: 3%;
-}
 /*PasswordAssistance exclusive*/
 .Haschanged {
     font-weight:bold;

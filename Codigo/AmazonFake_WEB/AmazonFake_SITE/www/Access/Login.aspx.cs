@@ -18,12 +18,12 @@ namespace AmazonFake_SITE.www.Access
             if (usuario == "Test@hotmail.com" && passwd == "1234")
             {
                 Session["UsuarioSession"] = usuario;
-                Response.Redirect("~/www/Index.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             if (usuario == "Test2@hotmail.com" && passwd == "1234")
             {
                 Session["UsuarioSession"] = usuario;
-                Response.Redirect("~/www/Index.aspx");
+                Response.Redirect("~/Index.aspx");
             }
             else
             {
@@ -38,18 +38,18 @@ namespace AmazonFake_SITE.www.Access
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Params["error"] != null)
-            {
-                string error = Request.Params["error"];
-                if (error == "1")
-                {
-                    lbl_Errores.Text = "Debe iniciar Sesion para acceder a Su perfil...";
-                }
-                else if (error == "2")
-                {
-                    lbl_Errores.Text = "Debe iniciar Sesion para acceder a su perfil...";
-                }
-            }
+            //if (Request.Params["error"] != null)
+            //{
+            //    string error = Request.Params["error"];
+            //    if (error == "1")
+            //    {
+            //        lbl_Errores.Text = "Debe iniciar Sesion para acceder a Su perfil...";
+            //    }
+            //    else if (error == "2")
+            //    {
+            //        lbl_Errores.Text = "Debe iniciar Sesion para acceder a su perfil...";
+            //    }
+            //}
         }
 
         #region Boton_CreateAccount

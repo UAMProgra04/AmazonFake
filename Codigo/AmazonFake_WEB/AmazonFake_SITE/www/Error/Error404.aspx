@@ -14,14 +14,14 @@
     <div>
         <center>
             <div>
-                <asp:Image class="amazonfake_logo" ID="Im_amazonfake_logo" src="../../Imagenes/Access/amazonfake_logo.png" runat="server" />
+                <asp:Image class="amazonfake_logo" ID="Im_amazonfake_logo" src="../../img/Access/amazonfake_logo.png" runat="server" />
             </div>
             <div class="contenidoError">
                 <span class="BuscarAlgo">¿Buscas algo?</span>
                 <p>
                    <br />
                    Lo sentimos. La dirección web que has especificado no es una página activa de nuestro sitio.<br />
-                   Ir a la página de <asp:HyperLink class="hl_Error404" ID="hl_Error404" NavigateUrl="~/www/Index.aspx" runat="server">Inicio</asp:HyperLink> de Amazon.
+                   Ir a la página de <asp:HyperLink class="hl_Error404" ID="hl_Error404" NavigateUrl="~/Index.aspx" runat="server">Inicio</asp:HyperLink> de Amazon.
                 </p>
             </div>
         </center>

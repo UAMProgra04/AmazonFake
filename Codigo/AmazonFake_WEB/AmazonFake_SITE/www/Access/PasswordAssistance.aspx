@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="Contenedor">
 	<div>
-        <asp:Image class="amazonfake_logo" ID="Im_amazonfake_logo" src="../../Imagenes/Access/amazonfake_logo.png" runat="server" />
+        <asp:Image class="amazonfake_logo" ID="Im_amazonfake_logo" src="../../img/Access/amazonfake_logo.png" runat="server" />
     </div>
 	<section class="SectionForm">
 		<form class="Form" action="">
@@ -35,9 +35,6 @@
 	</section>
     <div class="footer">
         <hr class="hr2" /><br />
-        <asp:HyperLink class="linksFooter linksFoo1" ID="linksFoo1" NavigateUrl="#" runat="server">Conditions of Use</asp:HyperLink>
-        <asp:HyperLink class="linksFooter linksFoo2" ID="linksFoo2" NavigateUrl="#" runat="server">Privacy Notice</asp:HyperLink>
-        <asp:HyperLink class="linksFooter" NavigateUrl="#" runat="server">Help</asp:HyperLink>
     </div>
 </div>
 </asp:Content>

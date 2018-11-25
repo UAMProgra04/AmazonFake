@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/Access/Access.css">
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -35,22 +36,6 @@
 <body>
     <!-- HEADER -->
     <header>
-	    <!-- TOP HEADER -->
-	    <div id="top-header">
-		    <div class="container">
-			    <ul class="header-links pull-left">
-				    <li><a href="#"><i class="fa fa-phone"></i> 2200 - 00 - 00</a></li>
-				    <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-				    <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-			    </ul>
-			    <ul class="header-links pull-right">
-				    <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-				    <li><a href="#"><i class="fa fa-user-o"></i> Cuenta</a></li>
-			    </ul>
-		    </div>
-	    </div>
-	    <!-- /TOP HEADER -->
-
 	    <!-- MAIN HEADER -->
 	    <div id="header">
 		    <!-- container -->
@@ -90,7 +75,7 @@
 						    <div>
 							    <a href="#">
 								    <i class="fa fa-heart-o"></i>
-								    <span>Lista de Deseos</span>
+								    <span>Deseos</span>
 								    <div class="qty">2</div>
 							    </a>
 						    </div>
@@ -156,6 +141,39 @@
 		    <!-- container -->
 	    </div>
 	    <!-- /MAIN HEADER -->
+
+<!--NO TOCAR-->
+<form id="form1" runat="server">
+
+        <!-- TOP HEADER -->
+	    <div id="top-header">
+		    <div class="container">
+			    <ul class="header-links pull-left">
+				    <li>
+                        <a id="" href="#"></a>
+                        <asp:HyperLink ID="Opc_Nombre_Usuario" runat="server">
+                            <i class="fa fa-map-marker"></i><asp:Label ID="lbl_NombreUsuario" title="Name" runat="server" Text="Bienvenido : " Font-Bold="true"></asp:Label>
+                        </asp:HyperLink>
+				    </li>
+			    </ul>
+			    <ul class="header-links pull-right">
+				    <%--<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>--%>
+                    <li>
+                        <asp:HyperLink ID="Opc_Cesta" runat="server"><i class="fa fa-shopping-cart"></i> Cesta</asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="Opc_IniciarSesion" NavigateUrl="~/www/Access/Login.aspx" runat="server"><i class="fa fa-user-o"></i> Iniciar Sesión</asp:HyperLink>
+                    </li>
+                    <li>                        
+                        <asp:HyperLink ID="Opc_CerrarSesion" NavigateUrl="~/Index.aspx" runat="server">
+                            <i class="fa fa-user-o"></i>
+                            <asp:Button ID="btnCerrarSesion" BackColor="#2B2D42" BorderStyle="None"  runat="server" Text="Cerrar Sesion" onclick="btnCerrarSesion_Click" />
+                        </asp:HyperLink>
+                    </li>
+			    </ul>
+		    </div>
+	    </div>
+	    <!-- /TOP HEADER -->
     </header>
     <!-- /HEADER -->
 
@@ -164,14 +182,33 @@
 	    <!-- container -->
 	    <div class="container">
 		    <!-- responsive-nav -->
-		    <div id="responsive-nav">
+		    <div id="responsive-nav" class="menu">
 			    <!-- NAV -->
 			    <ul class="main-nav nav navbar-nav">
-				    <li class="active"><a href="#">Inicio</a></li>
+                    <li>
+                        <asp:HyperLink ID="Opc_Index" NavigateUrl="~/Index.aspx" runat="server">Inicio</asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="Opc_Administrativa" runat="server">Administración</asp:HyperLink>
+                        <ul>
+						    <li>
+                                <asp:HyperLink ID="Opc_Administrativa_Clientes" NavigateUrl="~/www/Administrador/Adm_Clientes.aspx" runat="server">Clientes</asp:HyperLink>
+						    </li>
+						    <li>
+                                <asp:HyperLink ID="Opc_Administrativa_Usuarios" NavigateUrl="~/www/Administrador/Adm_Usuarios.aspx" runat="server">Usuarios</asp:HyperLink>
+						    </li>
+						    <li>
+                                <asp:HyperLink ID="Opc_Administrativa_Productos" NavigateUrl="~/www/Administrador/Adm_Productos.aspx" runat="server">Productos</asp:HyperLink>
+						    </li>
+					    </ul>
+                    </li>
 				    <li><a href="#">Laptops</a></li>
 				    <li><a href="#">Smartphones</a></li>
 				    <li><a href="#">Cámaras</a></li>
 				    <li><a href="#">Accesorios</a></li>
+                    <li>
+                        <asp:HyperLink ID="Opc_Perfil_Usuario" NavigateUrl="~/www/Usuario/UserPerfil.aspx" runat="server">Perfil</asp:HyperLink>
+                    </li>
 			    </ul>
 			    <!-- /NAV -->
 		    </div>
@@ -181,15 +218,13 @@
     </nav>
     <!-- /NAVIGATION -->
 
-    <!--NO TOCAR-->
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+<!--NO TOCAR-->
+<div>
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
-    <!--NO TOCAR-->
+</asp:ContentPlaceHolder>
+</div>
+<!--NO TOCAR-->
 
     <!-- NEWSLETTER -->
     <div id="newsletter" class="section">
@@ -199,23 +234,18 @@
 		    <div class="row">
 			    <div class="col-md-12">
 				    <div class="newsletter">
-					    <p>Registrate para recibir <strong>Ofertas</strong></p>
-					    <form>
-						    <input class="input" type="email" placeholder="Ingrese su e-mail">
-						    <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribirse</button>
-					    </form>
 					    <ul class="newsletter-follow">
 						    <li>
-							    <a href="#"><i class="fa fa-facebook"></i></a>
+							    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
 						    </li>
 						    <li>
-							    <a href="#"><i class="fa fa-twitter"></i></a>
+							    <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
 						    </li>
 						    <li>
-							    <a href="#"><i class="fa fa-instagram"></i></a>
+							    <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
 						    </li>
 						    <li>
-							    <a href="#"><i class="fa fa-pinterest"></i></a>
+							    <a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a>
 						    </li>
 					    </ul>
 				    </div>
@@ -238,11 +268,11 @@
 				    <div class="col-md-3 col-xs-6">
 					    <div class="footer">
 						    <h3 class="footer-title">About Us</h3>
-						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+						    <p>AmazonFake es una alternativa de compras Web destinada al servicio de la comunidad.</p>
 						    <ul class="footer-links">
-							    <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-							    <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-							    <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+							    <li><a href="#"><i class="fa fa-map-marker"></i>San José, Costa Rica</a></li>
+							    <li><a href="#"><i class="fa fa-phone"></i>+506 7106 7394</a></li>
+							    <li><a href="mailto:AmazonFace.Mail@gmail.com" ><i class="fa fa-envelope-o"></i>AmazonFake</a></li>
 						    </ul>
 					    </div>
 				    </div>
@@ -279,11 +309,15 @@
 					    <div class="footer">
 						    <h3 class="footer-title">Service</h3>
 						    <ul class="footer-links">
-							    <li><a href="#">My Account</a></li>
-							    <li><a href="#">View Cart</a></li>
-							    <li><a href="#">Wishlist</a></li>
-							    <li><a href="#">Track My Order</a></li>
-							    <li><a href="#">Help</a></li>
+							    <li>
+                                    <asp:HyperLink ID="My_Account" runat="server">
+                                        <asp:Button ID="btn_My_Account" BackColor="#1E1F29" BorderStyle="None"  runat="server" Text="My Account" onclick="btn_My_Account_Click" />
+                                    </asp:HyperLink>
+							    </li>
+							    <li><a href="#">&nbsp;View Cart</a></li>
+							    <li><a href="#">&nbsp;Wishlist</a></li>
+							    <li><a href="#">&nbsp;Track My Order</a></li>
+							    <li><a href="#">&nbsp;Help</a></li>
 						    </ul>
 					    </div>
 				    </div>
@@ -322,6 +356,9 @@
 	    <!-- /bottom footer -->
     </footer>
     <!-- /FOOTER -->
+
+</form>
+<!--NO TOCAR-->
 
     <!-- jQuery Plugins -->
     <script src="js/jquery.min.js"></script>

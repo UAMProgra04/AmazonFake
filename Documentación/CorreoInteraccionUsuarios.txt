@@ -1,0 +1,6 @@
+Nombre: AmazonFake
+Apellido: AmazonFake
+Nombre Usuario: AmazonFace.Mail@gmail.com
+p: egs76$gs
+fn: 23 julio 1970
+sexo: hombre
