@@ -39,4 +39,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Envio_Correo_Cliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Correo_Target" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo_Source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo_Encabezado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo_Mensaje" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Envio_Correo_ClienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

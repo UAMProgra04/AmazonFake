@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.Text;
 using BLL.Base_Datos;
 using DAL.Base_Datos;
+using DAL.Correo;
+using BLL.Correo;
 using System.Data;
 
 namespace SVC.Contract
@@ -42,6 +44,23 @@ namespace SVC.Contract
             {
                 return null;
             }
+        }
+        #endregion
+
+        #region Envio_Correo_Cliente
+        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
+            string Correo_Encabezado, string Correo_Mensaje)
+        {
+            Cls_Correo_BLL obj_Correo_Data_BLL = new Cls_Correo_BLL();
+            Cls_Correo_DAL obj_Correo_Data_DAL = new Cls_Correo_DAL();
+            obj_Correo_Data_DAL.SCorreo_Target = Correo_Target;
+            obj_Correo_Data_DAL.SCorreo_Source = Correo_Source;
+            obj_Correo_Data_DAL.SCorreo_Head = Correo_Encabezado;
+            obj_Correo_Data_DAL.SCorreo_Message = Correo_Mensaje;
+
+            obj_Correo_Data_BLL.Datos_Correo(obj_Correo_Data_DAL);
+
+            obj_Correo_Data_BLL.Envio_Correo_Electronico();
         }
         #endregion
     }

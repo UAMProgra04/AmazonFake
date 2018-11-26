@@ -26,6 +26,12 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion", ReplyAction="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> Mostrar_InformacionAsync(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> Mostrar_InformacionAsync(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos) {
             return base.Channel.Mostrar_InformacionAsync(Nombre_StoreProcedure_BaseDatos, Nombre_Tabla_BaseDatos);
+        }
+        
+        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        }
+        
+        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
         }
     }
 }

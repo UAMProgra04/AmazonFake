@@ -24,6 +24,11 @@
 			<div >
                 <asp:Button class="BotonSingIn" ID="btn_Continue" runat="server" Text="Continue" OnClick="btn_Continue_Click" />
 			</div>
+            <div>
+                <center>
+                    <asp:Label ID="lbl_Errores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
+                </center>
+            </div>
 		</form>
 		<div>
             <br />

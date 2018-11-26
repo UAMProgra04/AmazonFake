@@ -13,7 +13,7 @@ namespace AmazonFake_SITE.www.Access
     public partial class PasswordAssistance : System.Web.UI.Page
     {
         #region Correos
-        private void EnviarCorreoElectronicos()
+        /*private void EnviarCorreoElectronicos()
         {
             SmtpClient Envio_Correo = new SmtpClient(); //Configuracion del ENVIO 
             MailMessage Mensaje_Correo = new MailMessage(); //Configuracion del MSJ
@@ -47,8 +47,9 @@ namespace AmazonFake_SITE.www.Access
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts",
                     "<script>alert('Error al ejecutar la Solicitud, Revise su conexion a Internet');</script>");
             }
-        }
+        }*/
         #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -56,19 +57,39 @@ namespace AmazonFake_SITE.www.Access
 
         protected void btn_Continue_Click(object sender, EventArgs e)
         {
-            try
+            #region Correos
+            /*
+             try
             {
                 Thread Hilo_Segundo_PLano = new Thread(EnviarCorreoElectronicos);
                 Hilo_Segundo_PLano.Start();
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Correo Enviado Exitosamente');</script>");
                 Response.Redirect("~/www/Access/Login.aspx");
-                
+
             }
             catch (Exception)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", 
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts",
                     "<script>alert('Error al ejecutar la Solicitud, Revise su conexion a Internet');</script>");
+            }*/
+            #endregion
+            if(this.txt_email.Text != string.Empty)
+            {
+                AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
+                string Correo_Target = this.txt_email.Text.Trim();
+                string Correo_Source = "amazonface.mail@gmail.com";
+                string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
+                string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + this.txt_email.Text.Trim() + "<br>Contraseña: contraseña</p>";
+                Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
+                this.lbl_Errores.Text = "Correo Enviado Exitosamente!";
+                this.txt_email.Text = string.Empty;
+                this.txt_email.Focus();
             }
+            else
+            {
+                this.lbl_Errores.Text = "El Campo a de Correo no deberia estar Vacio!";
+            }
+
         }
     }
 }

@@ -5,3 +5,12 @@ C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Debug\D
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.dll
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Debug\BLL.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Debug\BLL.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Debug\DAL.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Debug\DAL.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Debug\BLL.pdb

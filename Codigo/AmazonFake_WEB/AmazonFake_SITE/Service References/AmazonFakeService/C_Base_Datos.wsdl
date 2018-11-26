@@ -19,6 +19,12 @@
   <wsdl:message name="I_Base_Datos_Mostrar_Informacion_OutputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_InformacionResponse" />
   </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Envio_Correo_Cliente" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Envio_Correo_ClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="I_Base_Datos">
     <wsdl:operation name="Conectar_Base_Datos">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos" message="tns:I_Base_Datos_Conectar_Base_Datos_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="Mostrar_Informacion">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion" message="tns:I_Base_Datos_Mostrar_Informacion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse" message="tns:I_Base_Datos_Mostrar_Informacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Envio_Correo_Cliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" message="tns:I_Base_Datos_Envio_Correo_Cliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse" message="tns:I_Base_Datos_Envio_Correo_Cliente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_I_Base_Datos" type="tns:I_Base_Datos">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="Mostrar_Informacion">
       <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Mostrar_Informacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Envio_Correo_Cliente">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

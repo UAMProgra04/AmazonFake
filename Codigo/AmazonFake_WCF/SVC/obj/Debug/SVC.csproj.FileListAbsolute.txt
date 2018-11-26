@@ -8,3 +8,15 @@ C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\D
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.csprojResolveAssemblyReference.cache
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.dll
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\SVC.dll.config
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\SVC.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\SVC.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\BLL.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\DAL.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\BLL.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Debug\DAL.pdb
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.csprojAssemblyReference.cache
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.csproj.CoreCompileInputs.cache
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.csproj.CopyComplete
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.dll
+C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Debug\SVC.pdb

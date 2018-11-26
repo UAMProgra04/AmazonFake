@@ -16,5 +16,8 @@ namespace SVC.Interface
         [OperationContract]
         DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos,
             string Nombre_Tabla_BaseDatos);
+        [OperationContract]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
+            string Correo_Encabezado, string Correo_Mensaje);
     }
 }
