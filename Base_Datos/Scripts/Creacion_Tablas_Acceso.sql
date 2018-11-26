@@ -1,17 +1,18 @@
---Tablas para Creacion de Cuenta y Login--
 use Prog04_Proj02
 go
 
---Creacion de la tabla PERFILES--
+------------------------------------------------------------------------------------
+--CREACION DE TABLAS PARA MANEJO DE USUARIOS Y LOGIN--
+------------------------------------------------------------------------------------
+--CREACION TABLA PERFILES--
 create table PERFILES
 (
 P_Id_Perfil tinyint primary key,
 P_Nombre_Perfil nvarchar(15),
 P_Descripcion_perfil nvarchar(30)
 )
--- Fin Creacion de la tabla Perfiles--
 
---Creacion de la tabla USUARIOS--
+--CREACION TABLA USUARIOS--
 create table USUARIOS
 (
 U_Correo nvarchar(20) primary key,
@@ -21,9 +22,8 @@ U_Direccion nvarchar(50),
 U_Telefono nvarchar(15),
 U_Perfil tinyint not null references PERFILES(P_Id_Perfil)
 )
--- Fin Creacion de la tabla USUARIOS--
 
---Creacion de la tabla LOGIN--
+--CREACION TABLA LOGIN--
 create table LOGIN
 (
 L_Correo nvarchar(20) primary key,
@@ -31,8 +31,6 @@ L_Nombre nvarchar(30) not null,
 L_Password nvarchar(12) not null,
 L_Estado bit not null
 )
--- Fin Creacion de la tabla LOGIN--
-
 
 --drop table Informacion_Tarjeta
 --(
@@ -43,26 +41,14 @@ L_Estado bit not null
 --It_Codigo_Seguridad nvarchar(4),
 --)
 
---Store Procedures para Creacion de Cuenta y Login--
+------------------------------------------------------------------------------------
+--STORE PROCEDURES--
+------------------------------------------------------------------------------------
 use Prog04_Proj02
 go
 
---Crecion de los PERFILES de la tabla PERFILES--
-begin transaction
-begin try
-	insert into PERFILES (P_Id_Perfil, P_Nombre_Perfil, P_Descripcion_perfil)
-	values
-	(0, 'Root', 'Perfil con maximo privilegio'),
-	(1, 'Admin', 'Perfil Adminitrativo'),
-	(2, 'User', 'Perfil de Clientes')
-	commit transaction
-end try
-begin catch
-	rollback transaction
-end catch
-
---Creacion del Store Procedure para la creacion de las cuentas de usuario y su login--
-alter procedure SP_Create_User_Account
+--CREACION STORE PROCEDURE PARA CREACION DE USUARIO Y LOGIN--
+create procedure SP_Create_User_Account
 	@Correo nvarchar(20),
 	@Nombre nvarchar(30),
 	@Password nvarchar(12)
@@ -81,8 +67,8 @@ begin transaction
 		rollback transaction
 	end catch
 
---Creacion del Store Procedure para la elimiacion de las cuentas de usuario y su login--
-alter procedure SP_Delete_User_Account
+--CREACION STORE PROCEDURE PARA ELIMINAR CUENTA DE USUARIO Y LOGIN--
+create procedure SP_Delete_User_Account
 	@Correo nvarchar(20),
 	@Password nvarchar(12)
 as 
@@ -96,8 +82,8 @@ begin transaction
 		rollback transaction
 	end catch
 
---Creacion del Store Procedure para la actualizacion de las cuentas de usuario y su login--
-alter procedure SP_Update_User_Account
+--CREACION STORE PROCEDURE PARA ACTUALIZAR LA CUENTA DE USUARIO--
+create procedure SP_Update_User_Account
 	@Correo nvarchar(20),
 	@Identificacion int,
 	@Direccion nvarchar(50),
@@ -114,7 +100,82 @@ begin transaction
 		rollback transaction
 	end catch
 
---Creacion del Super Usuario--
+--CREACION STORE PROCEDURE PARA VISUALIZAR TODOS LOS USUARIOS--
+create procedure SP_View_All_Users
+as 
+begin transaction 
+	begin try
+		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
+		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
+		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
+		commit transaction
+	end try
+	begin catch
+		rollback transaction
+	end catch
+
+--CREACION STORE PROCEDURE PARA RECUPERACION DE PASSWORD--
+create procedure SP_Password_Restore
+	@Correo nvarchar(20)
+as 
+begin transaction 
+	begin try
+		select L_Password from LOGIN where L_Correo = @Correo
+		commit transaction
+	end try
+	begin catch
+		rollback transaction
+	end catch
+
+--CREACION STORE PROCEDURE PARA LOGIN--
+create procedure SP_Login
+	@Correo nvarchar(20),
+	@Password nvarchar(12)
+as 
+begin transaction 
+	begin try
+		select L_Correo, L_Nombre, L_Password, L_Estado
+		from LOGIN 
+		where L_Correo = @Correo and L_Password = @Password
+		commit transaction
+	end try
+	begin catch
+		rollback transaction
+	end catch
+
+--CREACION STORE PROCEDURE PARA CAMBIO DE PASSWORD--
+create procedure SP_Change_Password
+	@Correo nvarchar(20),
+	@Password nvarchar(12)
+as 
+begin transaction 
+	begin try
+		update LOGIN set L_Password = @Password	where L_Correo = @Correo 
+		commit transaction
+	end try
+	begin catch
+		rollback transaction
+	end catch
+
+------------------------------------------------------------------------------------
+--CREACION DE PERFILES PARA TABLA PERFILES--
+------------------------------------------------------------------------------------
+begin transaction
+begin try
+	insert into PERFILES (P_Id_Perfil, P_Nombre_Perfil, P_Descripcion_perfil)
+	values
+	(0, 'Root', 'Perfil con maximo privilegio'),
+	(1, 'Admin', 'Perfil Adminitrativo'),
+	(2, 'User', 'Perfil de Clientes')
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+
+------------------------------------------------------------------------------------
+--CREACION DEL USUARIO ROOT--
+------------------------------------------------------------------------------------
 begin transaction
 	begin try
 		insert into USUARIOS (U_Correo, U_Nombre, U_Perfil )
@@ -127,10 +188,24 @@ begin transaction
 		rollback transaction
 	end catch
 
---Prueba de funcionalidad de los Store Procedures--
+------------------------------------------------------------------------------------
+--PRUEBA DE FUNCIONALIDAD DE STORE PROCEDURES--
+------------------------------------------------------------------------------------
+exec [dbo].[SP_View_All_Users]
 exec [dbo].[SP_Create_User_Account] 'carlos@hotmail.com', 'carlos', '12345678'
 exec [dbo].[SP_Update_User_Account] 'carlos@hotmail.com', 207250253, 'San Jose, Costa Rica', '+50689843266'
+exec [dbo].[SP_Password_Restore] 'carlos@hotmail.com'
+exec [dbo].[SP_Login] 'carlos@hotmail.com', '12345678'
+exec [dbo].[SP_Change_Password] 'carlos@hotmail.com', '87654321'
 exec [dbo].[SP_Delete_User_Account] 'carlos@hotmail.com', '12345678'
---Ver Informacion de las tablas afectadas--
+
+--VER INFORMACION DE TABLAS AFECTADAS--
 select U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono, U_Perfil from USUARIOS
 select L_Correo, L_Nombre, L_Password, L_Estado from  LOGIN
+
+
+
+
+
+
+

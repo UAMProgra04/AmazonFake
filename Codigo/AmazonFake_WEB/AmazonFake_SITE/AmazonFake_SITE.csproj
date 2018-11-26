@@ -153,10 +153,14 @@
     <Content Include="fonts\slick.eot" />
     <Content Include="fonts\slick.ttf" />
     <Content Include="fonts\slick.woff" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Service References\AmazonFakeService\AmazonFakeService.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmazonFakeService\AmazonFakeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmazonFakeService\C_Base_Datos.wsdl" />

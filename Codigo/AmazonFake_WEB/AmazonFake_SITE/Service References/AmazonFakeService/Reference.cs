@@ -20,6 +20,12 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos", ReplyAction="http://tempuri.org/I_Base_Datos/Conectar_Base_DatosResponse")]
         System.Threading.Tasks.Task<string> Conectar_Base_DatosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion", ReplyAction="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse")]
+        System.Data.DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion", ReplyAction="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> Mostrar_InformacionAsync(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         public System.Threading.Tasks.Task<string> Conectar_Base_DatosAsync() {
             return base.Channel.Conectar_Base_DatosAsync();
+        }
+        
+        public System.Data.DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos) {
+            return base.Channel.Mostrar_Informacion(Nombre_StoreProcedure_BaseDatos, Nombre_Tabla_BaseDatos);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> Mostrar_InformacionAsync(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos) {
+            return base.Channel.Mostrar_InformacionAsync(Nombre_StoreProcedure_BaseDatos, Nombre_Tabla_BaseDatos);
         }
     }
 }

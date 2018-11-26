@@ -25,6 +25,7 @@
     <MetadataFile FileName="AmazonFakeService.xsd" MetadataType="Schema" ID="0ae37302-48d8-49af-b0e6-58edfad67a78" SourceId="1" SourceUrl="http://localhost:56826/AmazonFakeService.svc?xsd=xsd0" />
     <MetadataFile FileName="C_Base_Datos.wsdl" MetadataType="Wsdl" ID="05ae51df-5bd5-4ce1-9d10-5683c726c6bd" SourceId="1" SourceUrl="http://localhost:56826/AmazonFakeService.svc?wsdl" />
     <MetadataFile FileName="AmazonFakeService1.xsd" MetadataType="Schema" ID="c8250e20-7fbd-49ef-b06f-85fb17bf73a0" SourceId="1" SourceUrl="http://localhost:56826/AmazonFakeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AmazonFakeService2.xsd" MetadataType="Schema" ID="bbac6530-6024-4b8a-9420-a04a0b519bc9" SourceId="1" SourceUrl="http://localhost:56826/AmazonFakeService.svc?xsd=xsd2" />
     <MetadataFile FileName="AmazonFakeService.disco" MetadataType="Disco" ID="1bda87c6-305b-4542-8439-be9ed7e543ad" SourceId="1" SourceUrl="http://localhost:56826/AmazonFakeService.svc?disco" />
   </Metadata>
   <Extensions>
