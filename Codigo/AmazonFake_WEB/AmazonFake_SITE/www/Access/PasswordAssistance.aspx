@@ -18,7 +18,8 @@
 				<div>
                     <br />
                     <asp:Label class="labelsForm" ID="lbl_email" for="txt_email" runat="server" Text="Email"></asp:Label>
-                    <asp:TextBox class="input_Formulario" type="email" ID="txt_email" runat="server" placeholder="Digite su Correo"></asp:TextBox>
+                    <asp:TextBox class="input_Formulario" type="email" ID="txt_email" required="required" runat="server" 
+                        pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" MaxLength="80" placeholder="Digite su Correo"></asp:TextBox>
 				</div>
 			</div>
 			<div >

@@ -26,7 +26,7 @@ namespace AmazonFake_SITE
 
             if (Session["UsuarioSession"] != null)
             {
-                if (Session["UsuarioSession"].ToString().Equals("Test@hotmail.com"))
+                if (Session["UsuarioSession"].ToString().Equals("test@hotmail.com"))
                 {
                     string NombreUsuario = Session["UsuarioSession"].ToString().ToUpper();
                     lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;
@@ -43,7 +43,7 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Usuarios.Visible = false;
                     this.Opc_Administrativa_Productos.Visible = false;
                 }
-                if (Session["UsuarioSession"].ToString().Equals("Test2@hotmail.com"))
+                if (Session["UsuarioSession"].ToString().Equals("test2@hotmail.com"))
                 {
                     string NombreUsuario = Session["UsuarioSession"].ToString().ToUpper();
                     lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;

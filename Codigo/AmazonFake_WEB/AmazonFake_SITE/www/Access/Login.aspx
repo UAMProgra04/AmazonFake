@@ -12,11 +12,14 @@
                 <asp:Label class="SingIn" ID="lbl_SingIn" runat="server" Text="Sing in"></asp:Label>
 			</div>
 			<div class="divForm">
-                <asp:Label class="labelsForm" ID="lbl_email" for="txt_email" runat="server" Text="Email"></asp:Label>
-                <asp:TextBox class="input_Formulario" type="email" ID="txt_email" runat="server" placeholder="Digite su Correo"></asp:TextBox>
+                <asp:Label class="labelsForm" ID="lbl_email" for="txt_email"  runat="server" Text="Email"></asp:Label>
+                <asp:TextBox class="input_Formulario" type="email" ID="txt_email" runat="server" 
+                    pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" MaxLength="80" placeholder="Digite su Correo"></asp:TextBox>
+                
                 <asp:Label class="labelsForm" ID="lbl_contrasena" for="txt_contrasena" runat="server" Text="Password"></asp:Label>
                 <asp:HyperLink class="Clave" ID="hl_Clave" NavigateUrl="~/www/Access/PasswordAssistance.aspx" runat="server">Forgot your password?</asp:HyperLink>
-                <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena" placeholder="Digite su Clave" runat="server"></asp:TextBox>
+                <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena" placeholder="Digite su Clave" 
+                    pattern="[a-zA-Z0-9]{1,12}" MaxLength="12" runat="server"></asp:TextBox>
 			</div>
 			<div >
                 <asp:Button class="BotonSingIn" ID="btn_SingIn" runat="server" Text="Sing in" OnClick="btn_SingIn_Click" />

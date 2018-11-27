@@ -15,12 +15,12 @@ namespace AmazonFake_SITE.www.Access
             string usuario = txt_email.Text;
             string passwd = txt_contrasena.Text;
 
-            if (usuario == "Test@hotmail.com" && passwd == "1234")
+            if (usuario == "test@hotmail.com" && passwd == "1234")
             {
                 Session["UsuarioSession"] = usuario;
                 Response.Redirect("~/Index.aspx");
             }
-            if (usuario == "Test2@hotmail.com" && passwd == "1234")
+            else if (usuario == "test2@hotmail.com" && passwd == "1234")
             {
                 Session["UsuarioSession"] = usuario;
                 Response.Redirect("~/Index.aspx");

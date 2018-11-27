@@ -24,6 +24,7 @@ namespace AmazonFake_SITE.www.Access
             string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + this.txt_email.Text.Trim() + "<br>Contraseña: contraseña</p>";
             Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);*/
             #endregion
+            lbl_Errores.Text = "Hola";
         }
     }
 }
