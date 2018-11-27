@@ -15,10 +15,10 @@ P_Descripcion_perfil nvarchar(30)
 --CREACION TABLA USUARIOS--
 create table USUARIOS
 (
-U_Correo nvarchar(20) primary key,
-U_Nombre nvarchar(30) not null,
+U_Correo nvarchar(80) primary key,
+U_Nombre nvarchar(100) not null,
 U_Identificacion int,
-U_Direccion nvarchar(50),
+U_Direccion nvarchar(150),
 U_Telefono nvarchar(15),
 U_Perfil tinyint not null references PERFILES(P_Id_Perfil)
 )
@@ -26,8 +26,8 @@ U_Perfil tinyint not null references PERFILES(P_Id_Perfil)
 --CREACION TABLA LOGIN--
 create table LOGIN
 (
-L_Correo nvarchar(20) primary key,
-L_Nombre nvarchar(30) not null,
+L_Correo nvarchar(80) primary key,
+L_Nombre nvarchar(100) not null,
 L_Password nvarchar(12) not null,
 L_Estado bit not null
 )
@@ -49,8 +49,8 @@ go
 
 --CREACION STORE PROCEDURE PARA CREACION DE USUARIO Y LOGIN--
 create procedure SP_Create_User_Account
-	@Correo nvarchar(20),
-	@Nombre nvarchar(30),
+	@Correo nvarchar(80),
+	@Nombre nvarchar(100),
 	@Password nvarchar(12)
 as 
 begin transaction 
@@ -69,7 +69,7 @@ begin transaction
 
 --CREACION STORE PROCEDURE PARA ELIMINAR CUENTA DE USUARIO Y LOGIN--
 create procedure SP_Delete_User_Account
-	@Correo nvarchar(20),
+	@Correo nvarchar(80),
 	@Password nvarchar(12)
 as 
 begin transaction 
@@ -84,9 +84,9 @@ begin transaction
 
 --CREACION STORE PROCEDURE PARA ACTUALIZAR LA CUENTA DE USUARIO--
 create procedure SP_Update_User_Account
-	@Correo nvarchar(20),
+	@Correo nvarchar(80),
 	@Identificacion int,
-	@Direccion nvarchar(50),
+	@Direccion nvarchar(150),
 	@Telefono nvarchar(15)
 as 
 begin transaction 
@@ -116,7 +116,7 @@ begin transaction
 
 --CREACION STORE PROCEDURE PARA RECUPERACION DE PASSWORD--
 create procedure SP_Password_Restore
-	@Correo nvarchar(20)
+	@Correo nvarchar(80)
 as 
 begin transaction 
 	begin try
@@ -129,7 +129,7 @@ begin transaction
 
 --CREACION STORE PROCEDURE PARA LOGIN--
 create procedure SP_Login
-	@Correo nvarchar(20),
+	@Correo nvarchar(80),
 	@Password nvarchar(12)
 as 
 begin transaction 
@@ -145,7 +145,7 @@ begin transaction
 
 --CREACION STORE PROCEDURE PARA CAMBIO DE PASSWORD--
 create procedure SP_Change_Password
-	@Correo nvarchar(20),
+	@Correo nvarchar(80),
 	@Password nvarchar(12)
 as 
 begin transaction 
