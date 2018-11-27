@@ -22,7 +22,7 @@
                 <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena2" placeholder="Re-Ingrese su Clave" runat="server"></asp:TextBox>
 		    </div>
 		    <div >
-                <asp:Button class="BotonSingIn" ID="btn_Createaccount" runat="server" Text="Create your Amazon account" />
+                <asp:Button class="BotonSingIn" ID="btn_Createaccount" runat="server" Text="Create your Amazon account" OnClick="btn_Createaccount_Click" />
 		    </div>
 		    <div>
 			    <p>
