@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AmazonFake_SITE.Secure;
 
 namespace AmazonFake_SITE.www.Access
 {
@@ -16,15 +17,25 @@ namespace AmazonFake_SITE.www.Access
 
         protected void btn_Createaccount_Click(object sender, EventArgs e)
         {
-            #region Metodo_enviar_Correo_Creacion_Cuenta
-            /*AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
-            string Correo_Target = this.txt_email.Text.Trim();
-            string Correo_Source = "amazonface.mail@gmail.com";
-            string Correo_Head = "AmazonFake - Apertura de Cuenta en AmazonFake";
-            string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + this.txt_email.Text.Trim() + "<br>Contraseña: contraseña</p>";
-            Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);*/
-            #endregion
-            lbl_Errores.Text = "Hola";
+            if ((txt_nombre.Text != string.Empty) && (txt_email.Text != string.Empty) && 
+                (txt_contrasena.Text != string.Empty))
+            {
+                if (txt_contrasena.Text.Trim().Equals(txt_contrasena2.Text.Trim()))
+                {
+                    if (Cls_Secure.Validar(txt_nombre.Text, txt_email.Text.Trim(), txt_contrasena.Text.Trim()))
+                    {
+                        lbl_Errores.Text = "Hola";
+                    }
+                }else
+                {
+                    lbl_Errores.Text = "Los campos de Password y Re-enter password deben ser iguales!";
+                }
+            }
+            else
+            {
+                lbl_Errores.Text = "Todos los campos son obligatorios";
+            }
+
         }
     }
 }

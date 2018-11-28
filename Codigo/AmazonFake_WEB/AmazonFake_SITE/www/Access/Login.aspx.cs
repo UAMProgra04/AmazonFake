@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AmazonFake_SITE.Secure;
 
 namespace AmazonFake_SITE.www.Access
 {
@@ -20,14 +21,14 @@ namespace AmazonFake_SITE.www.Access
                 Session["UsuarioSession"] = usuario;
                 Response.Redirect("~/Index.aspx");
             }
-            else if (usuario == "test2@hotmail.com" && passwd == "1234")
+            else if (usuario == "test2@hotmail.com" && passwd == "12345")
             {
                 Session["UsuarioSession"] = usuario;
                 Response.Redirect("~/Index.aspx");
             }
             else
             {
-                lbl_Errores.Text = "Error de usuario o Contraseña";
+                lbl_Errores.Text = "Error de Usuario o Contraseña";
                 txt_email.Text = string.Empty;
                 txt_contrasena.Text = string.Empty;
                 txt_email.Focus();
@@ -62,7 +63,22 @@ namespace AmazonFake_SITE.www.Access
         #region Boton_SingIn
         protected void btn_SingIn_Click(object sender, EventArgs e)
         {
-            this.Administracion_Accesos();
+            if((txt_email.Text != string.Empty) && (txt_contrasena.Text != string.Empty))
+            {
+                if (Cls_Secure.Validar(txt_email.Text.Trim(), txt_contrasena.Text.Trim()))
+                {
+                    this.Administracion_Accesos();
+                }
+                else
+                {
+                    lbl_Errores.Text = "Error de usuario o Contraseña";
+                }
+            }
+            else
+            {
+                lbl_Errores.Text = "Ambos campos son obligatorios";
+            }
+            
         }
         #endregion
     }

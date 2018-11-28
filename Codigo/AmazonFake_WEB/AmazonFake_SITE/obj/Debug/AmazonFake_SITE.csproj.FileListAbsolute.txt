@@ -65,3 +65,4 @@ C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.dll
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.pdb
 C:\Users\CARLOSANDRESPEREZMED\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.csprojAssemblyReference.cache
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.csprojResolveAssemblyReference.cache

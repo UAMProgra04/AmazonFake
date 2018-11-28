@@ -6,7 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;  
 using System.Net.Mail;
-using System.Threading; 
+using System.Threading;
+using AmazonFake_SITE.Secure;
 
 namespace AmazonFake_SITE.www.Access
 {
@@ -21,21 +22,22 @@ namespace AmazonFake_SITE.www.Access
         {
             if(this.txt_email.Text != string.Empty)
             {
-                AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
-                string Correo_Target = this.txt_email.Text.Trim();
-                string Correo_Source = "amazonface.mail@gmail.com";
-                string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
-                string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + this.txt_email.Text.Trim() + "<br>Contraseña: contraseña</p>";
-                Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
-                this.lbl_Errores.Text = "Correo Enviado Exitosamente!";
-                this.txt_email.Text = string.Empty;
-                this.txt_email.Focus();
+                /*PENDIENTE:
+                Crear if con consulta a base de datos para validar si el correo realmente existe
+                ademas de agregar la contraseña del mismo en el campo contraseña del mesaje del correo*/
+
+                if (Cls_Secure.Validar(this.txt_email.Text.Trim()))
+                {
+                    Cls_Secure.Correo_Recuperacion(this.txt_email.Text.Trim());
+                    this.lbl_Errores.Text = "Correo Enviado Exitosamente!";
+                    this.txt_email.Text = string.Empty;
+                    this.txt_email.Focus();
+                }
             }
             else
             {
                 this.lbl_Errores.Text = "El Campo de Correo no deberia estar Vacio!";
             }
-
         }
     }
 }

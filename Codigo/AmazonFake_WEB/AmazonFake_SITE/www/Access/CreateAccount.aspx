@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonFake.Master" AutoEventWireup="true" CodeBehind="CreateAccount.aspx.cs" Inherits="AmazonFake_SITE.www.Access.CreateAccount" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AmazonFake.Master" enableEventValidation="false" validateRequest="false" AutoEventWireup="true" CodeBehind="CreateAccount.aspx.cs" Inherits="AmazonFake_SITE.www.Access.CreateAccount" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,6 +11,11 @@
 		    <div>
                 <asp:Label class="SingIn" ID="lbl_CreateAccount" runat="server" Text="Create account"></asp:Label>
 		    </div>
+            <div>
+                <center>
+                    <asp:Label ID="lbl_Errores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
+                </center>
+            </div>
 		    <div class="divForm">
                 <asp:Label class="labelsForm" ID="lbl_nombre" for="txt_nombre" runat="server" Text="Your name"></asp:Label>
                 <asp:TextBox class="input_Formulario" ID="txt_nombre" placeholder="Digite su Nombre" runat="server" required="required"
@@ -49,11 +54,6 @@
     </section>
     <div class="footer">
         <hr class="hr2" /><br />
-        <div>
-            <center>
-                <asp:Label ID="lbl_Errores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
-            </center>
-        </div>
     </div>
 </div>
 </asp:Content>

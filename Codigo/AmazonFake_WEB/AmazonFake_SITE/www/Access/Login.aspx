@@ -11,6 +11,11 @@
 			<div>
                 <asp:Label class="SingIn" ID="lbl_SingIn" runat="server" Text="Sing in"></asp:Label>
 			</div>
+            <div>
+                <center>
+                    <asp:Label ID="lbl_Errores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
+                </center>
+            </div>
 			<div class="divForm">
                 <asp:Label class="labelsForm" ID="lbl_email" for="txt_email"  runat="server" Text="Email"></asp:Label>
                 <asp:TextBox class="input_Formulario" type="email" ID="txt_email" runat="server" 
@@ -33,11 +38,6 @@
                 <hr class="hr" />
                 <asp:Button class="BotonCreateAccount" ID="btn_CreateAccount" runat="server" Text="Create your Amazon Account" onclick="btn_CreateAccount_Click" />
 		    </div>
-            <div>
-                <center>
-                    <asp:Label ID="lbl_Errores" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
-                </center>
-            </div>  
 		</form>
 	</section>
     <div class="footer">
