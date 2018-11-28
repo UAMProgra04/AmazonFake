@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AmazonFake_SITE.AmazonFakeService;
+using System.Data;
 
 namespace AmazonFake_SITE.www.Administrador
 {
@@ -12,10 +13,24 @@ namespace AmazonFake_SITE.www.Administrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AmazonFakeService.I_Base_DatosClient SV = 
-                new AmazonFakeService.I_Base_DatosClient();
 
-            SV.Mostrar_Informacion("SP_View_All_Users", "USUARIOS");
+        }
+        protected void CargarListaUsuarios()
+        {
+            //AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+
+            DataTable DataTableUser =
+            cliente.Mostrar_Informacion("SP_View_All_Admins", "USUARIOS");
+
+            GV_ALL_USER.DataSource = null;
+            GV_ALL_USER.DataSource = DataTableUser;
+            GV_ALL_USER.DataBind();
+        }
+
+        protected void btn_CargarUsuarios_Click(object sender, EventArgs e)
+        {
+            this.CargarListaUsuarios();
         }
     }
 }

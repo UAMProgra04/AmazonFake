@@ -135,6 +135,13 @@
     <Content Include="AmazonFake.Master" />
     <Content Include="Checkout.aspx" />
     <Content Include="Product.aspx" />
+    <None Include="Service References\AmazonFakeService\AmazonFakeService.disco" />
+    <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
+    <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
+    <None Include="Service References\AmazonFakeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="www\Access\CreateAccount.aspx" />
     <Content Include="www\Access\Login.aspx" />
     <Content Include="www\Access\PasswordAssistance.aspx" />
@@ -175,13 +182,6 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <None Include="Service References\AmazonFakeService\AmazonFakeService.disco" />
-    <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
-    <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
-    <None Include="Service References\AmazonFakeService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

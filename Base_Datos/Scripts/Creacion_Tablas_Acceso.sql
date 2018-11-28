@@ -101,18 +101,48 @@ begin transaction
 	end catch
 
 --CREACION STORE PROCEDURE PARA VISUALIZAR TODOS LOS USUARIOS--
+--create procedure SP_View_All_Admins
+--as 
+--begin transaction 
+--	begin try
+--		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
+--		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
+--		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
+--		where P_Id_Perfil = 0 or P_Id_Perfil = 1
+--		commit transaction
+--	end try
+--	begin catch
+--		rollback transaction
+--	end catch
+create procedure SP_View_All_Admins
+as 
+begin 
+	select U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono
+	from USUARIOS 
+	where U_Perfil = 0 or U_Perfil = 1
+end 
+
+--CREACION STORE PROCEDURE PARA VISUALIZAR TODOS LOS CLIENTES--
+--create procedure SP_View_All_Users
+--as 
+--begin transaction 
+--	begin try
+--		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
+--		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
+--		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
+--		where P_Id_Perfil = 2
+--		commit transaction
+--	end try
+--	begin catch
+--		rollback transaction
+--	end catch
 create procedure SP_View_All_Users
 as 
-begin transaction 
-	begin try
-		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
-		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
-		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
-		commit transaction
-	end try
-	begin catch
-		rollback transaction
-	end catch
+begin 
+	select U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono
+	from USUARIOS 
+	where U_Perfil = 2
+end 
 
 --CREACION STORE PROCEDURE PARA RECUPERACION DE PASSWORD--
 create procedure SP_Password_Restore
@@ -192,6 +222,7 @@ begin transaction
 --PRUEBA DE FUNCIONALIDAD DE STORE PROCEDURES--
 ------------------------------------------------------------------------------------
 exec [dbo].[SP_View_All_Users]
+exec [dbo].[SP_View_All_Admins]
 exec [dbo].[SP_Create_User_Account] 'carlos@hotmail.com', 'carlos', '12345678'
 exec [dbo].[SP_Update_User_Account] 'carlos@hotmail.com', 207250253, 'San Jose, Costa Rica', '+50689843266'
 exec [dbo].[SP_Password_Restore] 'carlos@hotmail.com'

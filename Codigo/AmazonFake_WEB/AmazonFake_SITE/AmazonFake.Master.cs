@@ -57,7 +57,7 @@ namespace AmazonFake_SITE
 
                     this.Opc_Administrativa.Visible = true;
                     this.Opc_Administrativa_Clientes.Visible = true;
-                    this.Opc_Administrativa_Usuarios.Visible = false;
+                    this.Opc_Administrativa_Usuarios.Visible = true;
                     this.Opc_Administrativa_Productos.Visible = true;
                 }
             }

@@ -2,4 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
+        <center>
+            <asp:Label ID="lbl_Clientes" runat="server" Text="Lista de Clientes"></asp:Label>
+            <br />
+            <asp:GridView ID="GV_ALL_CLIENT" runat="server" Width="547px"></asp:GridView>
+        </center>
+    </div>
+    <div>
+        <br />
+        <center>
+            <asp:Button ID="btn_CargarClientes" runat="server" Text="Ver Clientes" onclick="btn_CargarClientes_Click"/>
+        </center>
+    </div>
 </asp:Content>
