@@ -17,7 +17,9 @@ namespace AmazonFake_SITE
             this.Opc_IniciarSesion.Visible = true;
             this.Opc_CerrarSesion.Visible = false;
 
+            this.Opc_Usuarios.Visible = false;
             this.Opc_Perfil_Usuario.Visible = false;
+            this.Opc_CambioContrasena_Usuario.Visible = false;
 
             this.Opc_Administrativa.Visible = false;
             this.Opc_Administrativa_Clientes.Visible = false;
@@ -36,7 +38,9 @@ namespace AmazonFake_SITE
                     this.Opc_IniciarSesion.Visible = false;
                     this.Opc_CerrarSesion.Visible = true;
 
+                    this.Opc_Usuarios.Visible = true;
                     this.Opc_Perfil_Usuario.Visible = true;
+                    this.Opc_CambioContrasena_Usuario.Visible = true;
 
                     this.Opc_Administrativa.Visible = false;
                     this.Opc_Administrativa_Clientes.Visible = false;
@@ -53,7 +57,28 @@ namespace AmazonFake_SITE
                     this.Opc_IniciarSesion.Visible = false;
                     this.Opc_CerrarSesion.Visible = true;
 
+                    this.Opc_Usuarios.Visible = false;
                     this.Opc_Perfil_Usuario.Visible = false;
+                    this.Opc_CambioContrasena_Usuario.Visible = false;
+
+                    this.Opc_Administrativa.Visible = true;
+                    this.Opc_Administrativa_Clientes.Visible = true;
+                    this.Opc_Administrativa_Usuarios.Visible = true;
+                    this.Opc_Administrativa_Productos.Visible = true;
+                }
+                if (Session["UsuarioSession"].ToString().Equals("root@amazon.com"))
+                {
+                    string NombreUsuario = Session["UsuarioSession"].ToString().ToUpper();
+                    lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;
+
+                    this.Opc_Nombre_Usuario.Visible = true;
+                    this.Opc_Cesta.Visible = true;
+                    this.Opc_IniciarSesion.Visible = true;
+                    this.Opc_CerrarSesion.Visible = true;
+
+                    this.Opc_Usuarios.Visible = true;
+                    this.Opc_Perfil_Usuario.Visible = true;
+                    this.Opc_CambioContrasena_Usuario.Visible = true;
 
                     this.Opc_Administrativa.Visible = true;
                     this.Opc_Administrativa_Clientes.Visible = true;

@@ -24,7 +24,7 @@
                 <asp:Label class="labelsForm" ID="lbl_contrasena" for="txt_contrasena" runat="server" Text="Password"></asp:Label>
                 <asp:HyperLink class="Clave" ID="hl_Clave" NavigateUrl="~/www/Access/PasswordAssistance.aspx" runat="server">Forgot your password?</asp:HyperLink>
                 <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena" placeholder="Digite su Clave" 
-                    pattern="[a-zA-Z0-9]{1,12}" MaxLength="12" runat="server"></asp:TextBox>
+                    pattern="[a-zA-Z0-9]{4,12}" MaxLength="12" runat="server"></asp:TextBox>
 			</div>
 			<div >
                 <asp:Button class="BotonSingIn" ID="btn_SingIn" runat="server" Text="Sing in" OnClick="btn_SingIn_Click" />

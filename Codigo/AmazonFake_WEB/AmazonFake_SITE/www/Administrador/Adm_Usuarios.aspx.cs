@@ -20,8 +20,7 @@ namespace AmazonFake_SITE.www.Administrador
             //AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
             I_Base_DatosClient cliente = new I_Base_DatosClient();
 
-            DataTable DataTableUser =
-            cliente.Mostrar_Informacion("SP_View_All_Admins", "USUARIOS");
+            DataTable DataTableUser = cliente.Mostrar_Informacion("SP_View_All_Admins", "USUARIOS");
 
             GV_ALL_USER.DataSource = null;
             GV_ALL_USER.DataSource = DataTableUser;

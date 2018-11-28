@@ -27,11 +27,11 @@
 
                 <asp:Label class="labelsForm" ID="lbl_contrasena" for="txt_contrasena" runat="server" Text="Password"></asp:Label>
                 <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena" placeholder="Digite su Clave" runat="server" 
-                    required="required" pattern="[a-zA-Z0-9]{1,12}" MaxLength="12" ></asp:TextBox>
+                    required="required" pattern="[a-zA-Z0-9]{4,12}" MaxLength="12" ></asp:TextBox>
 
                 <asp:Label class="labelsForm" ID="lbl_contrasena2" for="txt_contrasena2" runat="server" Text="Re-enter password"></asp:Label> 
                 <asp:TextBox class="input_Formulario" type="password" ID="txt_contrasena2" placeholder="Re-Ingrese su Clave" runat="server" 
-                    required="required" pattern="[a-zA-Z0-9]{1,12}" MaxLength="12" ></asp:TextBox>
+                    required="required" pattern="[a-zA-Z0-9]{4,12}" MaxLength="12" ></asp:TextBox>
 		    </div>
 		    <div >
                 <asp:Button class="BotonSingIn" ID="btn_Createaccount" runat="server" Text="Create your Amazon account" OnClick="btn_Createaccount_Click" />

@@ -54,7 +54,7 @@ namespace AmazonFake_SITE.Secure
                 if (Cls_Secure.ValidarCampoPorPatron(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", Email) && 
                     (Email.Length <= 80))
                 {
-                    if (Cls_Secure.ValidarCampoPorPatron(@"[a-zA-Z0-9]{1,12}", Password) &&
+                    if (Cls_Secure.ValidarCampoPorPatron(@"[a-zA-Z0-9]{4,12}", Password) &&
                         (Password.Length <= 12))
                     {
                         return true;
@@ -84,7 +84,7 @@ namespace AmazonFake_SITE.Secure
                     if (Cls_Secure.ValidarCampoPorPatron(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", Email) &&
                         (Email.Length <= 80))
                     {
-                        if (Cls_Secure.ValidarCampoPorPatron(@"[a-zA-Z0-9]{1,12}", Password) &&
+                        if (Cls_Secure.ValidarCampoPorPatron(@"[a-zA-Z0-9]{4,12}", Password) &&
                             (Password.Length <= 12))
                         {
                             return true;
@@ -99,6 +99,32 @@ namespace AmazonFake_SITE.Secure
                 }
                 else
                     return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region Validaciones_Secccion_OPcionesUsuario
+        public static bool ValidarChangePasswod(string Password)
+        {
+            /*
+             * Tener pendiente crear metodo para validar el viejo password 
+             * contra lo almacenado en la base de datos
+             */
+            try
+            {
+                if (Cls_Secure.ValidarCampoPorPatron(@"[a-zA-Z0-9]{4,12}", Password) &&
+                        (Password.Length <= 12))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception)
             {

@@ -207,7 +207,15 @@
 				    <li><a href="#">Cámaras</a></li>
 				    <li><a href="#">Accesorios</a></li>
                     <li>
-                        <asp:HyperLink ID="Opc_Perfil_Usuario" NavigateUrl="~/www/Usuario/UserPerfil.aspx" runat="server">Perfil</asp:HyperLink>
+                        <asp:HyperLink ID="Opc_Usuarios" runat="server">Opciones de Usuario</asp:HyperLink>
+                        <ul>
+                            <li>
+                                <asp:HyperLink ID="Opc_Perfil_Usuario" NavigateUrl="~/www/Usuario/UserPerfil.aspx" runat="server">Perfil</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="Opc_CambioContrasena_Usuario" NavigateUrl="~/www/Usuario/UserChangePassword.aspx" runat="server">Cambio Contrasena</asp:HyperLink>
+                            </li>
+                        </ul>
                     </li>
 			    </ul>
 			    <!-- /NAV -->
