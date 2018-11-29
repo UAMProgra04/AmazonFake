@@ -1,0 +1,121 @@
+CREATE TABLE Cliente(
+	idCliente int not null,
+	nombre nvarchar(100) not null,
+	primerApellido nvarchar(100) not null,
+	segundoApellido nvarchar(100) not null,
+	telefono int,
+	email nvarchar(25) not null,
+	constraint pk_Cliente primary key (idCliente)
+)
+go
+
+
+Create table Usuario(
+   nickname nvarchar(15) primary key,
+   pass nvarchar(8) not null default ('Password'),
+   activo bit not null default(1),
+   idCliente int not null,
+   constraint fk_Cliente_Usuario foreign key (idCliente) references Cliente (idCliente),
+)
+go
+
+
+create table Perfil(
+  idPerfil int primary key,
+  nomPerfil nvarchar(50) not null,
+  activo bit not null default(1)
+)
+go
+
+
+
+create table UsuarioPorPerfil(
+  nickname nvarchar(15) not null,
+  idPerfil int not null,
+  fechaRegistro datetime not null default(getdate()),
+  constraint fk_Usuario_UsuarioPorPerfil foreign key (nickname) references Usuario (nickname),
+  constraint fk_Perfil_UsuarioPorPerfil foreign key (idPerfil) references Perfil (idPerfil)
+)
+go
+
+
+
+ CREATE TABLE Categoria (
+	idCategoriaProducto int primary key not null,
+	nombre nvarchar(50) not null,
+	fechaModificacion datetime not null default(getdate())
+)
+go
+
+
+CREATE TABLE Subcategoria (
+	idSubcategoriaProducto int primary key not null,
+	nombre nvarchar(50) not null,
+	idCategoriaProducto int not null,
+	fechaModificacion datetime not null default(getdate()),
+	constraint fk_Categoria_Subcategoria foreign key (idCategoriaProducto) references Categoria (idCategoriaProducto)
+)
+go
+
+
+CREATE TABLE Producto(
+	idProducto int primary key,
+	nombre nvarchar(100) not null,
+	precioUnitario decimal(10,2) not null default(0),
+	descripcion nvarchar (250),
+	idSubcategoriaProducto int not null,
+	constraint fk_Subcategoria_Producto foreign key (idSubcategoriaProducto) references Subcategoria (idSubcategoriaProducto)
+)
+go
+
+
+CREATE TABLE Proveedor(
+	idProveedor int primary key,
+	nombre nvarchar(100) not null,
+	direccion nvarchar(150) not null,
+	telefono int not null,
+	email nvarchar(25) not null
+)
+go
+
+
+
+CREATE TABLE Inventario(
+	idProveedor int not null,
+	idProducto int not null,
+	cantidadDisponible int,
+	fechaModificacion  datetime not null default(getdate()),
+	constraint fk_Proveedor_Inventario foreign key (idProveedor) references Proveedor (idProveedor),
+	constraint fk_Producto_Inventario foreign key (idProducto) references Producto (idProducto)
+
+)
+go
+
+
+CREATE TABLE OrdenCompra(
+	idOrdenCompra int primary key not null,
+	idCliente int not null,
+	idproducto int not null,
+	cantidadProducto int not null,
+	constraint fk_Cliente_OrdenCompra foreign key (idCliente) references Cliente (idCliente),
+	constraint fk_Producto_OrdenCompra foreign key (idProducto) references Producto (idProducto)
+)
+go
+
+
+CREATE TABLE Factura (
+	idFactura int primary key not null,
+	idCliente int not null,
+	fechaCreacion datetime not null default(getdate()),
+	constraint fk_Cliente_Factura foreign key (idCliente) references Cliente (idCliente)
+)
+go
+
+
+CREATE TABLE DetalleFactura(
+	idFactura int not null,
+	idOrdenCompra int not null,
+	constraint fk_Factura_DetalleFactura foreign key (idFactura) references Factura (idFactura),
+	constraint fk_OrdenCompra_DetalleFactura foreign key (idOrdenCompra) references OrdenCompra (idOrdenCompra)
+)
+go
