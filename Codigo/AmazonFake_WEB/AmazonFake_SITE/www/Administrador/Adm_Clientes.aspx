@@ -6,7 +6,7 @@
         <center>
             <asp:Label ID="lbl_Clientes" runat="server" Text="Lista de Clientes"></asp:Label>
             <br />
-            <asp:GridView ID="GV_ALL_CLIENT" runat="server" Width="547px"></asp:GridView>
+            <asp:GridView ID="GV_ALL_CLIENT" runat="server" ></asp:GridView>
         </center>
     </div>
     <div>

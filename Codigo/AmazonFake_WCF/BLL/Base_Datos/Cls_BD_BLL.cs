@@ -27,6 +27,7 @@ namespace BLL.Base_Datos
                         obj_BD_DAL.obj_SQL_Conexion.Open();
                     }
                 }
+                obj_BD_DAL.SMsError = string.Empty;
             }
             catch (Exception ex)
             {

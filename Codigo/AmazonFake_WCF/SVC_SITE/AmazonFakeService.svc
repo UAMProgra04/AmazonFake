@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="SVC.Contract.C_Base_Datos" CodeBehind="SVC_SITE.SVC.Contract.C_Base_Datos.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SVC.Contract.C_Base_Datos" CodeBehind="SVC.Contract.C_Base_Datos.cs" %>

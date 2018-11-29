@@ -135,10 +135,26 @@
     <Content Include="AmazonFake.Master" />
     <Content Include="Checkout.aspx" />
     <Content Include="Product.aspx" />
+    <None Include="Service References\AmazonFakeServiceAlt\service.wsdl" />
+    <None Include="Service References\AmazonFakeServiceAlt\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeServiceAlt\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeServiceAlt\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AmazonFakeService\AmazonFakeService.disco" />
     <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
     <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
     <None Include="Service References\AmazonFakeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AmazonFakeServiceAlt\configuration91.svcinfo" />
+    <None Include="Service References\AmazonFakeServiceAlt\configuration.svcinfo" />
+    <None Include="Service References\AmazonFakeServiceAlt\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -212,6 +228,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secure\Cls_Secure.cs" />
+    <Compile Include="Service References\AmazonFakeServiceAlt\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\AmazonFakeService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -303,6 +324,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AmazonFakeServiceAlt\" />
     <WCFMetadataStorage Include="Service References\AmazonFakeService\" />
   </ItemGroup>
   <PropertyGroup>

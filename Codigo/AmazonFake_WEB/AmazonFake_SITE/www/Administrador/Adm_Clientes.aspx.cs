@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using AmazonFake_SITE.AmazonFakeService;
+//using AmazonFake_SITE.AmazonFakeService;
+using AmazonFake_SITE.AmazonFakeServiceAlt;
 using System.Data;
 
 namespace AmazonFake_SITE.www.Administrador
