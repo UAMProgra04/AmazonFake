@@ -10,26 +10,27 @@ using System.Data;
 
 namespace AmazonFake_SITE.www.Administrador
 {
-    public partial class Adm_Productos : System.Web.UI.Page
+    public partial class Adm_Proveedores : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void CargarListaProductos()
+        protected void CargarListaProveedores()
         {
             //AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
             I_Base_DatosClient cliente = new I_Base_DatosClient();
 
             DataTable DataTableClient = cliente.Mostrar_Informacion("SP_View_All_Users", "USUARIOS");
 
-            GV_ALL_PRODUCT.DataSource = null;
-            GV_ALL_PRODUCT.DataSource = DataTableClient;
-            GV_ALL_PRODUCT.DataBind();
+            GV_ALL_PROVIDER.DataSource = null;
+            GV_ALL_PROVIDER.DataSource = DataTableClient;
+            GV_ALL_PROVIDER.DataBind();
         }
-        protected void btn_CargarProductos_Click(object sender, EventArgs e)
+
+        protected void btn_CargarProveedores_Click(object sender, EventArgs e)
         {
-            this.CargarListaProductos();
+            this.CargarListaProveedores();
         }
     }
 }

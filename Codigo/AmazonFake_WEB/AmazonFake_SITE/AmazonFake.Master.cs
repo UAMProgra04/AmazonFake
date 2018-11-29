@@ -25,6 +25,7 @@ namespace AmazonFake_SITE
             this.Opc_Administrativa_Clientes.Visible = false;
             this.Opc_Administrativa_Usuarios.Visible = false;
             this.Opc_Administrativa_Productos.Visible = false;
+            this.Opc_Administrativa_Proveedores.Visible = false;
 
             if (Session["UsuarioSession"] != null)
             {
@@ -46,6 +47,7 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Clientes.Visible = false;
                     this.Opc_Administrativa_Usuarios.Visible = false;
                     this.Opc_Administrativa_Productos.Visible = false;
+                    this.Opc_Administrativa_Proveedores.Visible = false;
                 }
                 if (Session["UsuarioSession"].ToString().Equals("test2@hotmail.com"))
                 {
@@ -65,6 +67,7 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Clientes.Visible = true;
                     this.Opc_Administrativa_Usuarios.Visible = true;
                     this.Opc_Administrativa_Productos.Visible = true;
+                    this.Opc_Administrativa_Proveedores.Visible = true;
                 }
                 if (Session["UsuarioSession"].ToString().Equals("root@amazon.com"))
                 {
@@ -84,6 +87,7 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Clientes.Visible = true;
                     this.Opc_Administrativa_Usuarios.Visible = true;
                     this.Opc_Administrativa_Productos.Visible = true;
+                    this.Opc_Administrativa_Proveedores.Visible = true;
                 }
             }
         }

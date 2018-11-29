@@ -200,6 +200,9 @@
 						    <li>
                                 <asp:HyperLink ID="Opc_Administrativa_Productos" NavigateUrl="~/www/Administrador/Adm_Productos.aspx" runat="server">Productos</asp:HyperLink>
 						    </li>
+                            <li>
+                                <asp:HyperLink ID="Opc_Administrativa_Proveedores" NavigateUrl="~/www/Administrador/Adm_Proveedores.aspx" runat="server">Proveedores</asp:HyperLink>
+						    </li>
 					    </ul>
                     </li>
 				    <li><a href="#">Laptops</a></li>

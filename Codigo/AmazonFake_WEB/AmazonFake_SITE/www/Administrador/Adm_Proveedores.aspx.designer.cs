@@ -10,7 +10,7 @@
 namespace AmazonFake_SITE.www.Administrador {
     
     
-    public partial class Adm_Productos {
+    public partial class Adm_Proveedores {
         
         /// <summary>
         /// Control lbl_Proveedores.
@@ -22,21 +22,21 @@ namespace AmazonFake_SITE.www.Administrador {
         protected global::System.Web.UI.WebControls.Label lbl_Proveedores;
         
         /// <summary>
-        /// Control GV_ALL_PRODUCT.
+        /// Control GV_ALL_PROVIDER.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GV_ALL_PRODUCT;
+        protected global::System.Web.UI.WebControls.GridView GV_ALL_PROVIDER;
         
         /// <summary>
-        /// Control btn_CargarProductos.
+        /// Control btn_CargarProveedores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_CargarProductos;
+        protected global::System.Web.UI.WebControls.Button btn_CargarProveedores;
     }
 }
