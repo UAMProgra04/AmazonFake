@@ -163,6 +163,7 @@
     <Content Include="www\Access\PasswordAssistance.aspx" />
     <Content Include="www\Administrador\Adm_Clientes.aspx" />
     <Content Include="www\Administrador\Adm_Productos.aspx" />
+    <Content Include="www\Administrador\Adm_Proveedores.aspx" />
     <Content Include="www\Administrador\Adm_Usuarios.aspx" />
     <Content Include="www\Error\Error404.aspx" />
     <Content Include="Index.aspx" />
@@ -272,6 +273,13 @@
     </Compile>
     <Compile Include="www\Administrador\Adm_Productos.aspx.designer.cs">
       <DependentUpon>Adm_Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Proveedores.aspx.cs">
+      <DependentUpon>Adm_Proveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Proveedores.aspx.designer.cs">
+      <DependentUpon>Adm_Proveedores.aspx</DependentUpon>
     </Compile>
     <Compile Include="www\Administrador\Adm_Usuarios.aspx.cs">
       <DependentUpon>Adm_Usuarios.aspx</DependentUpon>

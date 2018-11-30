@@ -110,5 +110,6 @@ go
 CREATE TABLE DETALLE_FACTURA(
 	idFactura int not null references FACTURA (idFactura),
 	idOrdenCompra int not null references ORDEN_COMPRA (idOrdenCompra),
+	detalleFactura nvarchar(50)
 )
 go
