@@ -14,7 +14,10 @@ namespace AmazonFake_SITE.www.Administrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UsuarioSession"] == null)
+            {
+                Response.Redirect("~/www/Index.aspx");
+            }
         }
         protected void CargarListaUsuarios()
         {

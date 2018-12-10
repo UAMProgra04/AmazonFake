@@ -13,11 +13,30 @@ namespace SVC.Interface
     {
         [OperationContract]
         string Conectar_Base_Datos();
+
         [OperationContract]
         DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos,
             string Nombre_Tabla_BaseDatos);
+
         [OperationContract]
         void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
             string Correo_Encabezado, string Correo_Mensaje);
+
+        [OperationContract]
+        bool Insertar_DatosSinIdentity(string sNombreSP, DataTable dtParametros, 
+            ref string SMsError);
+
+        [OperationContract]
+        bool Modifica_DatosSinIdentity(string sNombreSP, DataTable dtParametros,
+            ref string SMsError);
+
+        [OperationContract]
+        bool Eliminar_DatosSinIdentity(string sNombreSP, DataTable dtParametros,
+            ref string SMsError);
+
+        [OperationContract]
+        bool Insertar_DatosConIdentity(string sNombreSP, DataTable dtParametros,
+            ref string sValorScalar, ref string SMsError);
+
     }
 }

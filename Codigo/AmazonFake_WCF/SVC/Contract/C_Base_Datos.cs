@@ -63,5 +63,33 @@ namespace SVC.Contract
             obj_Correo_Data_BLL.Envio_Correo_Electronico();
         }
         #endregion
+
+        #region Insertar_Actualizar_Eliminar_SinIdentity
+        public bool Insertar_DatosSinIdentity(string sNombreSP, DataTable dtParametros, ref string SMsError)
+        {
+            Cls_BD_BLL obj_BD_BLL = new Cls_BD_BLL();
+            return obj_BD_BLL.ExecuteNonQuery(sNombreSP, dtParametros, ref SMsError);
+        }
+        public bool Modifica_DatosSinIdentity(string sNombreSP, DataTable dtParametros, ref string SMsError)
+        {
+            Cls_BD_BLL obj_BD_BLL = new Cls_BD_BLL();
+            return obj_BD_BLL.ExecuteNonQuery(sNombreSP, dtParametros, ref SMsError);
+        }
+        public bool Eliminar_DatosSinIdentity(string sNombreSP, DataTable dtParametros, ref string SMsError)
+        {
+            Cls_BD_BLL obj_BD_BLL = new Cls_BD_BLL();
+            return obj_BD_BLL.ExecuteNonQuery(sNombreSP, dtParametros, ref SMsError);
+        }
+        #endregion
+
+        #region Insertar_DatosConIdentity
+        public bool Insertar_DatosConIdentity(string sNombreSP, DataTable dtParametros,
+            ref string sValorScalar, ref string SMsError)
+        {
+            Cls_BD_BLL obj_BD_BLL = new Cls_BD_BLL();
+            return obj_BD_BLL.ExecuteScalar(sNombreSP, dtParametros,
+                ref sValorScalar, ref SMsError);
+        }
+        #endregion
     }
 }

@@ -12,7 +12,10 @@ namespace AmazonFake_SITE.www.Usuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UsuarioSession"] == null)
+            {
+                Response.Redirect("~/www/Index.aspx");
+            }
         }
 
         protected void btn_Cambiar_contrasena_Click(object sender, EventArgs e)
