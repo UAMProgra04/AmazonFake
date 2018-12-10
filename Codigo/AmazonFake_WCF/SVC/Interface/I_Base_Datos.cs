@@ -12,6 +12,10 @@ namespace SVC.Interface
     public interface I_Base_Datos
     {
         [OperationContract]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
+            string Correo_Encabezado, string Correo_Mensaje);
+
+        [OperationContract]
         string Conectar_Base_Datos();
 
         [OperationContract]
@@ -19,8 +23,11 @@ namespace SVC.Interface
             string Nombre_Tabla_BaseDatos);
 
         [OperationContract]
-        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
-            string Correo_Encabezado, string Correo_Mensaje);
+        DataTable ListarDatos(string sNombreSP, ref string SMsError);
+
+        [OperationContract]
+        DataTable FiltrarDatos(string sNombreSP, string sNombreParametro,
+            SqlDbType DbType, string sValrParametro, ref string SMsError);
 
         [OperationContract]
         bool Insertar_DatosSinIdentity(string sNombreSP, DataTable dtParametros, 

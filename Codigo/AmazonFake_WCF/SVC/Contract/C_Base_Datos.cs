@@ -14,6 +14,23 @@ namespace SVC.Contract
 {
     public class C_Base_Datos : Interface.I_Base_Datos
     {
+        #region Envio_Correo_Cliente
+        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
+            string Correo_Encabezado, string Correo_Mensaje)
+        {
+            Cls_Correo_BLL obj_Correo_Data_BLL = new Cls_Correo_BLL();
+            Cls_Correo_DAL obj_Correo_Data_DAL = new Cls_Correo_DAL();
+            obj_Correo_Data_DAL.SCorreo_Target = Correo_Target;
+            obj_Correo_Data_DAL.SCorreo_Source = Correo_Source;
+            obj_Correo_Data_DAL.SCorreo_Head = Correo_Encabezado;
+            obj_Correo_Data_DAL.SCorreo_Message = Correo_Mensaje;
+
+            obj_Correo_Data_BLL.Datos_Correo(obj_Correo_Data_DAL);
+
+            obj_Correo_Data_BLL.Envio_Correo_Electronico();
+        }
+        #endregion
+
         #region Conectar_Base_Datos
         public string Conectar_Base_Datos()
         {
@@ -45,24 +62,25 @@ namespace SVC.Contract
                 return null;
             }
         }
-        #endregion
-
-        #region Envio_Correo_Cliente
-        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
-            string Correo_Encabezado, string Correo_Mensaje)
+        public DataTable ListarDatos(string sNombreSP, ref string SMsError)
         {
-            Cls_Correo_BLL obj_Correo_Data_BLL = new Cls_Correo_BLL();
-            Cls_Correo_DAL obj_Correo_Data_DAL = new Cls_Correo_DAL();
-            obj_Correo_Data_DAL.SCorreo_Target = Correo_Target;
-            obj_Correo_Data_DAL.SCorreo_Source = Correo_Source;
-            obj_Correo_Data_DAL.SCorreo_Head = Correo_Encabezado;
-            obj_Correo_Data_DAL.SCorreo_Message = Correo_Mensaje;
-
-            obj_Correo_Data_BLL.Datos_Correo(obj_Correo_Data_DAL);
-
-            obj_Correo_Data_BLL.Envio_Correo_Electronico();
+            Cls_BD_BLL obj_BD_BLL = new Cls_BD_BLL();
+            return obj_BD_BLL.ExecuteDataAdapter(sNombreSP, "",
+                SqlDbType.VarChar, "", ref SMsError);
         }
         #endregion
+
+        #region FiltrarDatos
+        public DataTable FiltrarDatos(string sNombreSP, string sNombreParametro,
+                                     SqlDbType DbType, string sValrParametro, ref string SMsError)
+        {
+            Cls_BD_BLL obj_BD_BLL = new Cls_BD_BLL();
+            return obj_BD_BLL.ExecuteDataAdapter(sNombreSP, sNombreParametro,
+                                                    DbType, sValrParametro, ref SMsError);
+        }
+        #endregion
+
+
 
         #region Insertar_Actualizar_Eliminar_SinIdentity
         public bool Insertar_DatosSinIdentity(string sNombreSP, DataTable dtParametros, ref string SMsError)

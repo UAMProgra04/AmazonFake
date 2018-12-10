@@ -135,6 +135,24 @@
     <Content Include="AmazonFake.Master" />
     <Content Include="Checkout.aspx" />
     <Content Include="Product.aspx" />
+    <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AmazonFakeServiceAlt\service.wsdl" />
     <None Include="Service References\AmazonFakeServiceAlt\service.xsd">
       <SubType>Designer</SubType>
@@ -146,6 +164,24 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmazonFakeService\AmazonFakeService.disco" />
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Eliminar_DatosSinIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.FiltrarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Insertar_DatosSinIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.ListarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Modifica_DatosSinIdentityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
     <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
     <None Include="Service References\AmazonFakeService\Reference.svcmap">

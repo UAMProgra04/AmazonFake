@@ -15,6 +15,12 @@ namespace AmazonFake_SITE.AmazonFakeServiceAlt {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmazonFakeServiceAlt.I_Base_Datos")]
     public interface I_Base_Datos {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos", ReplyAction="http://tempuri.org/I_Base_Datos/Conectar_Base_DatosResponse")]
         string Conectar_Base_Datos();
         
@@ -27,11 +33,323 @@ namespace AmazonFake_SITE.AmazonFakeServiceAlt {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion", ReplyAction="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> Mostrar_InformacionAsync(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
-        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarDatos", ReplyAction="http://tempuri.org/I_Base_Datos/ListarDatosResponse")]
+        AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse ListarDatos(AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
-        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarDatos", ReplyAction="http://tempuri.org/I_Base_Datos/ListarDatosResponse")]
+        System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse> ListarDatosAsync(AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/FiltrarDatos", ReplyAction="http://tempuri.org/I_Base_Datos/FiltrarDatosResponse")]
+        AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse FiltrarDatos(AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/FiltrarDatos", ReplyAction="http://tempuri.org/I_Base_Datos/FiltrarDatosResponse")]
+        System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse> FiltrarDatosAsync(AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_DatosSinIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_DatosSinIdentityResponse")]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse Insertar_DatosSinIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_DatosSinIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_DatosSinIdentityResponse")]
+        System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse> Insertar_DatosSinIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Modifica_DatosSinIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Modifica_DatosSinIdentityResponse")]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse Modifica_DatosSinIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Modifica_DatosSinIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Modifica_DatosSinIdentityResponse")]
+        System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse> Modifica_DatosSinIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Eliminar_DatosSinIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Eliminar_DatosSinIdentityResponse")]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse Eliminar_DatosSinIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Eliminar_DatosSinIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Eliminar_DatosSinIdentityResponse")]
+        System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse> Eliminar_DatosSinIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentityResponse")]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse Insertar_DatosConIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentityResponse")]
+        System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse> Insertar_DatosConIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListarDatos", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ListarDatosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string SMsError;
+        
+        public ListarDatosRequest() {
+        }
+        
+        public ListarDatosRequest(string sNombreSP, string SMsError) {
+            this.sNombreSP = sNombreSP;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListarDatosResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ListarDatosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Data.DataTable ListarDatosResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string SMsError;
+        
+        public ListarDatosResponse() {
+        }
+        
+        public ListarDatosResponse(System.Data.DataTable ListarDatosResult, string SMsError) {
+            this.ListarDatosResult = ListarDatosResult;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FiltrarDatos", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class FiltrarDatosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string sNombreParametro;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public System.Data.SqlDbType DbType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string sValrParametro;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string SMsError;
+        
+        public FiltrarDatosRequest() {
+        }
+        
+        public FiltrarDatosRequest(string sNombreSP, string sNombreParametro, System.Data.SqlDbType DbType, string sValrParametro, string SMsError) {
+            this.sNombreSP = sNombreSP;
+            this.sNombreParametro = sNombreParametro;
+            this.DbType = DbType;
+            this.sValrParametro = sValrParametro;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FiltrarDatosResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class FiltrarDatosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Data.DataTable FiltrarDatosResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string SMsError;
+        
+        public FiltrarDatosResponse() {
+        }
+        
+        public FiltrarDatosResponse(System.Data.DataTable FiltrarDatosResult, string SMsError) {
+            this.FiltrarDatosResult = FiltrarDatosResult;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insertar_DatosSinIdentity", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Insertar_DatosSinIdentityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Data.DataTable dtParametros;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string SMsError;
+        
+        public Insertar_DatosSinIdentityRequest() {
+        }
+        
+        public Insertar_DatosSinIdentityRequest(string sNombreSP, System.Data.DataTable dtParametros, string SMsError) {
+            this.sNombreSP = sNombreSP;
+            this.dtParametros = dtParametros;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insertar_DatosSinIdentityResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Insertar_DatosSinIdentityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool Insertar_DatosSinIdentityResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string SMsError;
+        
+        public Insertar_DatosSinIdentityResponse() {
+        }
+        
+        public Insertar_DatosSinIdentityResponse(bool Insertar_DatosSinIdentityResult, string SMsError) {
+            this.Insertar_DatosSinIdentityResult = Insertar_DatosSinIdentityResult;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Modifica_DatosSinIdentity", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Modifica_DatosSinIdentityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Data.DataTable dtParametros;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string SMsError;
+        
+        public Modifica_DatosSinIdentityRequest() {
+        }
+        
+        public Modifica_DatosSinIdentityRequest(string sNombreSP, System.Data.DataTable dtParametros, string SMsError) {
+            this.sNombreSP = sNombreSP;
+            this.dtParametros = dtParametros;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Modifica_DatosSinIdentityResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Modifica_DatosSinIdentityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool Modifica_DatosSinIdentityResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string SMsError;
+        
+        public Modifica_DatosSinIdentityResponse() {
+        }
+        
+        public Modifica_DatosSinIdentityResponse(bool Modifica_DatosSinIdentityResult, string SMsError) {
+            this.Modifica_DatosSinIdentityResult = Modifica_DatosSinIdentityResult;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Eliminar_DatosSinIdentity", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Eliminar_DatosSinIdentityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Data.DataTable dtParametros;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string SMsError;
+        
+        public Eliminar_DatosSinIdentityRequest() {
+        }
+        
+        public Eliminar_DatosSinIdentityRequest(string sNombreSP, System.Data.DataTable dtParametros, string SMsError) {
+            this.sNombreSP = sNombreSP;
+            this.dtParametros = dtParametros;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Eliminar_DatosSinIdentityResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Eliminar_DatosSinIdentityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool Eliminar_DatosSinIdentityResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string SMsError;
+        
+        public Eliminar_DatosSinIdentityResponse() {
+        }
+        
+        public Eliminar_DatosSinIdentityResponse(bool Eliminar_DatosSinIdentityResult, string SMsError) {
+            this.Eliminar_DatosSinIdentityResult = Eliminar_DatosSinIdentityResult;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insertar_DatosConIdentity", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Insertar_DatosConIdentityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Data.DataTable dtParametros;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string sValorScalar;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string SMsError;
+        
+        public Insertar_DatosConIdentityRequest() {
+        }
+        
+        public Insertar_DatosConIdentityRequest(string sNombreSP, System.Data.DataTable dtParametros, string sValorScalar, string SMsError) {
+            this.sNombreSP = sNombreSP;
+            this.dtParametros = dtParametros;
+            this.sValorScalar = sValorScalar;
+            this.SMsError = SMsError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Insertar_DatosConIdentityResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Insertar_DatosConIdentityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool Insertar_DatosConIdentityResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string sValorScalar;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string SMsError;
+        
+        public Insertar_DatosConIdentityResponse() {
+        }
+        
+        public Insertar_DatosConIdentityResponse(bool Insertar_DatosConIdentityResult, string sValorScalar, string SMsError) {
+            this.Insertar_DatosConIdentityResult = Insertar_DatosConIdentityResult;
+            this.sValorScalar = sValorScalar;
+            this.SMsError = SMsError;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,6 +379,14 @@ namespace AmazonFake_SITE.AmazonFakeServiceAlt {
                 base(binding, remoteAddress) {
         }
         
+        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        }
+        
+        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        }
+        
         public string Conectar_Base_Datos() {
             return base.Channel.Conectar_Base_Datos();
         }
@@ -77,12 +403,121 @@ namespace AmazonFake_SITE.AmazonFakeServiceAlt {
             return base.Channel.Mostrar_InformacionAsync(Nombre_StoreProcedure_BaseDatos, Nombre_Tabla_BaseDatos);
         }
         
-        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
-            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos.ListarDatos(AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosRequest request) {
+            return base.Channel.ListarDatos(request);
         }
         
-        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
-            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        public System.Data.DataTable ListarDatos(string sNombreSP, ref string SMsError) {
+            AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosRequest inValue = new AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.SMsError = SMsError;
+            AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse retVal = ((AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos)(this)).ListarDatos(inValue);
+            SMsError = retVal.SMsError;
+            return retVal.ListarDatosResult;
+        }
+        
+        public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse> ListarDatosAsync(AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosRequest request) {
+            return base.Channel.ListarDatosAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos.FiltrarDatos(AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosRequest request) {
+            return base.Channel.FiltrarDatos(request);
+        }
+        
+        public System.Data.DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, System.Data.SqlDbType DbType, string sValrParametro, ref string SMsError) {
+            AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosRequest inValue = new AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.sNombreParametro = sNombreParametro;
+            inValue.DbType = DbType;
+            inValue.sValrParametro = sValrParametro;
+            inValue.SMsError = SMsError;
+            AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse retVal = ((AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos)(this)).FiltrarDatos(inValue);
+            SMsError = retVal.SMsError;
+            return retVal.FiltrarDatosResult;
+        }
+        
+        public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse> FiltrarDatosAsync(AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosRequest request) {
+            return base.Channel.FiltrarDatosAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos.Insertar_DatosSinIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityRequest request) {
+            return base.Channel.Insertar_DatosSinIdentity(request);
+        }
+        
+        public bool Insertar_DatosSinIdentity(string sNombreSP, System.Data.DataTable dtParametros, ref string SMsError) {
+            AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityRequest inValue = new AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.dtParametros = dtParametros;
+            inValue.SMsError = SMsError;
+            AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse retVal = ((AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos)(this)).Insertar_DatosSinIdentity(inValue);
+            SMsError = retVal.SMsError;
+            return retVal.Insertar_DatosSinIdentityResult;
+        }
+        
+        public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse> Insertar_DatosSinIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityRequest request) {
+            return base.Channel.Insertar_DatosSinIdentityAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos.Modifica_DatosSinIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityRequest request) {
+            return base.Channel.Modifica_DatosSinIdentity(request);
+        }
+        
+        public bool Modifica_DatosSinIdentity(string sNombreSP, System.Data.DataTable dtParametros, ref string SMsError) {
+            AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityRequest inValue = new AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.dtParametros = dtParametros;
+            inValue.SMsError = SMsError;
+            AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse retVal = ((AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos)(this)).Modifica_DatosSinIdentity(inValue);
+            SMsError = retVal.SMsError;
+            return retVal.Modifica_DatosSinIdentityResult;
+        }
+        
+        public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse> Modifica_DatosSinIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityRequest request) {
+            return base.Channel.Modifica_DatosSinIdentityAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos.Eliminar_DatosSinIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityRequest request) {
+            return base.Channel.Eliminar_DatosSinIdentity(request);
+        }
+        
+        public bool Eliminar_DatosSinIdentity(string sNombreSP, System.Data.DataTable dtParametros, ref string SMsError) {
+            AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityRequest inValue = new AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.dtParametros = dtParametros;
+            inValue.SMsError = SMsError;
+            AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse retVal = ((AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos)(this)).Eliminar_DatosSinIdentity(inValue);
+            SMsError = retVal.SMsError;
+            return retVal.Eliminar_DatosSinIdentityResult;
+        }
+        
+        public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse> Eliminar_DatosSinIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityRequest request) {
+            return base.Channel.Eliminar_DatosSinIdentityAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos.Insertar_DatosConIdentity(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityRequest request) {
+            return base.Channel.Insertar_DatosConIdentity(request);
+        }
+        
+        public bool Insertar_DatosConIdentity(string sNombreSP, System.Data.DataTable dtParametros, ref string sValorScalar, ref string SMsError) {
+            AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityRequest inValue = new AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.dtParametros = dtParametros;
+            inValue.sValorScalar = sValorScalar;
+            inValue.SMsError = SMsError;
+            AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse retVal = ((AmazonFake_SITE.AmazonFakeServiceAlt.I_Base_Datos)(this)).Insertar_DatosConIdentity(inValue);
+            sValorScalar = retVal.sValorScalar;
+            SMsError = retVal.SMsError;
+            return retVal.Insertar_DatosConIdentityResult;
+        }
+        
+        public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse> Insertar_DatosConIdentityAsync(AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityRequest request) {
+            return base.Channel.Insertar_DatosConIdentityAsync(request);
         }
     }
 }
