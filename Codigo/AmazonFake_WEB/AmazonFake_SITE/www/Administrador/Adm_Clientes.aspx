@@ -7,6 +7,7 @@
             <asp:Label ID="lbl_Error" runat="server"></asp:Label>
             <br />
             <asp:Label ID="Label1" runat="server" Text="Buscar Cliente: "></asp:Label>
+            <br />
             <asp:TextBox ID="txt_Buscar" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="lbl_Clientes" runat="server" Text="Lista de Clientes"></asp:Label>

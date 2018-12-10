@@ -18,6 +18,10 @@ namespace AmazonFake_SITE.www.Administrador
             {
                 Response.Redirect("~/www/Index.aspx");
             }
+            else
+            {
+                CargarListaUsuarios();
+            }
         }
         protected void CargarListaUsuarios()
         {
@@ -27,6 +31,22 @@ namespace AmazonFake_SITE.www.Administrador
             GV_ALL_USER.DataSource = null;
             GV_ALL_USER.DataSource = DataTableUser;
             GV_ALL_USER.DataBind();*/
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            string SMsError = string.Empty;
+
+            DataTable myDataTable = cliente.ListarDatos("SP_View_All_Admins", ref SMsError);
+
+            if (SMsError != string.Empty)
+            {
+                lbl_Error.Text = "Hay un error " + SMsError.ToString();
+                GV_ALL_USER.DataSource = null;
+            }
+            else
+            {
+                GV_ALL_USER.DataSource = myDataTable;
+                GV_ALL_USER.DataBind();
+            }
+
         }
 
         protected void btn_CargarUsuarios_Click(object sender, EventArgs e)

@@ -18,6 +18,10 @@ namespace AmazonFake_SITE.www.Administrador
             {
                 Response.Redirect("~/www/Index.aspx");
             }
+            else
+            {
+                CargarListaProductos();
+            }
         }
         protected void CargarListaProductos()
         {
@@ -27,6 +31,22 @@ namespace AmazonFake_SITE.www.Administrador
             GV_ALL_PRODUCT.DataSource = null;
             GV_ALL_PRODUCT.DataSource = DataTableClient;
             GV_ALL_PRODUCT.DataBind();*/
+
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            string SMsError = string.Empty;
+
+            DataTable myDataTable = cliente.ListarDatos("SP_VIEW_ALL_Data_PRODUCTO", ref SMsError);
+
+            if (SMsError != string.Empty)
+            {
+                lbl_Error.Text = "Hay un error " + SMsError.ToString();
+                GV_ALL_PRODUCT.DataSource = null;
+            }
+            else
+            {
+                GV_ALL_PRODUCT.DataSource = myDataTable;
+                GV_ALL_PRODUCT.DataBind();
+            }
         }
         protected void btn_CargarProductos_Click(object sender, EventArgs e)
         {

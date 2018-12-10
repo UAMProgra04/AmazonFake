@@ -4,6 +4,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <center>
+            <asp:Label ID="lbl_Error" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Buscar Cliente: "></asp:Label>
+            <br />
+            <asp:TextBox ID="txt_Buscar" runat="server"></asp:TextBox>
+            <br />
             <asp:Label ID="lbl_Usuarios" runat="server" Text="Lista de Usuarios"></asp:Label>
             <br />
             <asp:GridView ID="GV_ALL_USER" runat="server"></asp:GridView>
