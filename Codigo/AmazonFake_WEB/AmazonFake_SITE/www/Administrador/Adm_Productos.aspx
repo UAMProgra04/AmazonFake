@@ -8,7 +8,7 @@
             <br />
             <asp:Label ID="Label1" runat="server" Text="Buscar Cliente: "></asp:Label>
             <br />
-            <asp:TextBox ID="txt_Buscar" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txt_Buscar" runat="server" OnTextChanged="txt_Buscar_TextChanged"></asp:TextBox>
             <br />
             <asp:Label ID="lbl_Proveedores" runat="server" Text="Lista de Productos"></asp:Label>
             <br />

@@ -59,5 +59,35 @@ namespace AmazonFake_SITE.www.Administrador
         {
             this.CargarListaClintes();
         }
+
+        protected void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            DataTable myDataTable = new DataTable();
+            string SMsError = string.Empty;
+
+
+            //DataTable myDataTable = cliente.ListarDatos("SP_Filtrar", ref SMsError);
+
+            if (txt_Buscar.Text.Trim() != string.Empty)
+            {
+
+                myDataTable = cliente.FiltrarDatos("SP_View_Name_Users", "@Nombre", SqlDbType.NVarChar, txt_Buscar.Text.Trim(), ref SMsError);
+            }
+            else
+            {
+                myDataTable = cliente.ListarDatos("SP_View_All_Users", ref SMsError);
+            }
+
+            if (SMsError != string.Empty)
+            {
+                lbl_Error.Text = "Hay un error " + SMsError.ToString();
+                GV_ALL_CLIENT.DataSource = null;
+            }
+            else
+            {
+                GV_ALL_CLIENT.DataSource = myDataTable;
+            }
+        }
     }
 }
