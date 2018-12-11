@@ -93,7 +93,7 @@ begin transaction
 begin try
 	select idProducto, nombre, precioUnitario, descripcion, idSubcategoriaProducto 
 	from PRODUCTO
-	where nombre = @nombre
+	where nombre like '%' + @nombre + '%'
 	commit transaction
 end try
 begin catch

@@ -98,7 +98,7 @@ begin transaction
 		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
 		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
 		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
-		where P_Id_Perfil = 0 or P_Id_Perfil = 1 and U.U_Correo = @Correo
+		where P_Id_Perfil = 0 or P_Id_Perfil = 1 and U.U_Correo like '%' + @Correo + '%'
 		commit transaction
 	end try
 	begin catch
@@ -115,7 +115,7 @@ begin transaction
 		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
 		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
 		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
-		where P_Id_Perfil = 0 or P_Id_Perfil = 1 and U.U_Nombre = @Nombre
+		where P_Id_Perfil = 0 or P_Id_Perfil = 1 and U.U_Nombre like '%' + @Nombre + '%'
 		commit transaction
 	end try
 	begin catch
@@ -167,7 +167,7 @@ begin transaction
 		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
 		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
 		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
-		where P_Id_Perfil = 2 and U.U_Correo = @Correo
+		where P_Id_Perfil = 2 and U.U_Correo like '%' + @Correo + '%'
 		commit transaction
 	end try
 	begin catch
@@ -184,7 +184,7 @@ begin transaction
 		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
 		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
 		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
-		where P_Id_Perfil = 2 and U.U_Nombre = @Nombre
+		where P_Id_Perfil = 2 and U.U_Nombre like '%' + @Nombre + "%"
 		commit transaction
 	end try
 	begin catch

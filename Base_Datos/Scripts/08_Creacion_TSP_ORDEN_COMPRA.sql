@@ -92,7 +92,7 @@ begin transaction
 begin try
 	select idOrdenCompra, idCliente, idproducto, cantidadProducto 
 	from ORDEN_COMPRA
-	where idCliente = @idCliente
+	where idCliente like '%' + @idCliente + '%'
 	commit transaction
 end try
 begin catch

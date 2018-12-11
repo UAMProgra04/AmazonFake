@@ -93,7 +93,7 @@ begin transaction
 begin try
 	select idProveedor, nombre, direccion, telefono, email 
 	from PROVEEDOR
-	where nombre = @nombre
+	where nombre like '%' + @nombre + '%'
 	commit transaction
 end try
 begin catch
@@ -108,7 +108,7 @@ begin transaction
 begin try
 	select idProveedor, nombre, direccion, telefono, email 
 	from PROVEEDOR
-	where email = @email
+	where email like '%' + @email + '%'
 	commit transaction
 end try
 begin catch

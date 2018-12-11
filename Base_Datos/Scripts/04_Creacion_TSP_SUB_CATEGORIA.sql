@@ -90,7 +90,7 @@ begin transaction
 begin try
 	select idSubcategoriaProducto, nombre, idCategoriaProducto, fechaModificacion 
 	from SUB_CATEGORIA
-	WHERE nombre = @nombre
+	WHERE nombre like '%' + @nombre + '%'
 	commit transaction
 end try
 begin catch
