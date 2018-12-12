@@ -116,13 +116,13 @@ begin catch
 end catch
 go
 
-[dbo].[SP_Insert_Data_PRODUCTO] 1, 'Pantalla', 980500.00, 'Pantalla Sony 50\"', 1
-[dbo].[SP_Insert_Data_PRODUCTO] 2, 'Camiseta niño', 980500.00, 'Camiseta talla "S" de Sonic', 2
-[dbo].[SP_Update_Data_PRODUCTO] 2, 'Camiseta niño', 5600.00, 'Camiseta talla "S" de Sonic', 2
-[dbo].[SP_Delete_Data_PRODUCTO] 2
+exec [dbo].[SP_Insert_Data_PRODUCTO] 1, 'Pantalla', 980500.00, 'Pantalla Sony 50\"', 1
+exec [dbo].[SP_Insert_Data_PRODUCTO] 2, 'Camiseta niño', 980500.00, 'Camiseta talla "S" de Sonic', 2
+exec [dbo].[SP_Update_Data_PRODUCTO] 2, 'Camiseta niño', 5600.00, 'Camiseta talla "S" de Sonic', 2
+exec [dbo].[SP_Delete_Data_PRODUCTO] 2
 
-[dbo].[SP_VIEW_ALL_Data_PRODUCTO]
-[dbo].[SP_VIEW_ID_Data_PRODUCTO] 1
-[dbo].[SP_VIEW_NAME_Data_PRODUCTO] 'Camiseta niño'
-[dbo].[SP_VIEW_PRICE_Data_PRODUCTO] 980500.00
+exec [dbo].[SP_VIEW_ALL_Data_PRODUCTO]
+exec [dbo].[SP_VIEW_ID_Data_PRODUCTO] 1
+exec [dbo].[SP_VIEW_NAME_Data_PRODUCTO] 'Camiseta niño'
+exec [dbo].[SP_VIEW_PRICE_Data_PRODUCTO] 980500.00
 

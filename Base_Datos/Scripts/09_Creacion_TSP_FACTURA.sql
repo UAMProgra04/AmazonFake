@@ -97,12 +97,12 @@ begin catch
 end catch
 go
 
-[dbo].[SP_Insert_Data_FACTURA] 1,'carlos@hotmail.com', '2018-11-29'
-[dbo].[SP_Insert_Data_FACTURA] 2,'carlos@hotmail.com', '2018-11-29'
-[dbo].[SP_Update_Data_FACTURA] 2,'carlos@hotmail.com', '2018-12-29'
-[dbo].[SP_Delete_Data_FACTURA] 1
+exec [dbo].[SP_Insert_Data_FACTURA] 1,'carlos@hotmail.com', '2018-11-29'
+exec [dbo].[SP_Insert_Data_FACTURA] 2,'carlos@hotmail.com', '2018-11-29'
+exec [dbo].[SP_Update_Data_FACTURA] 2,'carlos@hotmail.com', '2018-12-29'
+exec [dbo].[SP_Delete_Data_FACTURA] 1
 
-[dbo].[SP_VIEW_ALL_Data_FACTURA]
-[dbo].[SP_VIEW_DATE_Data_FACTURA] '2018-01-29', '2018-12-29'
-[dbo].[SP_VIEW_IDBILL_Data_FACTURA] 2
-[dbo].[SP_VIEW_IDCLIENT_Data_FACTURA] 'carlos@hotmail.com'
+exec [dbo].[SP_VIEW_ALL_Data_FACTURA]
+exec [dbo].[SP_VIEW_DATE_Data_FACTURA] '2018-01-29', '2018-12-29'
+exec [dbo].[SP_VIEW_IDBILL_Data_FACTURA] 2
+exec [dbo].[SP_VIEW_IDCLIENT_Data_FACTURA] 'carlos@hotmail.com'

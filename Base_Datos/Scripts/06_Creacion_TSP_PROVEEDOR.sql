@@ -116,12 +116,12 @@ begin catch
 end catch
 go
 
-[dbo].[SP_Insert_Data_PROVEEDOR] 1, 'CEMACO', 'San Jose Costa Rica, 100 metros este de Torre Mercedes, Paseo Colon', '+50622408987', 'cemaco_ventas@cemaco.com'
-[dbo].[SP_Insert_Data_PROVEEDOR] 2, 'CEMACO', 'Heredia Costa Rica, 100 metros norte del Hospital Central', '+50622408987', 'alis_ventas@alis.com'
-[dbo].[SP_Delete_Data_PROVEEDOR] 1
-[dbo].[SP_Update_Data_PROVEEDOR] 2, 'ALIS', 'Heredia Costa Rica, 100 metros norte del Hospital Central', '+50622702587', 'alis_ventas@alis.com'
+exec [dbo].[SP_Insert_Data_PROVEEDOR] 1, 'CEMACO', 'San Jose Costa Rica, 100 metros este de Torre Mercedes, Paseo Colon', '+50622408987', 'cemaco_ventas@cemaco.com'
+exec [dbo].[SP_Insert_Data_PROVEEDOR] 2, 'CEMACO', 'Heredia Costa Rica, 100 metros norte del Hospital Central', '+50622408987', 'alis_ventas@alis.com'
+exec [dbo].[SP_Delete_Data_PROVEEDOR] 1
+exec [dbo].[SP_Update_Data_PROVEEDOR] 2, 'ALIS', 'Heredia Costa Rica, 100 metros norte del Hospital Central', '+50622702587', 'alis_ventas@alis.com'
 
-[dbo].[SP_VIEW_ALL_Data_PROVEEDOR] 
-[dbo].[SP_VIEW_EMAIL_Data_PROVEEDOR] 'alis_ventas@alis.com' 
-[dbo].[SP_VIEW_ID_Data_PROVEEDOR] 1
-[dbo].[SP_VIEW_NAME_Data_PROVEEDOR]	'ALIS'
+exec [dbo].[SP_VIEW_ALL_Data_PROVEEDOR] 
+exec [dbo].[SP_VIEW_EMAIL_Data_PROVEEDOR] 'alis_ventas@alis.com' 
+exec [dbo].[SP_VIEW_ID_Data_PROVEEDOR] 1
+exec [dbo].[SP_VIEW_NAME_Data_PROVEEDOR]	'ALIS'
