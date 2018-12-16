@@ -34,7 +34,8 @@ create table LOGIN
 L_Correo nvarchar(80) primary key,
 L_Nombre nvarchar(100) not null,
 L_Password nvarchar(12) not null,
-L_Estado bit not null
+L_Estado bit not null,
+L_Perfil tinyint not null references PERFILES(P_Id_Perfil)
 )
 go
 

@@ -124,7 +124,7 @@ namespace BLL.Base_Datos
             try
             {
                 Cls_BD_DAL obj_BD_DALL = new Cls_BD_DAL();
-                obj_BD_DALL.SCadena = ConfigurationManager.ConnectionStrings[1].ToString();
+                obj_BD_DALL.SCadena = ConfigurationManager.ConnectionStrings["SQL_AUTH"].ToString();
                 obj_BD_DALL.obj_SQL_Conexion = new SqlConnection(obj_BD_DALL.SCadena);
 
                 if (obj_BD_DALL.obj_SQL_Conexion.State == ConnectionState.Closed)
@@ -192,7 +192,7 @@ namespace BLL.Base_Datos
             try
             {
                 Cls_BD_DAL obj_BD_DALL = new Cls_BD_DAL();
-                obj_BD_DALL.SCadena = ConfigurationManager.ConnectionStrings[1].ToString();
+                obj_BD_DALL.SCadena = ConfigurationManager.ConnectionStrings["SQL_AUTH"].ToString();
                 obj_BD_DALL.obj_SQL_Conexion = new SqlConnection(obj_BD_DALL.SCadena);
 
                 if (obj_BD_DALL.obj_SQL_Conexion.State == ConnectionState.Closed)
@@ -249,6 +249,32 @@ namespace BLL.Base_Datos
             {
                 SMsError = ex.Message.ToString();
                 return false;
+            }
+        }
+        #endregion
+
+        #region Conexion_Base_Datos
+        public SqlConnection Conexion_BAseDatos()
+        {
+            Cls_BD_DAL obj_BD_DAL = new Cls_BD_DAL();
+            try
+            {
+                obj_BD_DAL.SCadena = ConfigurationManager.ConnectionStrings["SQL_AUTH"].ToString();
+                obj_BD_DAL.obj_SQL_Conexion = new SqlConnection(obj_BD_DAL.SCadena);
+
+                if (obj_BD_DAL.obj_SQL_Conexion.State == ConnectionState.Open)
+                {
+                    obj_BD_DAL.obj_SQL_Conexion.Close();
+                }
+                else
+                {
+                    obj_BD_DAL.obj_SQL_Conexion.Open();
+                }
+                return obj_BD_DAL.obj_SQL_Conexion;
+            }
+            catch (Exception)
+            {
+                return obj_BD_DAL.obj_SQL_Conexion = null;
             }
         }
         #endregion

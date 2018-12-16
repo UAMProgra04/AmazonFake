@@ -109,5 +109,31 @@ namespace SVC.Contract
                 ref sValorScalar, ref SMsError);
         }
         #endregion
+
+
+
+
+        #region create account
+        public string Create_Account(string correo, string nombre, string pssword)
+        {
+            Cls_Create_Account_BLL obj_account_bll = new Cls_Create_Account_BLL();
+            Cls_Create_Account_DAL obj_account_dal = new Cls_Create_Account_DAL();
+            obj_account_dal.SCorreo = correo;
+            obj_account_dal.SNombre = nombre;
+            obj_account_dal.SPassword = pssword;
+            return obj_account_bll.Create_Account(obj_account_dal);
+        }
+        #endregion
+
+        #region Login
+        public List<Cls_Login_DAL> Login(string correo, string password)
+        {
+            Cls_Login_BLL obj_Login_bll = new Cls_Login_BLL();
+            Cls_Login_DAL obj_Login_dal = new Cls_Login_DAL();
+            obj_Login_dal.SCorreo = correo;
+            obj_Login_dal.SPassword = password;
+            return obj_Login_bll.Login(obj_Login_dal);
+        }
+        #endregion
     }
 }

@@ -9,7 +9,118 @@
 //------------------------------------------------------------------------------
 
 namespace AmazonFake_SITE.AmazonFakeService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cls_Login_DAL", Namespace="http://schemas.datacontract.org/2004/07/DAL.Base_Datos")]
+    [System.SerializableAttribute()]
+    public partial class Cls_Login_DAL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BEstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IPerfilField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SCorreoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SNombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SPasswordField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool BEstado {
+            get {
+                return this.BEstadoField;
+            }
+            set {
+                if ((this.BEstadoField.Equals(value) != true)) {
+                    this.BEstadoField = value;
+                    this.RaisePropertyChanged("BEstado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IPerfil {
+            get {
+                return this.IPerfilField;
+            }
+            set {
+                if ((this.IPerfilField.Equals(value) != true)) {
+                    this.IPerfilField = value;
+                    this.RaisePropertyChanged("IPerfil");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SCorreo {
+            get {
+                return this.SCorreoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SCorreoField, value) != true)) {
+                    this.SCorreoField = value;
+                    this.RaisePropertyChanged("SCorreo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SNombre {
+            get {
+                return this.SNombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SNombreField, value) != true)) {
+                    this.SNombreField = value;
+                    this.RaisePropertyChanged("SNombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SPassword {
+            get {
+                return this.SPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SPasswordField, value) != true)) {
+                    this.SPasswordField = value;
+                    this.RaisePropertyChanged("SPassword");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmazonFakeService.I_Base_Datos")]
@@ -74,6 +185,18 @@ namespace AmazonFake_SITE.AmazonFakeService {
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentityResponse")]
         System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityResponse> Insertar_DatosConIdentityAsync(AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
+        string Create_Account(string correo, string nombre, string pssword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
+        System.Threading.Tasks.Task<string> Create_AccountAsync(string correo, string nombre, string pssword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Login", ReplyAction="http://tempuri.org/I_Base_Datos/LoginResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL> Login(string correo, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Login", ReplyAction="http://tempuri.org/I_Base_Datos/LoginResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL>> LoginAsync(string correo, string password);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -518,6 +641,22 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         public System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityResponse> Insertar_DatosConIdentityAsync(AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityRequest request) {
             return base.Channel.Insertar_DatosConIdentityAsync(request);
+        }
+        
+        public string Create_Account(string correo, string nombre, string pssword) {
+            return base.Channel.Create_Account(correo, nombre, pssword);
+        }
+        
+        public System.Threading.Tasks.Task<string> Create_AccountAsync(string correo, string nombre, string pssword) {
+            return base.Channel.Create_AccountAsync(correo, nombre, pssword);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL> Login(string correo, string password) {
+            return base.Channel.Login(correo, password);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL>> LoginAsync(string correo, string password) {
+            return base.Channel.LoginAsync(correo, password);
         }
     }
 }

@@ -26,8 +26,8 @@ begin transaction
 		insert into  USUARIOS (U_Correo, U_Nombre, U_Perfil)
 		values (@Correo, @Nombre, 2)
 
-		insert into  LOGIN (L_Correo, L_Nombre, L_Password, L_Estado)
-		values (@Correo,@Nombre, @Password, 1)
+		insert into  LOGIN (L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil)
+		values (@Correo,@Nombre, @Password, 1, 2)
 
 		commit transaction
 	end try
@@ -184,7 +184,7 @@ begin transaction
 		select U.U_Correo, U.U_Nombre, U.U_Identificacion, 
 		U.U_Direccion, U.U_Telefono, P.P_Nombre_Perfil
 		from USUARIOS U inner join PERFILES P on U_Perfil = P_Id_Perfil
-		where P_Id_Perfil = 2 and U.U_Nombre like '%' + @Nombre + "%"
+		where P_Id_Perfil = 2 and U.U_Nombre like '%' + @Nombre + '%'
 		commit transaction
 	end try
 	begin catch
@@ -232,7 +232,7 @@ create procedure SP_Login
 as 
 begin transaction 
 	begin try
-		select L_Correo, L_Nombre, L_Password, L_Estado
+		select L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil
 		from LOGIN 
 		where L_Correo = @Correo and L_Password = @Password
 		commit transaction
@@ -281,8 +281,8 @@ begin transaction
 	begin try
 		insert into USUARIOS (U_Correo, U_Nombre, U_Perfil )
 		values ('root@amazon.com', 'Root', 0 ) 
-		insert into LOGIN (L_Correo, L_Nombre, L_Password, L_Estado )
-		values ('root@amazon.com', 'Root', 'RootPassword', 1 )
+		insert into LOGIN (L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil)
+		values ('root@amazon.com', 'Root', 'RootPassword', 1, 0)
 		commit transaction
 	end try
 	begin catch
@@ -311,7 +311,7 @@ exec [dbo].[SP_Delete_User_Account] 'carlos@hotmail.com', '12345678'
 
 --VER INFORMACION DE TABLAS AFECTADAS--
 select U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono, U_Perfil from USUARIOS
-select L_Correo, L_Nombre, L_Password, L_Estado from  LOGIN
+select L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil from  LOGIN
 
 
 

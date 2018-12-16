@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base_Datos\Cls_BD_BLL.cs" />
+    <Compile Include="Base_Datos\Cls_Create_Account_BLL.cs" />
+    <Compile Include="Base_Datos\Cls_Login_BLL.cs" />
     <Compile Include="Correo\Cls_Correo_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

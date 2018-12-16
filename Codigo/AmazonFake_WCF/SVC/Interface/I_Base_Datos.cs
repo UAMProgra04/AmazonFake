@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Data;
+using DAL.Base_Datos;
 
 namespace SVC.Interface
 {
@@ -45,5 +46,14 @@ namespace SVC.Interface
         bool Insertar_DatosConIdentity(string sNombreSP, DataTable dtParametros,
             ref string sValorScalar, ref string SMsError);
 
+
+
+
+
+        [OperationContract]
+        string Create_Account(string correo, string nombre, string pssword);
+
+        [OperationContract]
+        List<Cls_Login_DAL> Login(string correo, string password);
     }
 }

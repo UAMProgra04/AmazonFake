@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DAL.Base_Datos" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_InputMessage">
@@ -61,6 +62,18 @@
   <wsdl:message name="I_Base_Datos_Insertar_DatosConIdentity_OutputMessage">
     <wsdl:part name="parameters" element="tns:Insertar_DatosConIdentityResponse" />
   </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Create_Account_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create_Account" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Create_Account_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Create_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="I_Base_Datos">
     <wsdl:operation name="Envio_Correo_Cliente">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" message="tns:I_Base_Datos_Envio_Correo_Cliente_InputMessage" />
@@ -97,6 +110,14 @@
     <wsdl:operation name="Insertar_DatosConIdentity">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity" message="tns:I_Base_Datos_Insertar_DatosConIdentity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentityResponse" message="tns:I_Base_Datos_Insertar_DatosConIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_Account">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Create_Account" message="tns:I_Base_Datos_Create_Account_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Create_AccountResponse" message="tns:I_Base_Datos_Create_Account_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Login" message="tns:I_Base_Datos_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/LoginResponse" message="tns:I_Base_Datos_Login_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_I_Base_Datos" type="tns:I_Base_Datos">
@@ -175,6 +196,24 @@
     </wsdl:operation>
     <wsdl:operation name="Insertar_DatosConIdentity">
       <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_Account">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Create_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

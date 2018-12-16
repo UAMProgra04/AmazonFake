@@ -182,6 +182,12 @@
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Modifica_DatosSinIdentityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
     <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
     <None Include="Service References\AmazonFakeService\Reference.svcmap">

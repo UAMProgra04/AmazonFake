@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AmazonFake_SITE.Secure;
+using System.Data;
 
 namespace AmazonFake_SITE.www.Access
 {
@@ -24,7 +25,8 @@ namespace AmazonFake_SITE.www.Access
                 {
                     if (Cls_Secure.Validar(txt_nombre.Text, txt_email.Text.Trim(), txt_contrasena.Text.Trim()))
                     {
-                        lbl_Errores.Text = "Hola";
+                        AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
+                        lbl_Errores.Text = cliente.Create_Account(txt_email.Text, txt_nombre.Text, txt_contrasena.Text);
                     }
                 }else
                 {

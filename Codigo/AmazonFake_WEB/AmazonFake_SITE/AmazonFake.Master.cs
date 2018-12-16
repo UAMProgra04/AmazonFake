@@ -29,7 +29,7 @@ namespace AmazonFake_SITE
 
             if (Session["UsuarioSession"] != null)
             {
-                if (Session["UsuarioSession"].ToString().Equals("test@hotmail.com"))
+                if (Session["UsuarioPerfil"].ToString().Equals("2"))
                 {
                     string NombreUsuario = Session["UsuarioSession"].ToString().ToUpper();
                     lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;
@@ -49,7 +49,7 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Productos.Visible = false;
                     this.Opc_Administrativa_Proveedores.Visible = false;
                 }
-                if (Session["UsuarioSession"].ToString().Equals("test2@hotmail.com"))
+                if (Session["UsuarioPerfil"].ToString().Equals("1"))
                 {
                     string NombreUsuario = Session["UsuarioSession"].ToString().ToUpper();
                     lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;
@@ -69,7 +69,7 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Productos.Visible = true;
                     this.Opc_Administrativa_Proveedores.Visible = true;
                 }
-                if (Session["UsuarioSession"].ToString().Equals("root@amazon.com"))
+                if (Session["UsuarioPerfil"].ToString().Equals("0"))
                 {
                     string NombreUsuario = Session["UsuarioSession"].ToString().ToUpper();
                     lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;
