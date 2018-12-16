@@ -306,16 +306,9 @@ exec [dbo].[SP_Create_User_Account] 'carlos@hotmail.com', 'carlos', '12345678'
 exec [dbo].[SP_Update_User_Account] 'carlos@hotmail.com', 207250253, 'San Jose, Costa Rica', '+50689843266'
 exec [dbo].[SP_Password_Restore] 'carlos@hotmail.com'
 exec [dbo].[SP_Login] 'carlos@hotmail.com', '12345678'
-exec [dbo].[SP_Change_Password] 'carlos@hotmail.com', '87654321'
+exec [dbo].[SP_Change_Password] 'carlos@hotmail.com', 'Carlos23'
 exec [dbo].[SP_Delete_User_Account] 'carlos@hotmail.com', '12345678'
 
 --VER INFORMACION DE TABLAS AFECTADAS--
 select U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono, U_Perfil from USUARIOS
 select L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil from  LOGIN
-
-
-
-
-
-
-
