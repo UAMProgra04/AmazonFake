@@ -4,10 +4,12 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using BLL.Base_Datos;
 using DAL.Base_Datos;
 using DAL.Correo;
+using DAL.Usuarios;
+using BLL.Base_Datos;
 using BLL.Correo;
+using BLL.Usuarios;
 using System.Data;
 
 namespace SVC.Contract
@@ -80,8 +82,6 @@ namespace SVC.Contract
         }
         #endregion
 
-
-
         #region Insertar_Actualizar_Eliminar_SinIdentity
         public bool Insertar_DatosSinIdentity(string sNombreSP, DataTable dtParametros, ref string SMsError)
         {
@@ -112,28 +112,147 @@ namespace SVC.Contract
 
 
 
+        #region Metodos_Cls_Usuarios
 
-        #region create account
-        public string Create_Account(string correo, string nombre, string pssword)
-        {
-            Cls_Create_Account_BLL obj_account_bll = new Cls_Create_Account_BLL();
-            Cls_Create_Account_DAL obj_account_dal = new Cls_Create_Account_DAL();
-            obj_account_dal.SCorreo = correo;
-            obj_account_dal.SNombre = nombre;
-            obj_account_dal.SPassword = pssword;
-            return obj_account_bll.Create_Account(obj_account_dal);
-        }
-        #endregion
-
+        #region Accesos
         #region Login
-        public List<Cls_Login_DAL> Login(string correo, string password)
+        public List<Cls_Usuarios_DAL> Login(string correo, string password)
         {
-            Cls_Login_BLL obj_Login_bll = new Cls_Login_BLL();
-            Cls_Login_DAL obj_Login_dal = new Cls_Login_DAL();
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SCorreo = correo;
             obj_Login_dal.SPassword = password;
             return obj_Login_bll.Login(obj_Login_dal);
         }
         #endregion
+
+        #region Change_Password
+        public string Change_Password(string correo, string password)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SCorreo = correo;
+            obj_Login_dal.SPassword = password;
+            return obj_Login_bll.Change_Password(obj_Login_dal);
+        }
+        #endregion
+
+        #region Password_Restore
+        public List<Cls_Usuarios_DAL> Password_Restore(string correo)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SCorreo = correo;
+            return obj_Login_bll.Password_Restore(obj_Login_dal);
+        }
+        #endregion
+        #endregion
+
+        #region Administracion_Usuarios
+        #region Create_Account
+        public string Create_Account(string correo, string nombre, string password)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = correo;
+            obj_account_dal.SNombre = nombre;
+            obj_account_dal.SPassword = password;
+            return obj_account_bll.Create_Account(obj_account_dal);
+        }
+        #endregion
+
+        #region Delete_Account
+        public string Delete_Account(string correo, string password)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = correo;
+            obj_account_dal.SPassword = password;
+            return obj_account_bll.Delete_Account(obj_account_dal);
+        }
+        #endregion
+
+        #region Update_Account
+        public string Update_Account(string Correo, string Identificacion, 
+            string Direccion, string Telefono)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = Correo;
+            obj_account_dal.SIdentificacion = Identificacion;
+            obj_account_dal.SDireccion = Direccion;
+            obj_account_dal.STelefono = Telefono;
+            return obj_account_bll.Update_Account(obj_account_dal);
+        }
+        #endregion
+        #endregion
+
+        #region Filtrar_Empleados
+        #region View_Email_Admins
+        public List<Cls_Usuarios_DAL> View_Email_Admins(string Correo)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SCorreo = Correo;
+            return obj_Login_bll.View_Email_Admins(obj_Login_dal);
+        }
+        #endregion
+
+        #region View_Name_Admins
+        public List<Cls_Usuarios_DAL> View_Name_Admins(string Nombre)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SNombre = Nombre;
+            return obj_Login_bll.View_Name_Admins(obj_Login_dal);
+        }
+        #endregion
+
+        #region View_ID_Admins
+        public List<Cls_Usuarios_DAL> View_ID_Admins(string Identificacion)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SIdentificacion = Identificacion;
+            return obj_Login_bll.View_ID_Admins(obj_Login_dal);
+        }
+        #endregion
+        #endregion
+
+        #region Filtrar_CLientes
+        #region View_Email_Users
+        public List<Cls_Usuarios_DAL> View_Email_Users(string Correo)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SCorreo = Correo;
+            return obj_Login_bll.View_Email_Users(obj_Login_dal);
+        }
+        #endregion
+
+        #region View_Name_Users
+        public List<Cls_Usuarios_DAL> View_Name_Users(string Nombre)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SNombre = Nombre;
+            return obj_Login_bll.View_Name_Users(obj_Login_dal);
+        }
+        #endregion
+
+        #region View_ID_Users
+        public List<Cls_Usuarios_DAL> View_ID_Users(string Identificacion)
+        {
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SIdentificacion = Identificacion;
+            return obj_Login_bll.View_ID_Users(obj_Login_dal);
+        }
+        #endregion
+        #endregion
+
+        #endregion
+
+
     }
 }

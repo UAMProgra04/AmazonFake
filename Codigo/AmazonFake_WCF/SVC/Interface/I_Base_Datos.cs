@@ -5,19 +5,22 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Data;
-using DAL.Base_Datos;
+using DAL.Usuarios;
 
 namespace SVC.Interface
 {
     [ServiceContract]
     public interface I_Base_Datos
     {
+        #region Metodo_Conexion_Base_Datos
+        [OperationContract]
+        string Conectar_Base_Datos();
+        #endregion
+
+        #region Metodos_En_Clase
         [OperationContract]
         void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
             string Correo_Encabezado, string Correo_Mensaje);
-
-        [OperationContract]
-        string Conectar_Base_Datos();
 
         [OperationContract]
         DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos,
@@ -46,14 +49,47 @@ namespace SVC.Interface
         bool Insertar_DatosConIdentity(string sNombreSP, DataTable dtParametros,
             ref string sValorScalar, ref string SMsError);
 
+        #endregion
 
 
+        #region Metodos_Cls_Usuarios
+        #region Accesos
+        [OperationContract]
+        List<Cls_Usuarios_DAL> Login(string correo, string password);
+        [OperationContract]
+        string Change_Password(string correo, string password);
+        [OperationContract]
+        List<Cls_Usuarios_DAL> Password_Restore(string correo);
+        #endregion
 
-
+        #region Administracion_Usuarios
         [OperationContract]
         string Create_Account(string correo, string nombre, string pssword);
-
         [OperationContract]
-        List<Cls_Login_DAL> Login(string correo, string password);
+        string Delete_Account(string correo, string password);
+        [OperationContract]
+        string Update_Account(string Correo, string Identificacion,
+            string Direccion, string Telefono);
+        #endregion
+
+        #region Filtrar_Empleados
+        [OperationContract]
+        List<Cls_Usuarios_DAL> View_Email_Admins(string Correo);
+        [OperationContract]
+        List<Cls_Usuarios_DAL> View_Name_Admins(string Nombre);
+        [OperationContract]
+        List<Cls_Usuarios_DAL> View_ID_Admins(string Identificacion);
+        #endregion
+
+        #region Filtrar_CLientes
+        [OperationContract]
+        List<Cls_Usuarios_DAL> View_Email_Users(string Correo);
+        [OperationContract]
+        List<Cls_Usuarios_DAL> View_Name_Users(string Nombre);
+        [OperationContract]
+        List<Cls_Usuarios_DAL> View_ID_Users(string Identificacion);
+        #endregion
+
+        #endregion
     }
 }

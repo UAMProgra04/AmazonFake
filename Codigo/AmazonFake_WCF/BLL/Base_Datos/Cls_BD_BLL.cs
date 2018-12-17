@@ -253,6 +253,8 @@ namespace BLL.Base_Datos
         }
         #endregion
 
+
+        //Metodo de conexion
         #region Conexion_Base_Datos
         public SqlConnection Conexion_BAseDatos()
         {

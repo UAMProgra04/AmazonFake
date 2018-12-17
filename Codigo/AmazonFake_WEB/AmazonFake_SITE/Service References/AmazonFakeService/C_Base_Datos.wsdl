@@ -5,20 +5,20 @@
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
-      <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DAL.Base_Datos" />
+      <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DAL.Usuarios" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_InputMessage">
-    <wsdl:part name="parameters" element="tns:Envio_Correo_Cliente" />
-  </wsdl:message>
-  <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Envio_Correo_ClienteResponse" />
-  </wsdl:message>
   <wsdl:message name="I_Base_Datos_Conectar_Base_Datos_InputMessage">
     <wsdl:part name="parameters" element="tns:Conectar_Base_Datos" />
   </wsdl:message>
   <wsdl:message name="I_Base_Datos_Conectar_Base_Datos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Conectar_Base_DatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Envio_Correo_Cliente" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Envio_Correo_Cliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Envio_Correo_ClienteResponse" />
   </wsdl:message>
   <wsdl:message name="I_Base_Datos_Mostrar_Informacion_InputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_Informacion" />
@@ -62,26 +62,86 @@
   <wsdl:message name="I_Base_Datos_Insertar_DatosConIdentity_OutputMessage">
     <wsdl:part name="parameters" element="tns:Insertar_DatosConIdentityResponse" />
   </wsdl:message>
-  <wsdl:message name="I_Base_Datos_Create_Account_InputMessage">
-    <wsdl:part name="parameters" element="tns:Create_Account" />
-  </wsdl:message>
-  <wsdl:message name="I_Base_Datos_Create_Account_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Create_AccountResponse" />
-  </wsdl:message>
   <wsdl:message name="I_Base_Datos_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
   <wsdl:message name="I_Base_Datos_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Change_Password_InputMessage">
+    <wsdl:part name="parameters" element="tns:Change_Password" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Change_Password_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Change_PasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Password_Restore_InputMessage">
+    <wsdl:part name="parameters" element="tns:Password_Restore" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Password_Restore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Password_RestoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Create_Account_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create_Account" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Create_Account_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Create_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Delete_Account_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Account" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Delete_Account_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Update_Account_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Account" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Update_Account_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Email_Admins_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_Email_Admins" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Email_Admins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_Email_AdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Name_Admins_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_Name_Admins" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Name_Admins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_Name_AdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_ID_Admins_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_ID_Admins" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_ID_Admins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_ID_AdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Email_Users_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_Email_Users" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Email_Users_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_Email_UsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Name_Users_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_Name_Users" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_Name_Users_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_Name_UsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_ID_Users_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_ID_Users" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_ID_Users_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_ID_UsersResponse" />
+  </wsdl:message>
   <wsdl:portType name="I_Base_Datos">
-    <wsdl:operation name="Envio_Correo_Cliente">
-      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" message="tns:I_Base_Datos_Envio_Correo_Cliente_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse" message="tns:I_Base_Datos_Envio_Correo_Cliente_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Conectar_Base_Datos">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos" message="tns:I_Base_Datos_Conectar_Base_Datos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Conectar_Base_DatosResponse" message="tns:I_Base_Datos_Conectar_Base_Datos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Envio_Correo_Cliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" message="tns:I_Base_Datos_Envio_Correo_Cliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse" message="tns:I_Base_Datos_Envio_Correo_Cliente_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Mostrar_Informacion">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion" message="tns:I_Base_Datos_Mostrar_Informacion_InputMessage" />
@@ -111,19 +171,59 @@
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity" message="tns:I_Base_Datos_Insertar_DatosConIdentity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentityResponse" message="tns:I_Base_Datos_Insertar_DatosConIdentity_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Create_Account">
-      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Create_Account" message="tns:I_Base_Datos_Create_Account_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Create_AccountResponse" message="tns:I_Base_Datos_Create_Account_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Login" message="tns:I_Base_Datos_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/LoginResponse" message="tns:I_Base_Datos_Login_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Change_Password">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Change_Password" message="tns:I_Base_Datos_Change_Password_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Change_PasswordResponse" message="tns:I_Base_Datos_Change_Password_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Password_Restore">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Password_Restore" message="tns:I_Base_Datos_Password_Restore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Password_RestoreResponse" message="tns:I_Base_Datos_Password_Restore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_Account">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Create_Account" message="tns:I_Base_Datos_Create_Account_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Create_AccountResponse" message="tns:I_Base_Datos_Create_Account_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Account">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Delete_Account" message="tns:I_Base_Datos_Delete_Account_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Delete_AccountResponse" message="tns:I_Base_Datos_Delete_Account_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Account">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Update_Account" message="tns:I_Base_Datos_Update_Account_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Update_AccountResponse" message="tns:I_Base_Datos_Update_Account_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Email_Admins">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_Email_Admins" message="tns:I_Base_Datos_View_Email_Admins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_Email_AdminsResponse" message="tns:I_Base_Datos_View_Email_Admins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Name_Admins">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_Name_Admins" message="tns:I_Base_Datos_View_Name_Admins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_Name_AdminsResponse" message="tns:I_Base_Datos_View_Name_Admins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_ID_Admins">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_ID_Admins" message="tns:I_Base_Datos_View_ID_Admins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_ID_AdminsResponse" message="tns:I_Base_Datos_View_ID_Admins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Email_Users">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_Email_Users" message="tns:I_Base_Datos_View_Email_Users_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_Email_UsersResponse" message="tns:I_Base_Datos_View_Email_Users_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_Name_Users">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_Name_Users" message="tns:I_Base_Datos_View_Name_Users_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_Name_UsersResponse" message="tns:I_Base_Datos_View_Name_Users_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_ID_Users">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_ID_Users" message="tns:I_Base_Datos_View_ID_Users_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_ID_UsersResponse" message="tns:I_Base_Datos_View_ID_Users_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_I_Base_Datos" type="tns:I_Base_Datos">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Envio_Correo_Cliente">
-      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" style="document" />
+    <wsdl:operation name="Conectar_Base_Datos">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -131,8 +231,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Conectar_Base_Datos">
-      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos" style="document" />
+    <wsdl:operation name="Envio_Correo_Cliente">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -203,6 +303,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_Password">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Change_Password" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Password_Restore">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Password_Restore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Create_Account">
       <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Create_Account" style="document" />
       <wsdl:input>
@@ -212,8 +339,71 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Login">
-      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Login" style="document" />
+    <wsdl:operation name="Delete_Account">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Delete_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Account">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Update_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Email_Admins">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_Email_Admins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Name_Admins">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_Name_Admins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_ID_Admins">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_ID_Admins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Email_Users">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_Email_Users" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_Name_Users">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_Name_Users" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_ID_Users">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_ID_Users" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

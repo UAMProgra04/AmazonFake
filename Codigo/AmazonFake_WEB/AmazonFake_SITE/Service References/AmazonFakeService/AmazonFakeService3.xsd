@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DAL.Base_Datos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DAL.Base_Datos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfCls_Login_DAL">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DAL.Usuarios" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DAL.Usuarios" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCls_Usuarios_DAL">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cls_Login_DAL" nillable="true" type="tns:Cls_Login_DAL" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cls_Usuarios_DAL" nillable="true" type="tns:Cls_Usuarios_DAL" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCls_Login_DAL" nillable="true" type="tns:ArrayOfCls_Login_DAL" />
-  <xs:complexType name="Cls_Login_DAL">
+  <xs:element name="ArrayOfCls_Usuarios_DAL" nillable="true" type="tns:ArrayOfCls_Usuarios_DAL" />
+  <xs:complexType name="Cls_Usuarios_DAL">
     <xs:sequence>
       <xs:element minOccurs="0" name="BEstado" type="xs:boolean" />
       <xs:element minOccurs="0" name="IPerfil" type="xs:int" />
       <xs:element minOccurs="0" name="SCorreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SDireccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SIdentificacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SNombrePerfil" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STelefono" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Cls_Login_DAL" nillable="true" type="tns:Cls_Login_DAL" />
+  <xs:element name="Cls_Usuarios_DAL" nillable="true" type="tns:Cls_Usuarios_DAL" />
 </xs:schema>

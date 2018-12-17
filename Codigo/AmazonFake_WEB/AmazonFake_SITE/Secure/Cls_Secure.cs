@@ -141,11 +141,25 @@ namespace AmazonFake_SITE.Secure
              ademas de agregar la contraseña del mismo en el campo contraseña del mesaje del correo*/
 
             AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
-            string Correo_Target = Correo;
-            string Correo_Source = "amazonface.mail@gmail.com";
-            string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
-            string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + Correo + "<br>Contraseña: contraseña</p>";
-            Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
+            
+            List<string> listaLogin = new List<string>();
+            string passwd;
+   
+
+            foreach (var item in Cliente.Password_Restore(Correo))
+            {
+                passwd = item.SPassword;
+                string Correo_Target = Correo;
+                string Correo_Source = "amazonface.mail@gmail.com";
+                string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
+                string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + Correo + "<br>Contraseña: " + passwd + "</p>";
+                Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
+            }
+
+
+
+
+                
         }
 
         public static void Correo_Creacion_Cuenta(string Correo)

@@ -15,9 +15,9 @@ namespace AmazonFake_SITE.AmazonFakeService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Cls_Login_DAL", Namespace="http://schemas.datacontract.org/2004/07/DAL.Base_Datos")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cls_Usuarios_DAL", Namespace="http://schemas.datacontract.org/2004/07/DAL.Usuarios")]
     [System.SerializableAttribute()]
-    public partial class Cls_Login_DAL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Cls_Usuarios_DAL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -32,10 +32,25 @@ namespace AmazonFake_SITE.AmazonFakeService {
         private string SCorreoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SDireccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SIdentificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SNombreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SNombrePerfilField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SRespuestaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string STelefonoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -87,6 +102,32 @@ namespace AmazonFake_SITE.AmazonFakeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SDireccion {
+            get {
+                return this.SDireccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SDireccionField, value) != true)) {
+                    this.SDireccionField = value;
+                    this.RaisePropertyChanged("SDireccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SIdentificacion {
+            get {
+                return this.SIdentificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SIdentificacionField, value) != true)) {
+                    this.SIdentificacionField = value;
+                    this.RaisePropertyChanged("SIdentificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SNombre {
             get {
                 return this.SNombreField;
@@ -100,6 +141,19 @@ namespace AmazonFake_SITE.AmazonFakeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SNombrePerfil {
+            get {
+                return this.SNombrePerfilField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SNombrePerfilField, value) != true)) {
+                    this.SNombrePerfilField = value;
+                    this.RaisePropertyChanged("SNombrePerfil");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SPassword {
             get {
                 return this.SPasswordField;
@@ -108,6 +162,32 @@ namespace AmazonFake_SITE.AmazonFakeService {
                 if ((object.ReferenceEquals(this.SPasswordField, value) != true)) {
                     this.SPasswordField = value;
                     this.RaisePropertyChanged("SPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SRespuesta {
+            get {
+                return this.SRespuestaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SRespuestaField, value) != true)) {
+                    this.SRespuestaField = value;
+                    this.RaisePropertyChanged("SRespuesta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STelefono {
+            get {
+                return this.STelefonoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STelefonoField, value) != true)) {
+                    this.STelefonoField = value;
+                    this.RaisePropertyChanged("STelefono");
                 }
             }
         }
@@ -126,17 +206,17 @@ namespace AmazonFake_SITE.AmazonFakeService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmazonFakeService.I_Base_Datos")]
     public interface I_Base_Datos {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
-        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
-        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos", ReplyAction="http://tempuri.org/I_Base_Datos/Conectar_Base_DatosResponse")]
         string Conectar_Base_Datos();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos", ReplyAction="http://tempuri.org/I_Base_Datos/Conectar_Base_DatosResponse")]
         System.Threading.Tasks.Task<string> Conectar_Base_DatosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion", ReplyAction="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse")]
         System.Data.DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos);
@@ -186,17 +266,77 @@ namespace AmazonFake_SITE.AmazonFakeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentity", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_DatosConIdentityResponse")]
         System.Threading.Tasks.Task<AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityResponse> Insertar_DatosConIdentityAsync(AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Login", ReplyAction="http://tempuri.org/I_Base_Datos/LoginResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> Login(string correo, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Login", ReplyAction="http://tempuri.org/I_Base_Datos/LoginResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> LoginAsync(string correo, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Change_Password", ReplyAction="http://tempuri.org/I_Base_Datos/Change_PasswordResponse")]
+        string Change_Password(string correo, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Change_Password", ReplyAction="http://tempuri.org/I_Base_Datos/Change_PasswordResponse")]
+        System.Threading.Tasks.Task<string> Change_PasswordAsync(string correo, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Password_Restore", ReplyAction="http://tempuri.org/I_Base_Datos/Password_RestoreResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> Password_Restore(string correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Password_Restore", ReplyAction="http://tempuri.org/I_Base_Datos/Password_RestoreResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> Password_RestoreAsync(string correo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
         string Create_Account(string correo, string nombre, string pssword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
         System.Threading.Tasks.Task<string> Create_AccountAsync(string correo, string nombre, string pssword);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Login", ReplyAction="http://tempuri.org/I_Base_Datos/LoginResponse")]
-        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL> Login(string correo, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Delete_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Delete_AccountResponse")]
+        string Delete_Account(string correo, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Login", ReplyAction="http://tempuri.org/I_Base_Datos/LoginResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL>> LoginAsync(string correo, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Delete_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Delete_AccountResponse")]
+        System.Threading.Tasks.Task<string> Delete_AccountAsync(string correo, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Update_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Update_AccountResponse")]
+        string Update_Account(string Correo, string Identificacion, string Direccion, string Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Update_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Update_AccountResponse")]
+        System.Threading.Tasks.Task<string> Update_AccountAsync(string Correo, string Identificacion, string Direccion, string Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Email_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_Email_AdminsResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Email_Admins(string Correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Email_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_Email_AdminsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Email_AdminsAsync(string Correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Name_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_Name_AdminsResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Name_Admins(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Name_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_Name_AdminsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Name_AdminsAsync(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_ID_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_ID_AdminsResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_ID_Admins(string Identificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_ID_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_ID_AdminsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_ID_AdminsAsync(string Identificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Email_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_Email_UsersResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Email_Users(string Correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Email_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_Email_UsersResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Email_UsersAsync(string Correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Name_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_Name_UsersResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Name_Users(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Name_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_Name_UsersResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Name_UsersAsync(string Nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_ID_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_ID_UsersResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_ID_Users(string Identificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_ID_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_ID_UsersResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_ID_UsersAsync(string Identificacion);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -502,20 +642,20 @@ namespace AmazonFake_SITE.AmazonFakeService {
                 base(binding, remoteAddress) {
         }
         
-        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
-            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
-        }
-        
-        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
-            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
-        }
-        
         public string Conectar_Base_Datos() {
             return base.Channel.Conectar_Base_Datos();
         }
         
         public System.Threading.Tasks.Task<string> Conectar_Base_DatosAsync() {
             return base.Channel.Conectar_Base_DatosAsync();
+        }
+        
+        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        }
+        
+        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
         }
         
         public System.Data.DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos) {
@@ -643,6 +783,30 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.Insertar_DatosConIdentityAsync(request);
         }
         
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> Login(string correo, string password) {
+            return base.Channel.Login(correo, password);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> LoginAsync(string correo, string password) {
+            return base.Channel.LoginAsync(correo, password);
+        }
+        
+        public string Change_Password(string correo, string password) {
+            return base.Channel.Change_Password(correo, password);
+        }
+        
+        public System.Threading.Tasks.Task<string> Change_PasswordAsync(string correo, string password) {
+            return base.Channel.Change_PasswordAsync(correo, password);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> Password_Restore(string correo) {
+            return base.Channel.Password_Restore(correo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> Password_RestoreAsync(string correo) {
+            return base.Channel.Password_RestoreAsync(correo);
+        }
+        
         public string Create_Account(string correo, string nombre, string pssword) {
             return base.Channel.Create_Account(correo, nombre, pssword);
         }
@@ -651,12 +815,68 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.Create_AccountAsync(correo, nombre, pssword);
         }
         
-        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL> Login(string correo, string password) {
-            return base.Channel.Login(correo, password);
+        public string Delete_Account(string correo, string password) {
+            return base.Channel.Delete_Account(correo, password);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Login_DAL>> LoginAsync(string correo, string password) {
-            return base.Channel.LoginAsync(correo, password);
+        public System.Threading.Tasks.Task<string> Delete_AccountAsync(string correo, string password) {
+            return base.Channel.Delete_AccountAsync(correo, password);
+        }
+        
+        public string Update_Account(string Correo, string Identificacion, string Direccion, string Telefono) {
+            return base.Channel.Update_Account(Correo, Identificacion, Direccion, Telefono);
+        }
+        
+        public System.Threading.Tasks.Task<string> Update_AccountAsync(string Correo, string Identificacion, string Direccion, string Telefono) {
+            return base.Channel.Update_AccountAsync(Correo, Identificacion, Direccion, Telefono);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Email_Admins(string Correo) {
+            return base.Channel.View_Email_Admins(Correo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Email_AdminsAsync(string Correo) {
+            return base.Channel.View_Email_AdminsAsync(Correo);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Name_Admins(string Nombre) {
+            return base.Channel.View_Name_Admins(Nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Name_AdminsAsync(string Nombre) {
+            return base.Channel.View_Name_AdminsAsync(Nombre);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_ID_Admins(string Identificacion) {
+            return base.Channel.View_ID_Admins(Identificacion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_ID_AdminsAsync(string Identificacion) {
+            return base.Channel.View_ID_AdminsAsync(Identificacion);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Email_Users(string Correo) {
+            return base.Channel.View_Email_Users(Correo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Email_UsersAsync(string Correo) {
+            return base.Channel.View_Email_UsersAsync(Correo);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Name_Users(string Nombre) {
+            return base.Channel.View_Name_Users(Nombre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_Name_UsersAsync(string Nombre) {
+            return base.Channel.View_Name_UsersAsync(Nombre);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_ID_Users(string Identificacion) {
+            return base.Channel.View_ID_Users(Identificacion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_ID_UsersAsync(string Identificacion) {
+            return base.Channel.View_ID_UsersAsync(Identificacion);
         }
     }
 }
