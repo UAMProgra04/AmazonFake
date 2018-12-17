@@ -14,7 +14,9 @@
             <asp:Label ID="lbl_Error" runat="server"></asp:Label>
             <br />
             <asp:TextBox ID="txt_Buscar" runat="server" OnTextChanged="txt_Buscar_TextChanged"></asp:TextBox>
+            <br />
             <asp:Button ID="btn_CargarClientes" runat="server" Text="Buscar" onclick="btn_CargarClientes_Click"/>
+            <asp:Button ID="btn_Limpir" runat="server" Text="Limpiar" OnClick="btn_Limpir_Click"></asp:Button>
         </center>
     </div>
     <div>

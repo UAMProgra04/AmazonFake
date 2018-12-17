@@ -191,30 +191,37 @@ namespace SVC.Contract
         #region View_Email_Admins
         public List<Cls_Usuarios_DAL> View_Email_Admins(string Correo)
         {
+            List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
+
             Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SCorreo = Correo;
-            return obj_Login_bll.View_Email_Admins(obj_Login_dal);
+            lista.Add(obj_Login_bll.View_Email_Admins(obj_Login_dal));
+            return lista;
         }
         #endregion
 
         #region View_Name_Admins
         public List<Cls_Usuarios_DAL> View_Name_Admins(string Nombre)
         {
+            List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
             Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SNombre = Nombre;
-            return obj_Login_bll.View_Name_Admins(obj_Login_dal);
+            lista.Add(obj_Login_bll.View_Name_Admins(obj_Login_dal));
+            return lista;
         }
         #endregion
 
         #region View_ID_Admins
         public List<Cls_Usuarios_DAL> View_ID_Admins(string Identificacion)
         {
+            List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
             Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SIdentificacion = Identificacion;
-            return obj_Login_bll.View_ID_Admins(obj_Login_dal);
+            lista.Add(obj_Login_bll.View_ID_Admins(obj_Login_dal));
+            return lista;
         }
         #endregion
         #endregion
@@ -223,30 +230,36 @@ namespace SVC.Contract
         #region View_Email_Users
         public List<Cls_Usuarios_DAL> View_Email_Users(string Correo)
         {
+            List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
             Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SCorreo = Correo;
-            return obj_Login_bll.View_Email_Users(obj_Login_dal);
+            lista.Add(obj_Login_bll.View_Email_Users(obj_Login_dal));
+            return lista;
         }
         #endregion
 
         #region View_Name_Users
         public List<Cls_Usuarios_DAL> View_Name_Users(string Nombre)
         {
+            List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
             Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SNombre = Nombre;
-            return obj_Login_bll.View_Name_Users(obj_Login_dal);
+            lista.Add(obj_Login_bll.View_Name_Users(obj_Login_dal));
+            return lista;
         }
         #endregion
 
         #region View_ID_Users
         public List<Cls_Usuarios_DAL> View_ID_Users(string Identificacion)
         {
+            List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
             Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
             obj_Login_dal.SIdentificacion = Identificacion;
-            return obj_Login_bll.View_ID_Users(obj_Login_dal);
+            lista.Add(obj_Login_bll.View_ID_Users(obj_Login_dal));
+            return lista;
         }
         #endregion
         #endregion

@@ -20,17 +20,11 @@ namespace AmazonFake_SITE.www.Administrador
             }
             else
             {
-                CargarListaUsuarios();
+                CargarListaEmpleados();
             }
         }
-        protected void CargarListaUsuarios()
+        protected void CargarListaEmpleados()
         {
-            //AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
-            /*I_Base_DatosClient cliente = new I_Base_DatosClient();
-            DataTable DataTableUser = cliente.Mostrar_Informacion("SP_View_All_Admins", "USUARIOS");
-            GV_ALL_USER.DataSource = null;
-            GV_ALL_USER.DataSource = DataTableUser;
-            GV_ALL_USER.DataBind();*/
             I_Base_DatosClient cliente = new I_Base_DatosClient();
             string SMsError = string.Empty;
 
@@ -51,7 +45,72 @@ namespace AmazonFake_SITE.www.Administrador
 
         protected void btn_CargarUsuarios_Click(object sender, EventArgs e)
         {
-            this.CargarListaUsuarios();
+            this.CargarListaEmpleados();
+        }
+
+        protected void btn_CargarEmpleados_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            DataTable myDataTable = new DataTable();
+            myDataTable.Columns.Add("Correo Electronico");
+            myDataTable.Columns.Add("Nombre del Empleado");
+            myDataTable.Columns.Add("Numero de Identificacion");
+            myDataTable.Columns.Add("Direccion");
+            myDataTable.Columns.Add("Telefono");
+            myDataTable.Columns.Add("Tipo de Perfil");
+
+            if (this.SeleccionBusqueda.SelectedValue == "1")
+            {
+                foreach (var item in cliente.View_Email_Admins(txt_Buscar.Text))
+                {
+                    DataRow Fila = myDataTable.NewRow();
+                    Fila["Correo Electronico"] = item.SCorreo;
+                    Fila["Nombre del Empleado"] = item.SNombre;
+                    Fila["Numero de Identificacion"] = item.SIdentificacion;
+                    Fila["Direccion"] = item.SDireccion;
+                    Fila["Telefono"] = item.STelefono;
+                    Fila["Tipo de Perfil"] = item.SNombrePerfil;
+                    myDataTable.Rows.Add(Fila);
+                }
+            }
+            else if (this.SeleccionBusqueda.SelectedValue == "2")
+            {
+
+                foreach (var item in cliente.View_Name_Admins(txt_Buscar.Text))
+                {
+                    DataRow Fila = myDataTable.NewRow();
+                    Fila["Correo Electronico"] = item.SCorreo;
+                    Fila["Nombre del Empleado"] = item.SNombre;
+                    Fila["Numero de Identificacion"] = item.SIdentificacion;
+                    Fila["Direccion"] = item.SDireccion;
+                    Fila["Telefono"] = item.STelefono;
+                    Fila["Tipo de Perfil"] = item.SNombrePerfil;
+                    myDataTable.Rows.Add(Fila);
+                }
+            }
+            else if (this.SeleccionBusqueda.SelectedValue == "3")
+            {
+                foreach (var item in cliente.View_ID_Admins(txt_Buscar.Text))
+                {
+                    DataRow Fila = myDataTable.NewRow();
+                    Fila["Correo Electronico"] = item.SCorreo;
+                    Fila["Nombre del Empleado"] = item.SNombre;
+                    Fila["Numero de Identificacion"] = item.SIdentificacion;
+                    Fila["Direccion"] = item.SDireccion;
+                    Fila["Telefono"] = item.STelefono;
+                    Fila["Tipo de Perfil"] = item.SNombrePerfil;
+                    myDataTable.Rows.Add(Fila);
+                }
+            }
+
+            this.GV_ALL_USER.DataSource = myDataTable;
+            this.GV_ALL_USER.DataBind();
+        }
+
+        protected void btn_Limpir_Click(object sender, EventArgs e)
+        {
+            CargarListaEmpleados();
+            txt_Buscar.Text = string.Empty;
         }
     }
 }

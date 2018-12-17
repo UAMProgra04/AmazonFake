@@ -68,11 +68,11 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Direccion"] = item.SDireccion;
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
-                    myDataTable.Rows.Add();
+                    myDataTable.Rows.Add(Fila);
                 }
             }
             else if(this.SeleccionBusqueda.SelectedValue == "2"){
-                
+
                 foreach (var item in cliente.View_Name_Users(txt_Buscar.Text))
                 {
                     DataRow Fila = myDataTable.NewRow();
@@ -82,7 +82,7 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Direccion"] = item.SDireccion;
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
-                    myDataTable.Rows.Add();
+                    myDataTable.Rows.Add(Fila);
                 }
             }
             else if(this.SeleccionBusqueda.SelectedValue == "3")
@@ -96,13 +96,12 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Direccion"] = item.SDireccion;
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
-                    myDataTable.Rows.Add();
+                    myDataTable.Rows.Add(Fila);
                 }
             }
 
             this.GV_ALL_CLIENT.DataSource = myDataTable;
             this.GV_ALL_CLIENT.DataBind();
-
         }
 
         protected void txt_Buscar_TextChanged(object sender, EventArgs e)
@@ -131,6 +130,12 @@ namespace AmazonFake_SITE.www.Administrador
             {
                 GV_ALL_CLIENT.DataSource = myDataTable;
             }
+        }
+
+        protected void btn_Limpir_Click(object sender, EventArgs e)
+        {
+            CargarListaClintes();
+            txt_Buscar.Text = string.Empty;
         }
     }
 }
