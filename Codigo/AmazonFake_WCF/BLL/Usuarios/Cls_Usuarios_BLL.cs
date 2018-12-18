@@ -118,6 +118,41 @@ namespace BLL.Usuarios
             return lista;
         }
         #endregion
+
+        #region Lock_User_Account
+        public string Lock_User_Account(Cls_Usuarios_DAL obj_LockAccount)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_Change_Password";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
+                {
+                    obj_cmd.Parameters.AddWithValue("@Correo", obj_LockAccount.SCorreo);
+                    obj_cmd.Parameters.AddWithValue("@Estado", obj_LockAccount.BEstado);  
+                }
+                int registros;
+                registros = obj_cmd.ExecuteNonQuery();
+                if (registros >= 1)
+                {
+                    obj_LockAccount.SRespuesta = "Operacion Realizada con exito Con exito";
+                }
+                else
+                {
+                    obj_LockAccount.SRespuesta = "Error al Actualizar la Contraseña";
+                }
+                return obj_LockAccount.SRespuesta;
+
+            }
+            catch (Exception ex)
+            {
+                obj_LockAccount.SRespuesta = ex.Message.ToString();
+                return obj_LockAccount.SRespuesta;
+            }
+        }
+        #endregion
         #endregion
 
 
@@ -229,6 +264,47 @@ namespace BLL.Usuarios
                 return obj_Account.SRespuesta;
             }
         }
+        #endregion
+
+        #region Create_Employee_Account
+        public string Create_Employee_Account(Cls_Usuarios_DAL obj_EmpAccount)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_Create_Employee_Account";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
+                {
+                    obj_cmd.Parameters.AddWithValue("@Correo", obj_EmpAccount.SCorreo);
+                    obj_cmd.Parameters.AddWithValue("@Nombre", obj_EmpAccount.SNombre);
+                    obj_cmd.Parameters.AddWithValue("@Identificacion", 
+                        Convert.ToInt32(obj_EmpAccount.SIdentificacion));
+                    obj_cmd.Parameters.AddWithValue("@Direccion", obj_EmpAccount.SDireccion);
+                    obj_cmd.Parameters.AddWithValue("@Telefono", obj_EmpAccount.STelefono);
+                    obj_cmd.Parameters.AddWithValue("@Password", obj_EmpAccount.SPassword);
+                }
+
+                int registros = obj_cmd.ExecuteNonQuery();
+                if (registros >= 1)
+                {
+                    obj_EmpAccount.SRespuesta = "Cuenta de Empleado Creada Con exito";
+                }
+                else
+                {
+                    obj_EmpAccount.SRespuesta = "Error al Crear la Cuenta del Emppleado";
+                }
+                return obj_EmpAccount.SRespuesta;
+
+            }
+            catch (Exception ex)
+            {
+                obj_EmpAccount.SRespuesta = ex.Message.ToString();
+                return obj_EmpAccount.SRespuesta;
+            }
+        }
+
         #endregion
         #endregion
 

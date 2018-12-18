@@ -14,8 +14,47 @@ go
 ------------------------------------------------------------------------------------
 use Prog04_Proj02
 go
+--CREACION STORE PROCEDURE PARA BOQUEO DE USUARIO--
+create procedure SP_Lock_User_Account
+	@Correo nvarchar(80),
+	@Estado bit
+as 
+begin transaction 
+	begin try
+		update LOGIN set L_Estado = @Estado
+		where L_Correo = @Correo
+		commit transaction
+	end try
+	begin catch
+		rollback transaction
+	end catch
+go
 
---CREACION STORE PROCEDURE PARA CREACION DE USUARIO Y LOGIN--
+--CREACION STORE PROCEDURE PARA CREACION DE USUARIO (Empleado) Y LOGIN--
+create procedure SP_Create_Employee_Account
+	@Correo nvarchar(80),
+	@Nombre nvarchar(100),
+	@Identificacion int,
+	@Direccion nvarchar(150),
+	@Telefono nvarchar(15),
+	@Password nvarchar(12)
+as 
+begin transaction 
+	begin try
+		insert into  USUARIOS (U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono, U_Perfil)
+		values (@Correo, @Nombre, @Identificacion, @Direccion, @Telefono, 1)
+
+		insert into  LOGIN (L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil)
+		values (@Correo, @Nombre, @Password, 1, 1)
+
+		commit transaction
+	end try
+	begin catch
+		rollback transaction
+	end catch
+go
+
+--CREACION STORE PROCEDURE PARA CREACION DE USUARIO (Cliente) Y LOGIN--
 create procedure SP_Create_User_Account
 	@Correo nvarchar(80),
 	@Nombre nvarchar(100),
@@ -309,6 +348,8 @@ exec [dbo].[SP_Login] 'carlos@hotmail.com', '12345678'
 exec [dbo].[SP_Change_Password] 'carlos@hotmail.com', 'Carlos23'
 exec [dbo].[SP_Delete_User_Account] 'carlos@hotmail.com', '12345678'
 
+exec [dbo].[SP_Create_Employee_Account] 'marcoarias@amazon.com', 'Marco Arias', 204560876, 'Alajuela, Costa Rica, 100 mts del Coyol de Alajuela', '+50622456543', 'MarcoA01'
+exec [dbo].[SP_Lock_User_Account] 'marcoarias@amazon.com', 1
 --VER INFORMACION DE TABLAS AFECTADAS--
 select U_Correo, U_Nombre, U_Identificacion, U_Direccion, U_Telefono, U_Perfil from USUARIOS
 select L_Correo, L_Nombre, L_Password, L_Estado, L_Perfil from  LOGIN

@@ -161,6 +161,22 @@ namespace SVC.Contract
         }
         #endregion
 
+        #region Create_Employee_Account
+        public string Create_Employee_Account(string Correo, string Nombre, string Identificacion,
+            string Direccion, string Telefono, string Password)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = Correo;
+            obj_account_dal.SNombre = Nombre;
+            obj_account_dal.SIdentificacion = Identificacion;
+            obj_account_dal.SDireccion = Direccion;
+            obj_account_dal.STelefono = Telefono;
+            obj_account_dal.SPassword = Password;
+            return obj_account_bll.Create_Employee_Account(obj_account_dal);
+        }
+        #endregion
+
         #region Delete_Account
         public string Delete_Account(string correo, string password)
         {
@@ -183,6 +199,17 @@ namespace SVC.Contract
             obj_account_dal.SDireccion = Direccion;
             obj_account_dal.STelefono = Telefono;
             return obj_account_bll.Update_Account(obj_account_dal);
+        }
+        #endregion
+
+        #region Lock_User_Account
+        public string Lock_User_Account(string correo, bool Estado)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = correo;
+            obj_account_dal.BEstado = Estado;
+            return obj_account_bll.Lock_User_Account(obj_account_dal);
         }
         #endregion
         #endregion

@@ -46,6 +46,17 @@ namespace AmazonFake_SITE.www.Administrador
             }
         }
 
+        protected void CargarCamposTrabajo(string Correo, string Nombre, string Identificacion, 
+            string Direccion, string Telefono, string Perfil)
+        {
+            TextBox1.Text = Correo;
+            TextBox2.Text = Nombre;
+            TextBox3.Text = Identificacion;
+            TextBox4.Text = Direccion;
+            TextBox5.Text = Telefono;
+            TextBox6.Text = Perfil;
+        }
+
         protected void btn_CargarClientes_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -69,6 +80,8 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
+                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                 }
             }
             else if(this.SeleccionBusqueda.SelectedValue == "2"){

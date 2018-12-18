@@ -28,4 +28,17 @@
             <asp:GridView ID="GV_ALL_CLIENT" runat="server" ></asp:GridView>
         </center>
     </div>
+    <hr />
+    <div>
+        <center>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <br /><br />
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+        </center>
+    </div>
+
 </asp:Content>

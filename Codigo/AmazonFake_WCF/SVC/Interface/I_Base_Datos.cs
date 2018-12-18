@@ -60,11 +60,16 @@ namespace SVC.Interface
         string Change_Password(string correo, string password);
         [OperationContract]
         List<Cls_Usuarios_DAL> Password_Restore(string correo);
+        [OperationContract]
+        string Lock_User_Account(string correo, bool Estado);
         #endregion
 
         #region Administracion_Usuarios
         [OperationContract]
         string Create_Account(string correo, string nombre, string pssword);
+        [OperationContract]
+        string Create_Employee_Account(string Correo, string Nombre, string Identificacion,
+            string Direccion, string Telefono, string Password);
         [OperationContract]
         string Delete_Account(string correo, string password);
         [OperationContract]
