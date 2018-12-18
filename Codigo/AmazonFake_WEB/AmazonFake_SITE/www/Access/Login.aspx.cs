@@ -18,10 +18,10 @@ namespace AmazonFake_SITE.www.Access
             string usuario = txt_email.Text;
             string passwd = txt_contrasena.Text;
             string correo, nombre="", pass;
-            bool estado = false;
-            int Perfil = 3;
+            bool estado=false;
+            int Perfil=3;
 
-            foreach(var item in cliente.Login(usuario, passwd))
+            foreach (var item in cliente.Login(usuario, passwd))
             {
                 correo = item.SCorreo;
                 nombre = item.SNombre;
@@ -91,7 +91,7 @@ namespace AmazonFake_SITE.www.Access
                 }
                 else
                 {
-                    lbl_Errores.Text = "Error de usuario o Contraseña";
+                    lbl_Errores.Text = "Error Contraseña";
                 }
             }
             else

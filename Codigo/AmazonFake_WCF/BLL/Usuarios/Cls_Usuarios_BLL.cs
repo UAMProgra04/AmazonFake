@@ -406,9 +406,9 @@ namespace BLL.Usuarios
                     obj_dal.SNombrePerfil = lectura[5].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                obj_dal.SRespuesta = ex.Message.ToString();
+                obj_dal = null;
             }
             return obj_dal;
         }
@@ -443,9 +443,9 @@ namespace BLL.Usuarios
                     obj_dal.SNombrePerfil = lectura[5].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                obj_dal.SRespuesta = ex.Message.ToString();
+                obj_dal = null;
             }
             return obj_dal;
         }
@@ -480,9 +480,9 @@ namespace BLL.Usuarios
                     obj_dal.SNombrePerfil = lectura[5].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                obj_dal.SRespuesta = ex.Message.ToString();
+                obj_dal = null;
             }
             return obj_dal;
         }
@@ -520,9 +520,9 @@ namespace BLL.Usuarios
                     obj_dal.SNombrePerfil = lectura[5].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                obj_dal.SRespuesta = ex.Message.ToString();
+                obj_dal = null;
             }
             return obj_dal;
         }
@@ -557,9 +557,9 @@ namespace BLL.Usuarios
                     obj_dal.SNombrePerfil = lectura[5].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                obj_dal.SRespuesta = ex.Message.ToString();
+                obj_dal = null;
             }
             return obj_dal;
         }
@@ -579,8 +579,7 @@ namespace BLL.Usuarios
                 obj_cmd.CommandText = "SP_View_ID_Users";
                 obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
                 {
-                    obj_cmd.Parameters.AddWithValue("@Identificacion",
-                        Convert.ToInt32(obj_ViewUser.SIdentificacion));
+                    obj_cmd.Parameters.AddWithValue("@Identificacion", obj_ViewUser.SIdentificacion);
                 }
                 lectura = obj_cmd.ExecuteReader();
 
@@ -595,9 +594,9 @@ namespace BLL.Usuarios
                     obj_dal.SNombrePerfil = lectura[5].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                obj_dal.SRespuesta = ex.Message.ToString();
+                obj_dal = null;
             }
             return obj_dal;
         }

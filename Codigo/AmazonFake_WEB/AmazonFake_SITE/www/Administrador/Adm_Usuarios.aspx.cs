@@ -44,7 +44,7 @@ namespace AmazonFake_SITE.www.Administrador
         }
 
         protected void CargarCamposTrabajo(string Correo, string Nombre, string Identificacion,
-            string Direccion, string Telefono, string Perfil, string error)
+            string Direccion, string Telefono, string Perfil)
         {
             TextCorreo.Text = Correo;
             TextNombre.Text = Nombre;
@@ -52,11 +52,11 @@ namespace AmazonFake_SITE.www.Administrador
             TextDireccion.Text = Direccion;
             TextTelefono.Text = Telefono;
             TextPerfil.Text = Perfil;
-            lbl_Error.Text = error;
         }
         protected void LimpiarCampos()
         {
             txt_Buscar.Text = string.Empty;
+            lbl_Error.Text = string.Empty;
 
             TextCorreo.Text = string.Empty;
             TextNombre.Text = string.Empty;
@@ -95,9 +95,16 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
-                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
-                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString(),
-                                        item.SRespuesta.ToString());
+                    try
+                    {
+                        CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
+                        lbl_Error.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                    }
                 }
             }
             else if (this.SeleccionBusqueda.SelectedValue == "2")
@@ -113,9 +120,16 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
-                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
-                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString(),
-                                        item.SRespuesta.ToString());
+                    try
+                    {
+                        CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
+                        lbl_Error.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                    }
                 }
             }
             else if (this.SeleccionBusqueda.SelectedValue == "3")
@@ -130,9 +144,16 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
-                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
-                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString(),
-                                        item.SRespuesta.ToString());
+                    try
+                    {
+                        CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
+                        lbl_Error.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                    }
                 }
             }
 

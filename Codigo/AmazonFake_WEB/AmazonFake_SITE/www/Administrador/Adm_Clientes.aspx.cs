@@ -59,6 +59,7 @@ namespace AmazonFake_SITE.www.Administrador
         protected void LimpiarCampos()
         {
             txt_Buscar.Text = string.Empty;
+            lbl_Error.Text = string.Empty;
 
             TextCorreo.Text = string.Empty;
             TextNombre.Text = string.Empty;
@@ -92,8 +93,16 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
-                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                    try
+                    {
+                        CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
+                        lbl_Error.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        lbl_Error.Text = "Error de formato de busqueda "+ ex.Message.ToString();
+                    }
                 }
             }
             else if(this.SeleccionBusqueda.SelectedValue == "2"){
@@ -108,8 +117,16 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
-                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                    try
+                    {
+                        CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
+                        lbl_Error.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                    }
                 }
             }
             else if(this.SeleccionBusqueda.SelectedValue == "3")
@@ -124,8 +141,16 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
-                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                    try
+                    {
+                        CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
+                        lbl_Error.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                    }
                 }
             }
 
