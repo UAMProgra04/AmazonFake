@@ -17,9 +17,9 @@ namespace AmazonFake_SITE.www.Access
             List<string> listaLogin = new List<string>();
             string usuario = txt_email.Text;
             string passwd = txt_contrasena.Text;
-            string correo, nombre, pass;
-            bool estado;
-            int Perfil;
+            string correo, nombre="", pass;
+            bool estado = false;
+            int Perfil = 3;
 
             foreach(var item in cliente.Login(usuario, passwd))
             {
@@ -28,32 +28,31 @@ namespace AmazonFake_SITE.www.Access
                 pass = item.SPassword;
                 estado = item.BEstado;
                 Perfil = item.IPerfil;
-
-                if (estado == true && Perfil == 2)
-                {
-                    Session["UsuarioSession"] = nombre;
-                    Session["UsuarioPerfil"] = Perfil.ToString();
-                    Response.Redirect("~/Index.aspx");
-                }
-                else if (estado == true && Perfil == 1)
-                {
-                    Session["UsuarioSession"] = nombre;
-                    Session["UsuarioPerfil"] = Perfil.ToString();
-                    Response.Redirect("~/Index.aspx");
-                }
-                else if (estado == true && Perfil == 0)
-                {
-                    Session["UsuarioSession"] = usuario;
-                    Session["UsuarioPerfil"] = Perfil.ToString();
-                    Response.Redirect("~/Index.aspx");
-                }
-                else
-                {
-                    lbl_Errores.Text = "Error de Usuario o Contraseña";
-                    txt_email.Text = string.Empty;
-                    txt_contrasena.Text = string.Empty;
-                    txt_email.Focus();
-                }
+            }
+            if (estado == true && Perfil == 2)
+            {
+                Session["UsuarioSession"] = nombre;
+                Session["UsuarioPerfil"] = Perfil.ToString();
+                Response.Redirect("~/Index.aspx");
+            }
+            else if (estado == true && Perfil == 1)
+            {
+                Session["UsuarioSession"] = nombre;
+                Session["UsuarioPerfil"] = Perfil.ToString();
+                Response.Redirect("~/Index.aspx");
+            }
+            else if (estado == true && Perfil == 0)
+            {
+                Session["UsuarioSession"] = usuario;
+                Session["UsuarioPerfil"] = Perfil.ToString();
+                Response.Redirect("~/Index.aspx");
+            }
+            else
+            {
+                lbl_Errores.Text = "Error de Usuario o Contraseña";
+                txt_email.Text = string.Empty;
+                txt_contrasena.Text = string.Empty;
+                txt_email.Focus();
             }
         }
         #endregion

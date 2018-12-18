@@ -284,11 +284,29 @@ namespace AmazonFake_SITE.AmazonFakeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Password_Restore", ReplyAction="http://tempuri.org/I_Base_Datos/Password_RestoreResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> Password_RestoreAsync(string correo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Lock_User_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Lock_User_AccountResponse")]
+        string Lock_User_Account(string correo, bool Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Lock_User_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Lock_User_AccountResponse")]
+        System.Threading.Tasks.Task<string> Lock_User_AccountAsync(string correo, bool Estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_User_Status", ReplyAction="http://tempuri.org/I_Base_Datos/View_User_StatusResponse")]
+        bool View_User_Status(string Correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_User_Status", ReplyAction="http://tempuri.org/I_Base_Datos/View_User_StatusResponse")]
+        System.Threading.Tasks.Task<bool> View_User_StatusAsync(string Correo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
         string Create_Account(string correo, string nombre, string pssword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
         System.Threading.Tasks.Task<string> Create_AccountAsync(string correo, string nombre, string pssword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Employee_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_Employee_AccountResponse")]
+        string Create_Employee_Account(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Employee_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_Employee_AccountResponse")]
+        System.Threading.Tasks.Task<string> Create_Employee_AccountAsync(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Delete_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Delete_AccountResponse")]
         string Delete_Account(string correo, string password);
@@ -296,11 +314,17 @@ namespace AmazonFake_SITE.AmazonFakeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Delete_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Delete_AccountResponse")]
         System.Threading.Tasks.Task<string> Delete_AccountAsync(string correo, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Update_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Update_AccountResponse")]
-        string Update_Account(string Correo, string Identificacion, string Direccion, string Telefono);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_Admin", ReplyAction="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_AdminResponse")]
+        string Delete_User_Account_Por_Admin(string correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_Admin", ReplyAction="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_AdminResponse")]
+        System.Threading.Tasks.Task<string> Delete_User_Account_Por_AdminAsync(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Update_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Update_AccountResponse")]
-        System.Threading.Tasks.Task<string> Update_AccountAsync(string Correo, string Identificacion, string Direccion, string Telefono);
+        string Update_Account(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Update_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Update_AccountResponse")]
+        System.Threading.Tasks.Task<string> Update_AccountAsync(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_Email_Admins", ReplyAction="http://tempuri.org/I_Base_Datos/View_Email_AdminsResponse")]
         System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Email_Admins(string Correo);
@@ -807,12 +831,36 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.Password_RestoreAsync(correo);
         }
         
+        public string Lock_User_Account(string correo, bool Estado) {
+            return base.Channel.Lock_User_Account(correo, Estado);
+        }
+        
+        public System.Threading.Tasks.Task<string> Lock_User_AccountAsync(string correo, bool Estado) {
+            return base.Channel.Lock_User_AccountAsync(correo, Estado);
+        }
+        
+        public bool View_User_Status(string Correo) {
+            return base.Channel.View_User_Status(Correo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> View_User_StatusAsync(string Correo) {
+            return base.Channel.View_User_StatusAsync(Correo);
+        }
+        
         public string Create_Account(string correo, string nombre, string pssword) {
             return base.Channel.Create_Account(correo, nombre, pssword);
         }
         
         public System.Threading.Tasks.Task<string> Create_AccountAsync(string correo, string nombre, string pssword) {
             return base.Channel.Create_AccountAsync(correo, nombre, pssword);
+        }
+        
+        public string Create_Employee_Account(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono, string Password) {
+            return base.Channel.Create_Employee_Account(Correo, Nombre, Identificacion, Direccion, Telefono, Password);
+        }
+        
+        public System.Threading.Tasks.Task<string> Create_Employee_AccountAsync(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono, string Password) {
+            return base.Channel.Create_Employee_AccountAsync(Correo, Nombre, Identificacion, Direccion, Telefono, Password);
         }
         
         public string Delete_Account(string correo, string password) {
@@ -823,12 +871,20 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.Delete_AccountAsync(correo, password);
         }
         
-        public string Update_Account(string Correo, string Identificacion, string Direccion, string Telefono) {
-            return base.Channel.Update_Account(Correo, Identificacion, Direccion, Telefono);
+        public string Delete_User_Account_Por_Admin(string correo) {
+            return base.Channel.Delete_User_Account_Por_Admin(correo);
         }
         
-        public System.Threading.Tasks.Task<string> Update_AccountAsync(string Correo, string Identificacion, string Direccion, string Telefono) {
-            return base.Channel.Update_AccountAsync(Correo, Identificacion, Direccion, Telefono);
+        public System.Threading.Tasks.Task<string> Delete_User_Account_Por_AdminAsync(string correo) {
+            return base.Channel.Delete_User_Account_Por_AdminAsync(correo);
+        }
+        
+        public string Update_Account(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono) {
+            return base.Channel.Update_Account(Correo, Nombre, Identificacion, Direccion, Telefono);
+        }
+        
+        public System.Threading.Tasks.Task<string> Update_AccountAsync(string Correo, string Nombre, string Identificacion, string Direccion, string Telefono) {
+            return base.Channel.Update_AccountAsync(Correo, Nombre, Identificacion, Direccion, Telefono);
         }
         
         public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL> View_Email_Admins(string Correo) {

@@ -21,7 +21,7 @@ create table USUARIOS
 (
 U_Correo nvarchar(80) primary key,
 U_Nombre nvarchar(100) not null,
-U_Identificacion int,
+U_Identificacion nvarchar(9),
 U_Direccion nvarchar(150),
 U_Telefono nvarchar(15),
 U_Perfil tinyint not null references PERFILES(P_Id_Perfil)

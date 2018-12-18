@@ -277,6 +277,35 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Lock_User_Account">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lock_User_AccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Lock_User_AccountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_User_Status">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_User_StatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="View_User_StatusResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Create_Account">
     <xs:complexType>
       <xs:sequence>
@@ -290,6 +319,25 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Create_AccountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Create_Employee_Account">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Create_Employee_AccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Create_Employee_AccountResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -308,10 +356,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Delete_User_Account_Por_Admin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_User_Account_Por_AdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Delete_User_Account_Por_AdminResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Update_Account">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />

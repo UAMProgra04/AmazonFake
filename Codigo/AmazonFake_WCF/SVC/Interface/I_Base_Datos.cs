@@ -62,6 +62,8 @@ namespace SVC.Interface
         List<Cls_Usuarios_DAL> Password_Restore(string correo);
         [OperationContract]
         string Lock_User_Account(string correo, bool Estado);
+        [OperationContract]
+        Boolean View_User_Status(string Correo);
         #endregion
 
         #region Administracion_Usuarios
@@ -73,7 +75,9 @@ namespace SVC.Interface
         [OperationContract]
         string Delete_Account(string correo, string password);
         [OperationContract]
-        string Update_Account(string Correo, string Identificacion,
+        string Delete_User_Account_Por_Admin(string correo);
+        [OperationContract]
+        string Update_Account(string Correo, string Nombre, string Identificacion,
             string Direccion, string Telefono);
         #endregion
 

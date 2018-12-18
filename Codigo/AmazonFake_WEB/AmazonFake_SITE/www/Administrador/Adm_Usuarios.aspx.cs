@@ -43,6 +43,30 @@ namespace AmazonFake_SITE.www.Administrador
 
         }
 
+        protected void CargarCamposTrabajo(string Correo, string Nombre, string Identificacion,
+            string Direccion, string Telefono, string Perfil, string error)
+        {
+            TextCorreo.Text = Correo;
+            TextNombre.Text = Nombre;
+            TextIdentificacion.Text = Identificacion;
+            TextDireccion.Text = Direccion;
+            TextTelefono.Text = Telefono;
+            TextPerfil.Text = Perfil;
+            lbl_Error.Text = error;
+        }
+        protected void LimpiarCampos()
+        {
+            txt_Buscar.Text = string.Empty;
+
+            TextCorreo.Text = string.Empty;
+            TextNombre.Text = string.Empty;
+            TextIdentificacion.Text = string.Empty;
+            TextDireccion.Text = string.Empty;
+            TextTelefono.Text = string.Empty;
+            TextPerfil.Text = string.Empty;
+            TextStatus.Text = string.Empty;
+        }
+
         protected void btn_CargarUsuarios_Click(object sender, EventArgs e)
         {
             this.CargarListaEmpleados();
@@ -61,7 +85,7 @@ namespace AmazonFake_SITE.www.Administrador
 
             if (this.SeleccionBusqueda.SelectedValue == "1")
             {
-                foreach (var item in cliente.View_Email_Admins(txt_Buscar.Text))
+                foreach (var item in cliente.View_Email_Admins(txt_Buscar.Text.Trim()))
                 {
                     DataRow Fila = myDataTable.NewRow();
                     Fila["Correo Electronico"] = item.SCorreo;
@@ -71,6 +95,9 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
+                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString(),
+                                        item.SRespuesta.ToString());
                 }
             }
             else if (this.SeleccionBusqueda.SelectedValue == "2")
@@ -86,11 +113,14 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
+                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString(),
+                                        item.SRespuesta.ToString());
                 }
             }
             else if (this.SeleccionBusqueda.SelectedValue == "3")
             {
-                foreach (var item in cliente.View_ID_Admins(txt_Buscar.Text))
+                foreach (var item in cliente.View_ID_Admins(txt_Buscar.Text.Trim()))
                 {
                     DataRow Fila = myDataTable.NewRow();
                     Fila["Correo Electronico"] = item.SCorreo;
@@ -100,6 +130,9 @@ namespace AmazonFake_SITE.www.Administrador
                     Fila["Telefono"] = item.STelefono;
                     Fila["Tipo de Perfil"] = item.SNombrePerfil;
                     myDataTable.Rows.Add(Fila);
+                    CargarCamposTrabajo(item.SCorreo.ToString(), item.SNombre.ToString(), item.SIdentificacion.ToString(),
+                                        item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString(),
+                                        item.SRespuesta.ToString());
                 }
             }
 
@@ -110,7 +143,49 @@ namespace AmazonFake_SITE.www.Administrador
         protected void btn_Limpir_Click(object sender, EventArgs e)
         {
             CargarListaEmpleados();
-            txt_Buscar.Text = string.Empty;
+            LimpiarCampos();
+        }
+
+        protected void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            lbl_Error.Text = cliente.Update_Account(TextCorreo.Text, TextNombre.Text, TextIdentificacion.Text,
+                TextDireccion.Text, TextTelefono.Text);
+            CargarListaEmpleados(); LimpiarCampos();
+        }
+
+        protected void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            lbl_Error.Text = cliente.Delete_User_Account_Por_Admin(TextCorreo.Text);
+            CargarListaEmpleados(); LimpiarCampos();
+        }
+
+        protected void btn_validarEstado_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            if (cliente.View_User_Status(TextCorreo.Text))
+            {
+                TextStatus.Text = "Activo";
+            }
+            else
+            {
+                TextStatus.Text = "Inactivo";
+            }
+        }
+
+        protected void btn_ChangeStatus_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            if (ChangeStatus.SelectedValue.Equals("Activo"))
+            {
+                cliente.Lock_User_Account(TextCorreo.Text, true);
+            }
+            else if (ChangeStatus.SelectedValue.Equals("Inactivo"))
+            {
+                cliente.Lock_User_Account(TextCorreo.Text, false);
+            }
+            LimpiarCampos();
         }
     }
 }

@@ -146,6 +146,31 @@ namespace SVC.Contract
             return obj_Login_bll.Password_Restore(obj_Login_dal);
         }
         #endregion
+
+        #region Lock_User_Account
+        public string Lock_User_Account(string correo, bool Estado)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = correo;
+            obj_account_dal.BEstado = Estado;
+            return obj_account_bll.Lock_User_Account(obj_account_dal);
+        }
+        #endregion
+
+        #region View_User_Status
+        public Boolean View_User_Status(string Correo)
+        {
+            bool test;
+
+            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
+            obj_Login_dal.SCorreo = Correo;
+            obj_Login_dal = obj_Login_bll.View_User_Status(obj_Login_dal);
+            test = obj_Login_dal.BEstado;
+            return test;
+        }
+        #endregion
         #endregion
 
         #region Administracion_Usuarios
@@ -188,28 +213,28 @@ namespace SVC.Contract
         }
         #endregion
 
+        #region Delete_User_Account_Por_Admin
+        public string Delete_User_Account_Por_Admin(string correo)
+        {
+            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
+            obj_account_dal.SCorreo = correo;
+            return obj_account_bll.Delete_Account(obj_account_dal);
+        }
+        #endregion
+
         #region Update_Account
-        public string Update_Account(string Correo, string Identificacion, 
+        public string Update_Account(string Correo, string Nombre, string Identificacion, 
             string Direccion, string Telefono)
         {
             Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
             Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
             obj_account_dal.SCorreo = Correo;
+            obj_account_dal.SNombre = Nombre;
             obj_account_dal.SIdentificacion = Identificacion;
             obj_account_dal.SDireccion = Direccion;
             obj_account_dal.STelefono = Telefono;
             return obj_account_bll.Update_Account(obj_account_dal);
-        }
-        #endregion
-
-        #region Lock_User_Account
-        public string Lock_User_Account(string correo, bool Estado)
-        {
-            Cls_Usuarios_BLL obj_account_bll = new Cls_Usuarios_BLL();
-            Cls_Usuarios_DAL obj_account_dal = new Cls_Usuarios_DAL();
-            obj_account_dal.SCorreo = correo;
-            obj_account_dal.BEstado = Estado;
-            return obj_account_bll.Lock_User_Account(obj_account_dal);
         }
         #endregion
         #endregion

@@ -31,13 +31,29 @@
     <hr />
     <div>
         <center>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextCorreo" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextNombre" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextIdentificacion" runat="server"></asp:TextBox>
             <br /><br />
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextDireccion" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextTelefono" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextPerfil" runat="server"></asp:TextBox>
+            <br /><br />
+            <asp:Button ID="btn_Actualizar" runat="server" Text="Actualizar" OnClick="btn_Actualizar_Click" ></asp:Button>
+            <asp:Button ID="btn_Eliminar" runat="server" Text="Eliminar" OnClick="btn_Eliminar_Click"></asp:Button>
+        </center>
+    </div>
+    <hr />
+    <div>
+        <center>
+            <asp:TextBox ID="TextStatus" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="ChangeStatus" runat="server">
+                <asp:ListItem Value="Activo">Activo</asp:ListItem>
+                <asp:ListItem Value="Inactivo"></asp:ListItem>
+            </asp:DropDownList>
+            <br /><br />
+            <asp:Button ID="btn_validarEstado" runat="server" Text="validar Estado" OnClick="btn_validarEstado_Click" ></asp:Button>
+            <asp:Button ID="btn_ChangeStatus" runat="server" Text="Cambiar Estado" OnClick="btn_ChangeStatus_Click"></asp:Button>
         </center>
     </div>
 

@@ -127,7 +127,7 @@ namespace BLL.Usuarios
             try
             {
                 obj_cmd.CommandType = CommandType.StoredProcedure;
-                obj_cmd.CommandText = "SP_Change_Password";
+                obj_cmd.CommandText = "SP_Lock_User_Account";
                 obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
                 {
                     obj_cmd.Parameters.AddWithValue("@Correo", obj_LockAccount.SCorreo);
@@ -151,6 +151,38 @@ namespace BLL.Usuarios
                 obj_LockAccount.SRespuesta = ex.Message.ToString();
                 return obj_LockAccount.SRespuesta;
             }
+        }
+        #endregion
+
+        #region View_User_Status
+        public Cls_Usuarios_DAL View_User_Status(Cls_Usuarios_DAL obj_LockAccount)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+            Cls_Usuarios_DAL obj_dal = new Cls_Usuarios_DAL();
+            SqlDataReader lectura;
+
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_View_User_Status";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
+                {
+                    obj_cmd.Parameters.AddWithValue("@Correo", obj_LockAccount.SCorreo);
+                }
+                lectura = obj_cmd.ExecuteReader();
+
+                while (lectura.Read())
+                {
+                    obj_dal = new Cls_Usuarios_DAL();
+                    obj_dal.BEstado = Convert.ToBoolean(lectura[0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+            return obj_dal;
         }
         #endregion
         #endregion
@@ -228,6 +260,40 @@ namespace BLL.Usuarios
         }
         #endregion
 
+        #region Delete_User_Account_Por_Admin
+        public string Delete_User_Account_Por_Admin(Cls_Usuarios_DAL obj_Account)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_Delete_User_Account_Por_Admin";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
+                {
+                    obj_cmd.Parameters.AddWithValue("@Correo", obj_Account.SCorreo);
+                }
+
+                int registros = obj_cmd.ExecuteNonQuery();
+                if (registros >= 1)
+                {
+                    obj_Account.SRespuesta = "Cuenta Eliminada Con exito";
+                }
+                else
+                {
+                    obj_Account.SRespuesta = "Error al Eliminar la Cuenta";
+                }
+                return obj_Account.SRespuesta;
+
+            }
+            catch (Exception ex)
+            {
+                obj_Account.SRespuesta = ex.Message.ToString();
+                return obj_Account.SRespuesta;
+            }
+        }
+        #endregion
+
         #region Update_User_Account
         public string Update_Account(Cls_Usuarios_DAL obj_Account)
         {
@@ -240,6 +306,7 @@ namespace BLL.Usuarios
                 obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
                 {
                     obj_cmd.Parameters.AddWithValue("@Correo", obj_Account.SCorreo);
+                    obj_cmd.Parameters.AddWithValue("@Nombre", obj_Account.SNombre);
                     obj_cmd.Parameters.AddWithValue("@Identificacion", 
                         Convert.ToInt32(obj_Account.SIdentificacion));
                     obj_cmd.Parameters.AddWithValue("@Direccion", obj_Account.SDireccion);
@@ -341,7 +408,7 @@ namespace BLL.Usuarios
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                obj_dal.SRespuesta = ex.Message.ToString();
             }
             return obj_dal;
         }
@@ -378,7 +445,7 @@ namespace BLL.Usuarios
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                obj_dal.SRespuesta = ex.Message.ToString();
             }
             return obj_dal;
         }
@@ -398,8 +465,7 @@ namespace BLL.Usuarios
                 obj_cmd.CommandText = "SP_View_ID_Admins";
                 obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
                 {
-                    obj_cmd.Parameters.AddWithValue("@Identificacion", 
-                        Convert.ToInt32(obj_ViewAdmin.SIdentificacion));
+                    obj_cmd.Parameters.AddWithValue("@Identificacion", obj_ViewAdmin.SIdentificacion);
                 }
                 lectura = obj_cmd.ExecuteReader();
 
@@ -416,7 +482,7 @@ namespace BLL.Usuarios
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                obj_dal.SRespuesta = ex.Message.ToString();
             }
             return obj_dal;
         }
@@ -456,7 +522,7 @@ namespace BLL.Usuarios
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                obj_dal.SRespuesta = ex.Message.ToString();
             }
             return obj_dal;
         }
@@ -493,7 +559,7 @@ namespace BLL.Usuarios
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                obj_dal.SRespuesta = ex.Message.ToString();
             }
             return obj_dal;
         }
@@ -531,7 +597,7 @@ namespace BLL.Usuarios
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                obj_dal.SRespuesta = ex.Message.ToString();
             }
             return obj_dal;
         }

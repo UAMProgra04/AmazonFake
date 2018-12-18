@@ -80,17 +80,41 @@
   <wsdl:message name="I_Base_Datos_Password_Restore_OutputMessage">
     <wsdl:part name="parameters" element="tns:Password_RestoreResponse" />
   </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Lock_User_Account_InputMessage">
+    <wsdl:part name="parameters" element="tns:Lock_User_Account" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Lock_User_Account_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Lock_User_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_User_Status_InputMessage">
+    <wsdl:part name="parameters" element="tns:View_User_Status" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_View_User_Status_OutputMessage">
+    <wsdl:part name="parameters" element="tns:View_User_StatusResponse" />
+  </wsdl:message>
   <wsdl:message name="I_Base_Datos_Create_Account_InputMessage">
     <wsdl:part name="parameters" element="tns:Create_Account" />
   </wsdl:message>
   <wsdl:message name="I_Base_Datos_Create_Account_OutputMessage">
     <wsdl:part name="parameters" element="tns:Create_AccountResponse" />
   </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Create_Employee_Account_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create_Employee_Account" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Create_Employee_Account_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Create_Employee_AccountResponse" />
+  </wsdl:message>
   <wsdl:message name="I_Base_Datos_Delete_Account_InputMessage">
     <wsdl:part name="parameters" element="tns:Delete_Account" />
   </wsdl:message>
   <wsdl:message name="I_Base_Datos_Delete_Account_OutputMessage">
     <wsdl:part name="parameters" element="tns:Delete_AccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Delete_User_Account_Por_Admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_User_Account_Por_Admin" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Delete_User_Account_Por_Admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_User_Account_Por_AdminResponse" />
   </wsdl:message>
   <wsdl:message name="I_Base_Datos_Update_Account_InputMessage">
     <wsdl:part name="parameters" element="tns:Update_Account" />
@@ -183,13 +207,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Password_Restore" message="tns:I_Base_Datos_Password_Restore_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Password_RestoreResponse" message="tns:I_Base_Datos_Password_Restore_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Lock_User_Account">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Lock_User_Account" message="tns:I_Base_Datos_Lock_User_Account_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Lock_User_AccountResponse" message="tns:I_Base_Datos_Lock_User_Account_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="View_User_Status">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_User_Status" message="tns:I_Base_Datos_View_User_Status_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_User_StatusResponse" message="tns:I_Base_Datos_View_User_Status_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Create_Account">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Create_Account" message="tns:I_Base_Datos_Create_Account_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Create_AccountResponse" message="tns:I_Base_Datos_Create_Account_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Create_Employee_Account">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Create_Employee_Account" message="tns:I_Base_Datos_Create_Employee_Account_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Create_Employee_AccountResponse" message="tns:I_Base_Datos_Create_Employee_Account_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Delete_Account">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Delete_Account" message="tns:I_Base_Datos_Delete_Account_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Delete_AccountResponse" message="tns:I_Base_Datos_Delete_Account_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_User_Account_Por_Admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_Admin" message="tns:I_Base_Datos_Delete_User_Account_Por_Admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_AdminResponse" message="tns:I_Base_Datos_Delete_User_Account_Por_Admin_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Update_Account">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Update_Account" message="tns:I_Base_Datos_Update_Account_InputMessage" />
@@ -330,6 +370,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Lock_User_Account">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Lock_User_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="View_User_Status">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_User_Status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Create_Account">
       <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Create_Account" style="document" />
       <wsdl:input>
@@ -339,8 +397,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Create_Employee_Account">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Create_Employee_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Delete_Account">
       <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Delete_Account" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_User_Account_Por_Admin">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Delete_User_Account_Por_Admin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
