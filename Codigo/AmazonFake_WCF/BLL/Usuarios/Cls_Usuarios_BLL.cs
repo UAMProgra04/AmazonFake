@@ -307,8 +307,7 @@ namespace BLL.Usuarios
                 {
                     obj_cmd.Parameters.AddWithValue("@Correo", obj_Account.SCorreo);
                     obj_cmd.Parameters.AddWithValue("@Nombre", obj_Account.SNombre);
-                    obj_cmd.Parameters.AddWithValue("@Identificacion", 
-                        Convert.ToInt32(obj_Account.SIdentificacion));
+                    obj_cmd.Parameters.AddWithValue("@Identificacion", obj_Account.SIdentificacion);
                     obj_cmd.Parameters.AddWithValue("@Direccion", obj_Account.SDireccion);
                     obj_cmd.Parameters.AddWithValue("@Telefono", obj_Account.STelefono);
                 }

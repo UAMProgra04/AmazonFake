@@ -59,8 +59,8 @@ namespace AmazonFake_SITE
                     this.Opc_IniciarSesion.Visible = false;
                     this.Opc_CerrarSesion.Visible = true;
 
-                    this.Opc_Usuarios.Visible = false;
-                    this.Opc_Perfil_Usuario.Visible = false;
+                    this.Opc_Usuarios.Visible = true;
+                    this.Opc_Perfil_Usuario.Visible = true;
                     this.Opc_CambioContrasena_Usuario.Visible = true;
 
                     this.Opc_Administrativa.Visible = true;

@@ -16,6 +16,10 @@ namespace AmazonFake_SITE.www.Usuario
             {
                 Response.Redirect("~/www/Index.aspx");
             }
+            else
+            {
+                txt_email.Text = Session["Usuariocorreo"].ToString();
+            }
         }
 
         protected void btn_Cambiar_contrasena_Click(object sender, EventArgs e)

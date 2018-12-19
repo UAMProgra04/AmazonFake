@@ -17,7 +17,7 @@ namespace AmazonFake_SITE.www.Access
             List<string> listaLogin = new List<string>();
             string usuario = txt_email.Text;
             string passwd = txt_contrasena.Text;
-            string correo, nombre="", pass;
+            string correo="", nombre="", pass;
             bool estado=false;
             int Perfil=3;
 
@@ -33,18 +33,21 @@ namespace AmazonFake_SITE.www.Access
             {
                 Session["UsuarioSession"] = nombre;
                 Session["UsuarioPerfil"] = Perfil.ToString();
+                Session["Usuariocorreo"] = correo.ToString();
                 Response.Redirect("~/Index.aspx");
             }
             else if (estado == true && Perfil == 1)
             {
                 Session["UsuarioSession"] = nombre;
                 Session["UsuarioPerfil"] = Perfil.ToString();
+                Session["Usuariocorreo"] = correo.ToString();
                 Response.Redirect("~/Index.aspx");
             }
             else if (estado == true && Perfil == 0)
             {
                 Session["UsuarioSession"] = usuario;
                 Session["UsuarioPerfil"] = Perfil.ToString();
+                Session["Usuariocorreo"] = correo.ToString();
                 Response.Redirect("~/Index.aspx");
             }
             else

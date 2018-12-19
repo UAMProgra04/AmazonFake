@@ -3,9 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="SectionForm">
+        <asp:Label ID="Label1" runat="server" Text="Actualizar informacion del Perfil del Usuario"></asp:Label>
+        <br />
+        <asp:Label ID="lbl_Error" runat="server" ></asp:Label>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Correo" runat="server" Text="Correo Electronico: "></asp:Label>
-        <asp:TextBox class="input_Formulario" ID="txt_Correo" runat="server"></asp:TextBox>
+        <asp:TextBox class="input_Formulario" ID="txt_Correo" runat="server" ></asp:TextBox>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Nombre" runat="server" Text="Nombre Completo: "></asp:Label>
         <asp:TextBox class="input_Formulario" ID="txt_Nombre" runat="server"></asp:TextBox>
@@ -19,6 +22,7 @@
         <asp:Label class="labelsForm" ID="lbl_Telefono" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox class="input_Formulario" ID="txt_Telefono" runat="server"></asp:TextBox>
         <hr />
-        <asp:Button class="BotonSingIn" ID="btn_ActualizarDatos_Cliente" runat="server" Height="40" Font-Size="15" ForeColor="White" Text="Actualizar" />
+        <asp:Button class="BotonSingIn" ID="btn_ActualizarDatos_Cliente" runat="server" Height="40" 
+            Font-Size="15" ForeColor="White" Text="Actualizar" OnClick="btn_ActualizarDatos_Cliente_Click" />
     </div>
 </asp:Content>
