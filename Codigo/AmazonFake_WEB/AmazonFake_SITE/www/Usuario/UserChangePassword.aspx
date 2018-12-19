@@ -5,7 +5,7 @@
     <div class="SectionForm">
         <hr />
         <asp:Label class="labelsForm" ID="lbl_email" for="txt_email"  runat="server" Text="Confirme su correo Electronico"></asp:Label>
-                <asp:TextBox class="input_Formulario" type="email" ID="txt_email" runat="server" 
+                <asp:TextBox class="input_Formulario" type="email" ID="txt_email" runat="server" required="required"
                     pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" MaxLength="80"></asp:TextBox>
 
         <asp:Label class="labelsForm" ID="lbl_Old_Password" runat="server" Text="Ingrese su contrasena actual: "></asp:Label>
