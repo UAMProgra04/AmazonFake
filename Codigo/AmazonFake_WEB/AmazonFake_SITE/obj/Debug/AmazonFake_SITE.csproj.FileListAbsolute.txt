@@ -65,3 +65,4 @@ C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.dll
 C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WEB\AmazonFake_SITE\obj\Debug\AmazonFake_SITE.csprojResolveAssemblyReference.cache

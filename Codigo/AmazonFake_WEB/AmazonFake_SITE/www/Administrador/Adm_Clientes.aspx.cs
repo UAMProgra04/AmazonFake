@@ -153,7 +153,7 @@ namespace AmazonFake_SITE.www.Administrador
                     }
                 }
             }
-
+            Validar_Estatus();
             this.GV_ALL_CLIENT.DataSource = myDataTable;
             this.GV_ALL_CLIENT.DataBind();
         }
@@ -192,6 +192,19 @@ namespace AmazonFake_SITE.www.Administrador
             LimpiarCampos();
         }
 
+        protected void Validar_Estatus()
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            if (cliente.View_User_Status(TextCorreo.Text))
+            {
+                TextStatus.Text = "Activo";
+            }
+            else
+            {
+                TextStatus.Text = "Inactivo";
+            }
+        }
+
         protected void btn_Eliminar_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -209,15 +222,7 @@ namespace AmazonFake_SITE.www.Administrador
 
         protected void btn_validarEstado_Click(object sender, EventArgs e)
         {
-            I_Base_DatosClient cliente = new I_Base_DatosClient();
-            if (cliente.View_User_Status(TextCorreo.Text))
-            {
-                TextStatus.Text = "Activo";
-            }
-            else
-            {
-                TextStatus.Text = "Inactivo";
-            }
+            Validar_Estatus();
         }
 
         protected void btn_ChangeStatus_Click(object sender, EventArgs e)

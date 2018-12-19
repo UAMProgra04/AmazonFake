@@ -20,13 +20,13 @@ namespace AmazonFake_SITE.www.Usuario
 
         protected void btn_Cambiar_contrasena_Click(object sender, EventArgs e)
         {
-            if((txt_Old_Password.Text.Trim() != string.Empty) &&
-                (txt_New_Password.Text.Trim() != string.Empty))
+            if((txt_Old_Password.Text != string.Empty) &&
+                (txt_New_Password.Text != string.Empty))
             {
-                if (Cls_Secure.ValidarChangePasswod(txt_New_Password.Text.Trim()))
+                if (Cls_Secure.ValidarChangePasswod(txt_New_Password.Text))
                 {
-                    /*llamar al metodo de la base de datos para hacer
-                     el respectivo cambio*/
+                    AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
+                    lbl_Respuesta.Text = cliente.Change_Password(txt_email.Text.Trim(), txt_New_Password.Text.Trim());
                 }
             }
         }

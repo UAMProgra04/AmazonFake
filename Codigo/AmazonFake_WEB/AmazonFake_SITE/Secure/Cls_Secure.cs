@@ -110,10 +110,6 @@ namespace AmazonFake_SITE.Secure
         #region Validaciones_Secccion_OPcionesUsuario
         public static bool ValidarChangePasswod(string Password)
         {
-            /*
-             * Tener pendiente crear metodo para validar el viejo password 
-             * contra lo almacenado en la base de datos
-             */
             try
             {
                 if (Cls_Secure.ValidarCampoPorPatron(@"[a-zA-Z0-9]{4,12}", Password) &&
@@ -136,7 +132,7 @@ namespace AmazonFake_SITE.Secure
         #region Envio_Correos
         public static void Correo_Recuperacion(string Correo)
         {
-            /*PENDIENTE:
+            /*Listo:
              Crear if con consulta a base de datos para validar si el correo realmente existe
              ademas de agregar la contraseña del mismo en el campo contraseña del mesaje del correo*/
 
