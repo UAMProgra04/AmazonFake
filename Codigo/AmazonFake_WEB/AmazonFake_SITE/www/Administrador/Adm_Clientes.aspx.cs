@@ -99,9 +99,9 @@ namespace AmazonFake_SITE.www.Administrador
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                         lbl_Error.Text = string.Empty;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        lbl_Error.Text = "Error de formato de busqueda "+ ex.Message.ToString();
+                        lbl_Error.Text = "Error de formato de busqueda, seleccione la opcion Correcta ";
                     }
                 }
             }
@@ -123,9 +123,9 @@ namespace AmazonFake_SITE.www.Administrador
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                         lbl_Error.Text = string.Empty;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                        lbl_Error.Text = "Error de formato de busqueda, seleccione la opcion Correcta ";
                     }
                 }
             }
@@ -147,9 +147,9 @@ namespace AmazonFake_SITE.www.Administrador
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                         lbl_Error.Text = string.Empty;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                        lbl_Error.Text = "Error de formato de busqueda, seleccione la opcion Correcta ";
                     }
                 }
             }

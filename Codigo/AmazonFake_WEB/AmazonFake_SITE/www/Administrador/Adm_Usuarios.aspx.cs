@@ -65,6 +65,13 @@ namespace AmazonFake_SITE.www.Administrador
             TextTelefono.Text = string.Empty;
             TextPerfil.Text = string.Empty;
             TextStatus.Text = string.Empty;
+
+            Text_Pass.Text = string.Empty;
+            Text_Tel.Text = string.Empty;
+            Text_Dir.Text = string.Empty;
+            Text_Id.Text = string.Empty;
+            Text_Nom.Text = string.Empty;
+            Text_Email.Text = string.Empty;
         }
 
         protected void btn_CargarUsuarios_Click(object sender, EventArgs e)
@@ -101,9 +108,9 @@ namespace AmazonFake_SITE.www.Administrador
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                         lbl_Error.Text = string.Empty;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                        lbl_Error.Text = "Error de formato de busqueda, seleccione la opcion Correcta ";
                     }
                 }
             }
@@ -126,9 +133,9 @@ namespace AmazonFake_SITE.www.Administrador
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                         lbl_Error.Text = string.Empty;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                        lbl_Error.Text = "Error de formato de busqueda, seleccione la opcion Correcta ";
                     }
                 }
             }
@@ -150,13 +157,13 @@ namespace AmazonFake_SITE.www.Administrador
                                         item.SDireccion.ToString(), item.STelefono.ToString(), item.SNombrePerfil.ToString());
                         lbl_Error.Text = string.Empty;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        lbl_Error.Text = "Error de formato de busqueda " + ex.Message.ToString();
+                        lbl_Error.Text = "Error de formato de busqueda, seleccione la opcion Correcta ";
                     }
                 }
             }
-
+            Validar_Estatus();
             this.GV_ALL_USER.DataSource = myDataTable;
             this.GV_ALL_USER.DataBind();
         }
@@ -165,6 +172,19 @@ namespace AmazonFake_SITE.www.Administrador
         {
             CargarListaEmpleados();
             LimpiarCampos();
+        }
+
+        protected void Validar_Estatus()
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            if (cliente.View_User_Status(TextCorreo.Text))
+            {
+                TextStatus.Text = "Activo";
+            }
+            else
+            {
+                TextStatus.Text = "Inactivo";
+            }
         }
 
         protected void btn_Actualizar_Click(object sender, EventArgs e)
@@ -184,17 +204,9 @@ namespace AmazonFake_SITE.www.Administrador
 
         protected void btn_validarEstado_Click(object sender, EventArgs e)
         {
-            I_Base_DatosClient cliente = new I_Base_DatosClient();
-            if (cliente.View_User_Status(TextCorreo.Text))
-            {
-                TextStatus.Text = "Activo";
-            }
-            else
-            {
-                TextStatus.Text = "Inactivo";
-            }
+            Validar_Estatus();
         }
-
+        
         protected void btn_ChangeStatus_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -207,6 +219,16 @@ namespace AmazonFake_SITE.www.Administrador
                 cliente.Lock_User_Account(TextCorreo.Text, false);
             }
             LimpiarCampos();
+        }
+
+        protected void btn_CrearCuentaEmpleado_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            lbl_Resultados.Text = cliente.Create_Employee_Account(Text_Email.Text, 
+                Text_Nom.Text, Text_Id.Text, Text_Dir.Text, Text_Tel.Text, 
+                Text_Pass.Text);
+            CargarListaEmpleados(); LimpiarCampos();
+
         }
     }
 }
