@@ -13,11 +13,14 @@ namespace AmazonFake_SITE.www.Access
 {
     public partial class PasswordAssistance : System.Web.UI.Page
     {
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
+        #region Boton_Recuperar_Contrasena
         protected void btn_Continue_Click(object sender, EventArgs e)
         {
             if(this.txt_email.Text != string.Empty)
@@ -39,5 +42,6 @@ namespace AmazonFake_SITE.www.Access
                 this.lbl_Errores.Text = "El Campo de Correo no deberia estar Vacio!";
             }
         }
+        #endregion
     }
 }

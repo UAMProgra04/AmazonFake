@@ -10,7 +10,7 @@ namespace AmazonFake_SITE.www.Access
 {
     public partial class Login : System.Web.UI.Page
     {
-        #region Administracion_Accesos
+        #region Metodo_Para_Administracion_Accesos
         private void Administracion_Accesos()
         {
             AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
@@ -60,21 +60,12 @@ namespace AmazonFake_SITE.www.Access
         }
         #endregion
 
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Request.Params["error"] != null)
-            //{
-            //    string error = Request.Params["error"];
-            //    if (error == "1")
-            //    {
-            //        lbl_Errores.Text = "Debe iniciar Sesion para acceder a Su perfil...";
-            //    }
-            //    else if (error == "2")
-            //    {
-            //        lbl_Errores.Text = "Debe iniciar Sesion para acceder a su perfil...";
-            //    }
-            //}
+            
         }
+        #endregion
 
         #region Boton_CreateAccount
         protected void btn_CreateAccount_Click(object sender, EventArgs e)
@@ -101,7 +92,6 @@ namespace AmazonFake_SITE.www.Access
             {
                 lbl_Errores.Text = "Ambos campos son obligatorios";
             }
-            
         }
         #endregion
     }

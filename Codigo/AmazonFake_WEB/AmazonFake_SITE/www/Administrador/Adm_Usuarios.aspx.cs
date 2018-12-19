@@ -12,6 +12,7 @@ namespace AmazonFake_SITE.www.Administrador
 {
     public partial class Adm_Usuarios : System.Web.UI.Page
     {
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioSession"] == null)
@@ -23,6 +24,9 @@ namespace AmazonFake_SITE.www.Administrador
                 CargarListaEmpleados();
             }
         }
+        #endregion
+
+        #region  Metodo_Cargar_Lista_Empleados_ALL
         protected void CargarListaEmpleados()
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -42,7 +46,9 @@ namespace AmazonFake_SITE.www.Administrador
             }
 
         }
+        #endregion
 
+        #region Metodo_Cargar_Datos_A_TextBox
         protected void CargarCamposTrabajo(string Correo, string Nombre, string Identificacion,
             string Direccion, string Telefono, string Perfil)
         {
@@ -53,6 +59,9 @@ namespace AmazonFake_SITE.www.Administrador
             TextTelefono.Text = Telefono;
             TextPerfil.Text = Perfil;
         }
+        #endregion
+
+        #region Metodo_Limpiar_Campos
         protected void LimpiarCampos()
         {
             txt_Buscar.Text = string.Empty;
@@ -73,12 +82,16 @@ namespace AmazonFake_SITE.www.Administrador
             Text_Nom.Text = string.Empty;
             Text_Email.Text = string.Empty;
         }
+        #endregion
 
+        #region Boton_Cargar_Usuarios
         protected void btn_CargarUsuarios_Click(object sender, EventArgs e)
         {
             this.CargarListaEmpleados();
         }
+        #endregion
 
+        #region Metodo_Buscar_Por_Correo_Nombre_Identificacion_Empleados
         protected void btn_CargarEmpleados_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -167,13 +180,9 @@ namespace AmazonFake_SITE.www.Administrador
             this.GV_ALL_USER.DataSource = myDataTable;
             this.GV_ALL_USER.DataBind();
         }
+        #endregion
 
-        protected void btn_Limpir_Click(object sender, EventArgs e)
-        {
-            CargarListaEmpleados();
-            LimpiarCampos();
-        }
-
+        #region Metodo_Validar_Estatus
         protected void Validar_Estatus()
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -186,7 +195,17 @@ namespace AmazonFake_SITE.www.Administrador
                 TextStatus.Text = "Inactivo";
             }
         }
+        #endregion
 
+        #region Boton_Limpiar
+        protected void btn_Limpir_Click(object sender, EventArgs e)
+        {
+            CargarListaEmpleados();
+            LimpiarCampos();
+        }
+        #endregion
+
+        #region Boton_Actualizar
         protected void btn_Actualizar_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -194,19 +213,25 @@ namespace AmazonFake_SITE.www.Administrador
                 TextDireccion.Text, TextTelefono.Text);
             CargarListaEmpleados(); LimpiarCampos();
         }
+        #endregion
 
+        #region Boton_eliminar
         protected void btn_Eliminar_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
             lbl_Error.Text = cliente.Delete_User_Account_Por_Admin(TextCorreo.Text);
             CargarListaEmpleados(); LimpiarCampos();
         }
+        #endregion
 
+        #region Boton_Validar_estado
         protected void btn_validarEstado_Click(object sender, EventArgs e)
         {
             Validar_Estatus();
         }
-        
+        #endregion
+
+        #region Boton_Cambiar_Estado
         protected void btn_ChangeStatus_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -220,7 +245,9 @@ namespace AmazonFake_SITE.www.Administrador
             }
             LimpiarCampos();
         }
+        #endregion
 
+        #region Boton_Crear_Cuenta_Empleado
         protected void btn_CrearCuentaEmpleado_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -230,5 +257,6 @@ namespace AmazonFake_SITE.www.Administrador
             CargarListaEmpleados(); LimpiarCampos();
 
         }
+        #endregion
     }
 }

@@ -11,11 +11,14 @@ namespace AmazonFake_SITE.www.Access
 {
     public partial class CreateAccount : System.Web.UI.Page
     {
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
+        #region Boton_CrearCuenta
         protected void btn_Createaccount_Click(object sender, EventArgs e)
         {
             if ((txt_nombre.Text != string.Empty) && (txt_email.Text != string.Empty) && 
@@ -39,5 +42,6 @@ namespace AmazonFake_SITE.www.Access
             }
 
         }
+        #endregion
     }
 }

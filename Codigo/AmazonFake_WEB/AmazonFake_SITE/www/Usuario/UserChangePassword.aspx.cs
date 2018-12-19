@@ -10,6 +10,7 @@ namespace AmazonFake_SITE.www.Usuario
 {
     public partial class UserChangePassword : System.Web.UI.Page
     {
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioSession"] == null)
@@ -21,11 +22,13 @@ namespace AmazonFake_SITE.www.Usuario
                 txt_email.Text = Session["Usuariocorreo"].ToString();
             }
         }
+        #endregion
 
+        #region Boton_Cambiar_COntrasena
         protected void btn_Cambiar_contrasena_Click(object sender, EventArgs e)
         {
-            if((txt_Old_Password.Text != string.Empty) &&
-                (txt_New_Password.Text != string.Empty))
+            if((txt_Old_Password.Text != string.Empty) && (txt_New_Password.Text != string.Empty) && 
+                (txt_email.Text != string.Empty))
             {
                 if (Cls_Secure.ValidarChangePasswod(txt_New_Password.Text))
                 {
@@ -33,6 +36,11 @@ namespace AmazonFake_SITE.www.Usuario
                     lbl_Respuesta.Text = cliente.Change_Password(txt_email.Text.Trim(), txt_New_Password.Text.Trim());
                 }
             }
+            else
+            {
+                lbl_Respuesta.Text = "Debe llenar todos los campos";
+            }
         }
+        #endregion
     }
 }

@@ -12,6 +12,7 @@ namespace AmazonFake_SITE.www.Administrador
 {
     public partial class Adm_Clientes : System.Web.UI.Page
     {
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
             #region Valida_Sesion
@@ -26,7 +27,9 @@ namespace AmazonFake_SITE.www.Administrador
             #endregion
             
         }
+        #endregion
 
+        #region  Metodo_Cargar_Lista_Cliente_ALL
         protected void CargarListaClientes()
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -45,7 +48,9 @@ namespace AmazonFake_SITE.www.Administrador
                 GV_ALL_CLIENT.DataBind();
             }
         }
+        #endregion
 
+        #region  Metodo_Cargar_Datos_A_TextBox
         protected void CargarCamposTrabajo(string Correo, string Nombre, string Identificacion, 
             string Direccion, string Telefono, string Perfil)
         {
@@ -56,6 +61,9 @@ namespace AmazonFake_SITE.www.Administrador
             TextTelefono.Text = Telefono;
             TextPerfil.Text = Perfil;
         }
+        #endregion
+
+        #region Metodo_Limpiar_Campos
         protected void LimpiarCampos()
         {
             txt_Buscar.Text = string.Empty;
@@ -69,7 +77,9 @@ namespace AmazonFake_SITE.www.Administrador
             TextPerfil.Text = string.Empty;
             TextStatus.Text = string.Empty;
         }
+        #endregion
 
+        #region Metodo_Buscar_Por_Correo_Nombre_Identificacion_Clientes
         protected void btn_CargarClientes_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -157,7 +167,24 @@ namespace AmazonFake_SITE.www.Administrador
             this.GV_ALL_CLIENT.DataSource = myDataTable;
             this.GV_ALL_CLIENT.DataBind();
         }
+        #endregion
 
+        #region Metodo_Validar_Estatus
+        protected void Validar_Estatus()
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            if (cliente.View_User_Status(TextCorreo.Text))
+            {
+                TextStatus.Text = "Activo";
+            }
+            else
+            {
+                TextStatus.Text = "Inactivo";
+            }
+        }
+        #endregion
+
+        #region Metodo_Buscar_Hecho_Prof_No_USADO
         protected void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -185,33 +212,26 @@ namespace AmazonFake_SITE.www.Administrador
                 GV_ALL_CLIENT.DataSource = myDataTable;
             }
         }
+        #endregion
 
+        #region Boton_Limpiar
         protected void btn_Limpir_Click(object sender, EventArgs e)
         {
             CargarListaClientes();
             LimpiarCampos();
         }
+        #endregion
 
-        protected void Validar_Estatus()
-        {
-            I_Base_DatosClient cliente = new I_Base_DatosClient();
-            if (cliente.View_User_Status(TextCorreo.Text))
-            {
-                TextStatus.Text = "Activo";
-            }
-            else
-            {
-                TextStatus.Text = "Inactivo";
-            }
-        }
-
+        #region Boton_eliminar
         protected void btn_Eliminar_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
             lbl_Error.Text = cliente.Delete_User_Account_Por_Admin(TextCorreo.Text);
             CargarListaClientes(); LimpiarCampos();
         }
+        #endregion
 
+        #region Boton_Actualizar
         protected void btn_Actualizar_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -219,12 +239,16 @@ namespace AmazonFake_SITE.www.Administrador
                 TextDireccion.Text, TextTelefono.Text);
             CargarListaClientes(); LimpiarCampos();
         }
+        #endregion
 
+        #region Boton_Validar_estado
         protected void btn_validarEstado_Click(object sender, EventArgs e)
         {
             Validar_Estatus();
         }
+        #endregion
 
+        #region Boton_Cambiar_Estado
         protected void btn_ChangeStatus_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -238,5 +262,6 @@ namespace AmazonFake_SITE.www.Administrador
             }
             LimpiarCampos();
         }
+        #endregion
     }
 }
