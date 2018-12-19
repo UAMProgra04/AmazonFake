@@ -10,6 +10,7 @@ namespace AmazonFake_SITE.www.Usuario
 {
     public partial class UserPerfil : System.Web.UI.Page
     {
+        #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UsuarioSession"] == null)
@@ -19,29 +20,29 @@ namespace AmazonFake_SITE.www.Usuario
             else
             {
                 txt_Correo.Text = Session["Usuariocorreo"].ToString();
-                lblCorreo.Text = Session["Usuariocorreo"].ToString();
                 Cargar_Datos_Perfil();
             }
         }
+        #endregion
 
+        #region Cargar_Datos_A_TextBox
         protected void CargarCamposTrabajo(string Nombre, string Identificacion,
             string Direccion, string Telefono)
         {
-
             /*Referencia:
              * Para el uso del atributo placeHolder
              *https://stackoverflow.com/questions/20689890/add-html5-placeholder-text-to-a-textbox-net/20689928
              */
-
             txt_Nombre.Attributes.Add("placeholder", Nombre);
             txt_Identificacion.Attributes.Add("placeholder", Identificacion);
             txt_Direccion.Attributes.Add("placeholder", Direccion);
             txt_Telefono.Attributes.Add("placeholder", Telefono);
         }
+        #endregion
 
+        #region Metodo_Cargar_Datos_Perfil
         protected void Cargar_Datos_Perfil()
         {
-
             I_Base_DatosClient cliente = new I_Base_DatosClient();
 
             if (Session["UsuarioPerfil"].ToString().Equals("1"))
@@ -75,7 +76,9 @@ namespace AmazonFake_SITE.www.Usuario
                 }
             }
         }
+        #endregion
 
+        #region Boton_Actualizar_Usuario
         protected void btn_ActualizarDatos_Cliente_Click(object sender, EventArgs e)
         {
             I_Base_DatosClient cliente = new I_Base_DatosClient();
@@ -83,5 +86,6 @@ namespace AmazonFake_SITE.www.Usuario
                 txt_Direccion.Text, txt_Telefono.Text);
             Cargar_Datos_Perfil();
         }
+        #endregion
     }
 }

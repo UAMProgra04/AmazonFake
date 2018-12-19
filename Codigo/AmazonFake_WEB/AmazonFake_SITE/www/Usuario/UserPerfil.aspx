@@ -8,19 +8,23 @@
         <asp:Label ID="lbl_Error" runat="server" ></asp:Label>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Correo" runat="server" Text="Correo Electronico: "></asp:Label>
-        <asp:TextBox class="input_Formulario" ID="txt_Correo" runat="server" ></asp:TextBox>
+        <asp:TextBox class="input_Formulario" ID="txt_Correo" runat="server" type="email" ID="txt_email" 
+                    pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" MaxLength="80"></asp:TextBox>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Nombre" runat="server" Text="Nombre Completo: "></asp:Label>
-        <asp:TextBox class="input_Formulario" ID="txt_Nombre" runat="server"></asp:TextBox>
+        <asp:TextBox class="input_Formulario" ID="txt_Nombre" runat="server" 
+            pattern="[a-zA-ZñÑ\s]{2,100}" MaxLength="100"></asp:TextBox>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Identificacion" runat="server" Text="Numero de Identificacion: "></asp:Label>
-        <asp:TextBox class="input_Formulario" ID="txt_Identificacion" runat="server"></asp:TextBox>
+        <asp:TextBox class="input_Formulario" ID="txt_Identificacion" runat="server"
+            pattern="[0-9]{1,9}(\.[0-9]{0,2})?$" MaxLength="9"></asp:TextBox>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Direccion" runat="server" Text="Direccion Exacta para entregas: "></asp:Label>
-        <asp:TextBox class="input_Formulario" ID="txt_Direccion" runat="server"></asp:TextBox>
+        <asp:TextBox class="input_Formulario" ID="txt_Direccion" runat="server" MaxLength="150"></asp:TextBox>
         <hr />
         <asp:Label class="labelsForm" ID="lbl_Telefono" runat="server" Text="Telefono: "></asp:Label>
-        <asp:TextBox class="input_Formulario" ID="txt_Telefono" runat="server"></asp:TextBox>
+        <asp:TextBox class="input_Formulario" ID="txt_Telefono" runat="server"
+            pattern="^[+-]?\d+(\.\d+)?$"  MaxLength="15"></asp:TextBox>
         <hr />
         <asp:Button class="BotonSingIn" ID="btn_ActualizarDatos_Cliente" runat="server" Height="40" 
             Font-Size="15" ForeColor="White" Text="Actualizar" OnClick="btn_ActualizarDatos_Cliente_Click" />
