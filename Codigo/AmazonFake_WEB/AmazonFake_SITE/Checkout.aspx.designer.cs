@@ -13,6 +13,24 @@ namespace AmazonFake_SITE.www {
     public partial class Checkout {
         
         /// <summary>
+        /// Control Table1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table1;
+        
+        /// <summary>
+        /// Control lbl_Error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Error;
+        
+        /// <summary>
         /// Control txtCodigo.
         /// </summary>
         /// <remarks>
@@ -40,13 +58,13 @@ namespace AmazonFake_SITE.www {
         protected global::System.Web.UI.WebControls.TextBox txtCliente;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TextCorreoCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextCorreoCliente;
         
         /// <summary>
         /// Control GridView1.

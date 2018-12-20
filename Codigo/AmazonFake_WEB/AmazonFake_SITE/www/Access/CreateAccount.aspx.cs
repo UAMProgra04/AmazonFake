@@ -30,6 +30,7 @@ namespace AmazonFake_SITE.www.Access
                     {
                         AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
                         lbl_Errores.Text = cliente.Create_Account(txt_email.Text, txt_nombre.Text, txt_contrasena.Text);
+                        Cls_Secure.Correo_Creacion_Cuenta(txt_email.Text, txt_nombre.Text, txt_contrasena.Text);
                     }
                 }else
                 {

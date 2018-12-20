@@ -13,11 +13,20 @@ namespace AmazonFake_SITE.www
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack == false)
+            if (Session["UsuarioSession"] == null)
             {
-                cargarcarrito();
-                Ultimo();
-                lblFecha.Text = DateTime.Now.Date.ToString().Substring(0, 10);
+                Response.Redirect("~/www/Index.aspx");
+            }
+            else
+            {
+                this.TextCorreoCliente.Text = Session["Usuariocorreo"].ToString();
+                this.txtCliente.Text = Session["UsuarioSession"].ToString();
+                if (Page.IsPostBack == false)
+                {
+                    cargarcarrito();
+                    Ultimo();
+                    lblFecha.Text = DateTime.Now.Date.ToString().Substring(0, 10);
+                }
             }
         }
 
@@ -61,9 +70,9 @@ namespace AmazonFake_SITE.www
         protected void SendEmail(object sender, EventArgs e)
         {
             System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
-            correo.From = new System.Net.Mail.MailAddress("Tu Correo");
-            correo.To.Add(this.TextBox2.Text);
-            correo.Subject = "Pedido de Compra";
+            correo.From = new System.Net.Mail.MailAddress("amazonface.mail@gmail.com");
+            correo.To.Add(this.TextCorreoCliente.Text);
+            correo.Subject = "Informe de Compra en AmazonFake";
 
             string cod, des;
             int cant;
@@ -86,27 +95,25 @@ namespace AmazonFake_SITE.www
                         break;
                     }
                 }
-
             }
-
-            correo.Body = "Hola " + txtCliente.Text + " Usted ha realizado un pedido por la cantidad de : S/. " + lblTotal.Text + "\r\n" + des;
-
-            correo.IsBodyHtml = false;
-            correo.Priority = System.Net.Mail.MailPriority.Normal;
-            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
-            //smtp.Host = "smtp.gmail.com"  'para gmail
-            smtp.Host = "smtp.live.com"; //para hotmail
-            smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("TuCorreo", "TuContraseña");
-            smtp.EnableSsl = true;
             try
             {
+                correo.Body = "Estimado " + txtCliente.Text + " Es un gusto informarle que usted ha realizado un pedido en nuestro sitio web por la cantidad de : S/. " + lblTotal.Text + "\r\nEntre los cuales se encuentran\r\n" + des;
+                correo.IsBodyHtml = false;
+                correo.Priority = System.Net.Mail.MailPriority.Normal;
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("amazonface.mail@gmail.com", "egs76$gs");
+                smtp.EnableSsl = true;
                 smtp.Send(correo);
-                this.Response.Write("<script language='JavaScript'>window.alert('Venta Enviada Correctamente')</script>");
+                smtp.Dispose();
+                Response.Redirect("/Index.aspx");
+
             }
             catch (Exception ex)
             {
-                throw new Exception("Error: (" + ex.Message + ")");
+                lbl_Error.Text = ex.Message.ToString();
             }
         }
 

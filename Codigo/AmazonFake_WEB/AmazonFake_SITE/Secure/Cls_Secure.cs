@@ -132,16 +132,9 @@ namespace AmazonFake_SITE.Secure
         #region Envio_Correos
         public static void Correo_Recuperacion(string Correo)
         {
-            /*Listo:
-             Crear if con consulta a base de datos para validar si el correo realmente existe
-             ademas de agregar la contraseña del mismo en el campo contraseña del mesaje del correo*/
-
             AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
-            
             List<string> listaLogin = new List<string>();
             string passwd;
-   
-
             foreach (var item in Cliente.Password_Restore(Correo))
             {
                 passwd = item.SPassword;
@@ -150,42 +143,32 @@ namespace AmazonFake_SITE.Secure
                 string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
                 string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + Correo + "<br>Contraseña: " + passwd + "</p>";
                 Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
-            }
-
-
-
-
-                
+            }   
         }
 
-        public static void Correo_Creacion_Cuenta(string Correo)
+        public static void Correo_Creacion_Cuenta(string correo, string nombre, string pssword)
         {
-            /*PENDIENTE:
-             Crear if con consulta a base de datos para validar si el correo realmente existe
-             ademas de agregar la contraseña del mismo en el campo contraseña del mesaje del correo
-             Pendiente de modificacion de la informacion del mensaje*/
-
             AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
-            string Correo_Target = Correo;
+            string Correo_Target = correo;
             string Correo_Source = "amazonface.mail@gmail.com";
-            string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
-            string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + Correo + "<br>Contraseña: contraseña</p>";
+            string Correo_Head = "AmazonFake - Creacion de Cuenta";
+            string Correo_Message = "<p>Estimado " + nombre + " sus datos de acceso a su cuenta de AmazonFake son: <br>Usuario: " + correo + "<br>Contraseña: " + pssword + "</p>";
             Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
         }
 
-        public static void Correo_Cambio_Contrasena(string Correo)
+        public static void Correo_Cambio_Contrasena(string Correo, string pssword)
         {
-            /*PENDIENTE:
-             Crear if con consulta a base de datos para validar si el correo realmente existe
-             ademas de agregar la contraseña del mismo en el campo contraseña del mesaje del correo
-             Pendiente de modificacion de la informacion del mensaje*/
-
             AmazonFakeService.I_Base_DatosClient Cliente = new AmazonFakeService.I_Base_DatosClient();
             string Correo_Target = Correo;
             string Correo_Source = "amazonface.mail@gmail.com";
-            string Correo_Head = "AmazonFake - Recuperacion de Contraseña";
-            string Correo_Message = "<p>Estimado sus datos son: <br>Usuario: " + Correo + "<br>Contraseña: contraseña</p>";
+            string Correo_Head = "AmazonFake - Cambio de Contraseña";
+            string Correo_Message = "<p>Estimado sus datos han sido actualizados: <br>Ahora sus datos son: <br>Usuario: "+ Correo + "<br>Nueva Contraseña: " + pssword + "</p>";
             Cliente.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Head, Correo_Message);
+        }
+
+        public static void Correo_Informacion_Compra(string Correo, string pssword)
+        {
+
         }
         #endregion
 

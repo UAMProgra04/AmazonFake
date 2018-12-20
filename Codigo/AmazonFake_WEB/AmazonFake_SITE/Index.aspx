@@ -10,16 +10,13 @@
                  <h1>Lista de Productos</h1>                                                       
                  <asp:Label ID="lblAgregado" runat="server" Text="Label"></asp:Label>
             </asp:TableCell>
-            <asp:TableCell>
-                <asp:ImageButton ID="ImageButton1" width="120" height="120" runat="server" ImageUrl="~/Imagenes/carro-de-compras.jpg" OnClick="ImageButton1_Click" />
-            </asp:TableCell>
         </asp:TableRow>
 
         <asp:TableRow>
             <asp:TableCell>
                 <asp:DataList ID="DataList1" runat="server" DataKeyField="codproducto" DataSourceID="SqlDataSource1" RepeatColumns="3" OnItemCommand="DataList1_ItemCommand" >
                     <ItemTemplate>
-                        <asp:Image ID="Image1" width="140" height="120" runat="server" ImageUrl='<%# "~/Imagenes/"+Eval("imagen") %>' />
+                        <asp:Image ID="Image1" width="140" height="120" runat="server" ImageUrl='<%# "~/img/Imagenes/"+Eval("imagen") %>' />
                         <br />
                         <br />
                         Código :
@@ -41,7 +38,8 @@
                         <br />
                     </ItemTemplate>
                 </asp:DataList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SQL_AUTH%>" SelectCommand="SELECT * FROM [PRODUCTOS]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SQL_AUTH%>" 
+                    SelectCommand="SELECT * FROM [PRODUCTOS]"></asp:SqlDataSource>
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>

@@ -33,7 +33,24 @@ namespace AmazonFake_SITE.www.Usuario
                 if (Cls_Secure.ValidarChangePasswod(txt_New_Password.Text))
                 {
                     AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
-                    lbl_Respuesta.Text = cliente.Change_Password(txt_email.Text.Trim(), txt_New_Password.Text.Trim());
+                    List<string> lista = new List<string>();
+                    string passwd="";
+                    foreach (var item in cliente.Password_Restore(txt_email.Text.Trim()))
+                    {
+                        passwd = item.SPassword;
+                    }
+                    if (passwd.Equals(txt_Old_Password.Text.Trim()))
+                    {
+                        lbl_Respuesta.Text = cliente.Change_Password(txt_email.Text.Trim(), txt_New_Password.Text.Trim());
+                        Cls_Secure.Correo_Cambio_Contrasena(txt_email.Text.Trim(), txt_New_Password.Text.Trim());
+                    }
+                    else
+                    {
+                        lbl_Respuesta.Text = "La contraseña actual no coincide con los registros. Verifiquela!";
+                        txt_Old_Password.Text = string.Empty;
+                        txt_New_Password.Text = string.Empty;
+                        txt_Old_Password.Focus();
+                    }
                 }
             }
             else

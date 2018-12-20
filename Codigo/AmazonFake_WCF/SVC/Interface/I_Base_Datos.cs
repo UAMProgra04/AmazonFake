@@ -20,10 +20,6 @@ namespace SVC.Interface
 
         #region Metodos_En_Clase
         [OperationContract]
-        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
-            string Correo_Encabezado, string Correo_Mensaje);
-
-        [OperationContract]
         DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos,
             string Nombre_Tabla_BaseDatos);
 
@@ -64,6 +60,9 @@ namespace SVC.Interface
         string Lock_User_Account(string correo, bool Estado);
         [OperationContract]
         Boolean View_User_Status(string Correo);
+        [OperationContract]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source,
+            string Correo_Encabezado, string Correo_Mensaje);
         #endregion
 
         #region Administracion_Usuarios
