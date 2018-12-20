@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Data;
 using DAL.Usuarios;
+using DAL.Entidades_BD;
 
 namespace SVC.Interface
 {
@@ -50,7 +51,6 @@ namespace SVC.Interface
             ref string sValorScalar, ref string SMsError);
 
         #endregion
-
 
         #region Metodos_Cls_Usuarios
         #region Accesos
@@ -97,6 +97,35 @@ namespace SVC.Interface
         List<Cls_Usuarios_DAL> View_Name_Users(string Nombre);
         [OperationContract]
         List<Cls_Usuarios_DAL> View_ID_Users(string Identificacion);
+        #endregion
+
+        #endregion
+
+        #region Metodos_Entidades_Base_Datos
+        #region Cls_Entidad_Categoria_BLL
+        [OperationContract]
+        List<Cls_Entidad_Categoria_DAL> Listar();
+        #endregion
+
+        #region Cls_Entidad_Detalle_Ventas_BLL
+        [OperationContract]
+        string Insertar_Venta(Cls_Entidad_Detalle_Ventas_DAL obj_DetalleVenta_Dal);
+        #endregion
+
+        #region Cls_Entidad_Productos_BLL
+        [OperationContract]
+        string Insertar_Producto(Cls_Entidad_Productos_DAL obj_producto_Dal);
+        [OperationContract]
+        List<Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria);
+        [OperationContract]
+        List<Cls_Entidad_Productos_DAL> ListarTodos();
+        #endregion
+
+        #region Cls_Entidad_Ventas_BLL
+        [OperationContract]
+        string Insertar(Cls_Entidad_Ventas_DAL obj_venta_Dal);
+        [OperationContract]
+        List<Cls_Entidad_Ventas_DAL> UltimoCodigo();
         #endregion
 
         #endregion

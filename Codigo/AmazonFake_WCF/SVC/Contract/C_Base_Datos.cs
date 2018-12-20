@@ -7,9 +7,11 @@ using System.Text;
 using DAL.Base_Datos;
 using DAL.Correo;
 using DAL.Usuarios;
+using DAL.Entidades_BD;
 using BLL.Base_Datos;
 using BLL.Correo;
 using BLL.Usuarios;
+using BLL.Entidades_BD;
 using System.Data;
 
 namespace SVC.Contract
@@ -245,10 +247,10 @@ namespace SVC.Contract
         {
             List<Cls_Usuarios_DAL> lista = new List<Cls_Usuarios_DAL>();
 
-            Cls_Usuarios_BLL obj_Login_bll = new Cls_Usuarios_BLL();
-            Cls_Usuarios_DAL obj_Login_dal = new Cls_Usuarios_DAL();
-            obj_Login_dal.SCorreo = Correo;
-            lista.Add(obj_Login_bll.View_Email_Admins(obj_Login_dal));
+            Cls_Usuarios_BLL obj_Email_Admins_bll = new Cls_Usuarios_BLL();
+            Cls_Usuarios_DAL obj_Email_Admins_dal = new Cls_Usuarios_DAL();
+            obj_Email_Admins_dal.SCorreo = Correo;
+            lista.Add(obj_Email_Admins_bll.View_Email_Admins(obj_Email_Admins_dal));
             return lista;
         }
         #endregion
@@ -314,6 +316,86 @@ namespace SVC.Contract
             return lista;
         }
         #endregion
+        #endregion
+
+        #endregion
+
+
+        #region Metodos_Entidades_Base_Datos
+        #region Cls_Entidad_Categoria_BLL
+        public List<Cls_Entidad_Categoria_DAL> Listar()
+        {
+            Cls_Entidad_Categoria_BLL obj_categoria_BLL = new Cls_Entidad_Categoria_BLL();
+            return obj_categoria_BLL.Listar();
+        }
+        #endregion
+
+        #region Cls_Entidad_Detalle_Ventas_BLL
+        public string Insertar_Detalle_Venta(string codigo, string cantidad, string precio, string subtotal, 
+            string codproducto)
+        {
+            Cls_Entidad_Detalle_Ventas_DAL obj_DetalleVenta_DAL = new Cls_Entidad_Detalle_Ventas_DAL();
+            Cls_Entidad_Detalle_Ventas_BLL obj_DetalleVenta_BLL = new Cls_Entidad_Detalle_Ventas_BLL();
+            obj_DetalleVenta_DAL.Codigo = codigo;
+            obj_DetalleVenta_DAL.Cantidad = Convert.ToDecimal(cantidad);
+            obj_DetalleVenta_DAL.Precio = Convert.ToDecimal(precio);
+            obj_DetalleVenta_DAL.Subtotal = Convert.ToDecimal(subtotal);
+            obj_DetalleVenta_DAL.Codproducto = codproducto;
+            return obj_DetalleVenta_BLL.Insertar_Detalle_Venta(obj_DetalleVenta_DAL);
+        }
+        #endregion
+
+        #region Cls_Entidad_Productos_BLL
+        public string Insertar_Producto(string codproducto, string desproducto, string codcategoria, 
+            string preproducto, string canproducto)
+        {
+            Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
+            Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
+            obj_Producto_DAL.Codproducto = codproducto;
+            obj_Producto_DAL.Desproducto = desproducto;
+            obj_Producto_DAL.Codcategoria = codcategoria;
+            obj_Producto_DAL.Preproducto = Convert.ToDouble(preproducto);
+            obj_Producto_DAL.Canproducto = Convert.ToInt32(canproducto);
+            return obj_Producto_BLL.Insertar_Producto(obj_Producto_DAL);
+        }
+
+        public List<Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria)
+        {
+            List<Cls_Entidad_Productos_DAL> lista = new List<Cls_Entidad_Productos_DAL>();
+            Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
+            Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
+            obj_Producto_DAL.Codcategoria = codcategoria;
+            lista.Add(obj_Producto_BLL.ListarporCategoria(obj_Producto_DAL));
+            return lista;
+        }
+
+        public List<Cls_Entidad_Productos_DAL> ListarTodos()
+        {
+            Cls_Entidad_Productos_BLL obj_productos_BLL = new Cls_Entidad_Productos_BLL();
+            return obj_productos_BLL.ListarTodos();
+        }
+        #endregion
+
+        #region Cls_Entidad_Ventas_BLL
+        public string Insertar_Venta(string codigo, string fecha, string subtotal,
+            string igv, string total, string cliente)
+        {
+            Cls_Entidad_Ventas_DAL obj_Venta_DAL = new Cls_Entidad_Ventas_DAL();
+            Cls_Entidad_Ventas_BLL obj_Venta_BLL = new Cls_Entidad_Ventas_BLL();
+            obj_Venta_DAL.Codigo = codigo;
+            obj_Venta_DAL.Fecha = fecha;
+            obj_Venta_DAL.Subtotal = Convert.ToDecimal(subtotal);
+            obj_Venta_DAL.Igv = Convert.ToDecimal(igv); 
+            obj_Venta_DAL.Total = Convert.ToDecimal(total);
+            obj_Venta_DAL.Cliente = cliente;
+            return obj_Venta_BLL.Insertar_Venta(obj_Venta_DAL);    
+        }
+
+        public List<Cls_Entidad_Ventas_DAL> UltimoCodigo()
+        {
+            Cls_Entidad_Ventas_BLL obj_Venta_BLL = new Cls_Entidad_Ventas_BLL();
+            return obj_Venta_BLL.UltimoCodigo();
+        }
         #endregion
 
         #endregion

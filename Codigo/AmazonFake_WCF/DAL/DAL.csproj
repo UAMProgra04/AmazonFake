@@ -42,6 +42,10 @@
   <ItemGroup>
     <Compile Include="Base_Datos\Cls_BD_DAL.cs" />
     <Compile Include="Correo\Cls_Correo_DAL.cs" />
+    <Compile Include="Entidades_BD\Cls_Entidad_Categoria_DAL.cs" />
+    <Compile Include="Entidades_BD\Cls_Entidad_Detalle_Ventas_DAL.cs" />
+    <Compile Include="Entidades_BD\Cls_Entidad_Productos_DAL.cs" />
+    <Compile Include="Entidades_BD\Cls_Entidad_Ventas_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios\Cls_Usuarios_DAL.cs" />
   </ItemGroup>

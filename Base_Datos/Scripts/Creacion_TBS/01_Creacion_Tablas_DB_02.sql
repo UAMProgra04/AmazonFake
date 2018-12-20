@@ -255,3 +255,16 @@ begin catch
 	rollback transaction
 end catch
 go
+
+--select count(VEN_Codigo),max (VEN_Codigo) from VENTA--
+create procedure SP_Count_Ventas
+as
+begin transaction 
+begin try
+	select count(VEN_Codigo),max (VEN_Codigo) from VENTA
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+go
