@@ -2,202 +2,125 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<!-- BREADCRUMB -->
-<div id="breadcrumb" class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
-			<div class="col-md-12">
-				<h3 class="breadcrumb-header">Checkout</h3>
-				<ul class="breadcrumb-tree">
-					<li><a href="#">Home</a></li>
-					<li class="active">Checkout</li>
-				</ul>
-			</div>
-		</div>
-		<!-- /row -->
-	</div>
-	<!-- /container -->
-</div>
-<!-- /BREADCRUMB -->
-
-<!-- SECTION -->
-<div class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
-
-			<div class="col-md-7">
-				<!-- Billing Details -->
-				<div class="billing-details">
-					<div class="section-title">
-						<h3 class="title">Billing address</h3>
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="first-name" placeholder="First Name">
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="last-name" placeholder="Last Name">
-					</div>
-					<div class="form-group">
-						<input class="input" type="email" name="email" placeholder="Email">
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="address" placeholder="Address">
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="city" placeholder="City">
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="country" placeholder="Country">
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-					</div>
-					<div class="form-group">
-						<input class="input" type="tel" name="tel" placeholder="Telephone">
-					</div>
-					<div class="form-group">
-						<div class="input-checkbox">
-							<input type="checkbox" id="create-account">
-							<label for="create-account">
-								<span></span>
-								Create Account?
-							</label>
-							<div class="caption">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-								<input class="input" type="password" name="password" placeholder="Enter Your Password">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Billing Details -->
-
-				<!-- Shiping Details -->
-				<div class="shiping-details">
-					<div class="section-title">
-						<h3 class="title">Shiping address</h3>
-					</div>
-					<div class="input-checkbox">
-						<input type="checkbox" id="shiping-address">
-						<label for="shiping-address">
-							<span></span>
-							Ship to a diffrent address?
-						</label>
-						<div class="caption">
-							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
-							</div>
-							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Shiping Details -->
-
-				<!-- Order notes -->
-				<div class="order-notes">
-					<textarea class="input" placeholder="Order Notes"></textarea>
-				</div>
-				<!-- /Order notes -->
-			</div>
-
-			<!-- Order Details -->
-			<div class="col-md-5 order-details">
-				<div class="section-title text-center">
-					<h3 class="title">Your Order</h3>
-				</div>
-				<div class="order-summary">
-					<div class="order-col">
-						<div><strong>PRODUCT</strong></div>
-						<div><strong>TOTAL</strong></div>
-					</div>
-					<div class="order-products">
-						<div class="order-col">
-							<div>1x Product Name Goes Here</div>
-							<div>$980.00</div>
-						</div>
-						<div class="order-col">
-							<div>2x Product Name Goes Here</div>
-							<div>$980.00</div>
-						</div>
-					</div>
-					<div class="order-col">
-						<div>Shiping</div>
-						<div><strong>FREE</strong></div>
-					</div>
-					<div class="order-col">
-						<div><strong>TOTAL</strong></div>
-						<div><strong class="order-total">$2940.00</strong></div>
-					</div>
-				</div>
-				<div class="payment-method">
-					<div class="input-radio">
-						<input type="radio" name="payment" id="payment-1">
-						<label for="payment-1">
-							<span></span>
-							Direct Bank Transfer
-						</label>
-						<div class="caption">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-					<div class="input-radio">
-						<input type="radio" name="payment" id="payment-2">
-						<label for="payment-2">
-							<span></span>
-							Cheque Payment
-						</label>
-						<div class="caption">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-					<div class="input-radio">
-						<input type="radio" name="payment" id="payment-3">
-						<label for="payment-3">
-							<span></span>
-							Paypal System
-						</label>
-						<div class="caption">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<div class="input-checkbox">
-					<input type="checkbox" id="terms">
-					<label for="terms">
-						<span></span>
-						I've read and accept the <a href="#">terms & conditions</a>
-					</label>
-				</div>
-				<a href="#" class="primary-btn order-submit">Place order</a>
-			</div>
-			<!-- /Order Details -->
-		</div>
-		<!-- /row -->
-	</div>
-	<!-- /container -->
-</div>
-<!-- /SECTION -->
+<center>
+    <table style="width: 88%">
+        <tr>
+            <td colspan="3" style="text-align: center; color: #9999FF; font-size: large">
+                <strong>Mi Carrito de Compras</strong></td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td style="width: 397px">
+                <asp:TextBox ID="txtCodigo" runat="server" Visible="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                <strong>Fecha :</strong></td>
+            <td style="width: 397px">
+                <asp:Label ID="lblFecha" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                Cliente :</td>
+            <td style="width: 397px">
+                <asp:TextBox ID="txtCliente" runat="server" Width="332px"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                Email :</td>
+            <td style="width: 397px">
+                <asp:TextBox ID="TextBox2" runat="server" TextMode="Email" Width="329px"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td colspan="2">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                    Width="505px" OnRowCommand="GridView1_RowCommand" OnRowDeleting="GridView1_RowDeleting">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Quitar">
+                            <ItemTemplate>
+                                <asp:ImageButton ID="ImageButton1" runat="server" Height="19px" 
+                                    ImageUrl="~/Imagenes/borrar.jpg" Width="20px" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="codproducto" HeaderText="Codigo" />
+                        <asp:BoundField DataField="desproducto" HeaderText="Descripcion" />
+                        <asp:BoundField DataField="preproducto" HeaderText="Precio" />
+                        <asp:TemplateField HeaderText="Cantidad">
+                            <ItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server" Height="19px" Width="73px">1</asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="subtotal" HeaderText="Sub Total" />
+                    </Columns>
+                </asp:GridView>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td style="width: 397px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td style="width: 397px; text-align: right">
+                SubTotal S/ :&nbsp; 
+                <asp:Label ID="lblSubTotal" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td style="width: 397px; text-align: right">
+                IGV S/ :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblIGV" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td style="width: 397px; text-align: right">
+                Total S/ :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblTotal" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 77px">
+                &nbsp;</td>
+            <td style="width: 397px">
+                <asp:Button ID="Button1" runat="server" Text="Actualizar" OnClick="Button1_Click" />
+                <asp:Button ID="Button2" runat="server" Text="Continuar Compras" 
+                    style="margin-left: 111px" Width="157px" OnClick="Button2_Click" />
+            </td>
+            <td>
+                <asp:Button ID="Button3" runat="server" style="margin-left: 34px" 
+                    Text="Comprar" Width="120px" OnClick="Button3_Click" />
+            </td>
+        </tr>
+    </table>
+</center>
 </asp:Content>

@@ -32,7 +32,7 @@ namespace BLL.Entidades_BD
                 int registros = obj_cmd.ExecuteNonQuery();
                 if (registros == 1)
                 {
-                    obj_DetalleVenta_Dal.Respuesta = "Detalle de vVenta ingresado de forma Satisfactoria";
+                    obj_DetalleVenta_Dal.Respuesta = "Detalle de Venta ingresado de forma Satisfactoria";
                 }
                 else
                 {
