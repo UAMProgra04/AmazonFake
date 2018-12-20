@@ -39,9 +39,9 @@ namespace BLL.Entidades_BD
                     obj_DetalleVenta_Dal.Respuesta = "Error al Insertar el Detalle de la Venta";
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                System.Console.Write(ex.Message);
+                obj_DetalleVenta_Dal = null;
             }
             return obj_DetalleVenta_Dal.Respuesta;
         }

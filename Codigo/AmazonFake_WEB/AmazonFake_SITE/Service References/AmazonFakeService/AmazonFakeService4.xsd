@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCls_Entidad_Categoria_DAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cls_Entidad_Categoria_DAL" nillable="true" type="tns:Cls_Entidad_Categoria_DAL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCls_Entidad_Categoria_DAL" nillable="true" type="tns:ArrayOfCls_Entidad_Categoria_DAL" />
+  <xs:complexType name="Cls_Entidad_Categoria_DAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codcategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descategoria" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cls_Entidad_Categoria_DAL" nillable="true" type="tns:Cls_Entidad_Categoria_DAL" />
+  <xs:complexType name="ArrayOfCls_Entidad_Productos_DAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cls_Entidad_Productos_DAL" nillable="true" type="tns:Cls_Entidad_Productos_DAL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCls_Entidad_Productos_DAL" nillable="true" type="tns:ArrayOfCls_Entidad_Productos_DAL" />
+  <xs:complexType name="Cls_Entidad_Productos_DAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Canproducto" type="xs:int" />
+      <xs:element minOccurs="0" name="Codcategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codproducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Desproducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Preproducto" type="xs:double" />
+      <xs:element minOccurs="0" name="Respuesta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cls_Entidad_Productos_DAL" nillable="true" type="tns:Cls_Entidad_Productos_DAL" />
+  <xs:complexType name="ArrayOfCls_Entidad_Ventas_DAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cls_Entidad_Ventas_DAL" nillable="true" type="tns:Cls_Entidad_Ventas_DAL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCls_Entidad_Ventas_DAL" nillable="true" type="tns:ArrayOfCls_Entidad_Ventas_DAL" />
+  <xs:complexType name="Cls_Entidad_Ventas_DAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Igv" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Respuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cls_Entidad_Ventas_DAL" nillable="true" type="tns:Cls_Entidad_Ventas_DAL" />
+</xs:schema>

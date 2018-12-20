@@ -36,9 +36,9 @@ namespace BLL.Entidades_BD
                     lista.Add(obj_categoria_Dal);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                System.Console.Write(ex.Message);
+                lista = null;
             }
             return lista;
         }

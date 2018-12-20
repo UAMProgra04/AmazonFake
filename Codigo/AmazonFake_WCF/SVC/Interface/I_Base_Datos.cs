@@ -109,12 +109,14 @@ namespace SVC.Interface
 
         #region Cls_Entidad_Detalle_Ventas_BLL
         [OperationContract]
-        string Insertar_Venta(Cls_Entidad_Detalle_Ventas_DAL obj_DetalleVenta_Dal);
+        string Insertar_Detalle_Venta(string codigo, string cantidad, string precio, string subtotal,
+            string codproducto);
         #endregion
 
         #region Cls_Entidad_Productos_BLL
         [OperationContract]
-        string Insertar_Producto(Cls_Entidad_Productos_DAL obj_producto_Dal);
+        string Insertar_Producto(string codproducto, string desproducto, string codcategoria,
+            string preproducto, string canproducto);
         [OperationContract]
         List<Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria);
         [OperationContract]
@@ -123,7 +125,8 @@ namespace SVC.Interface
 
         #region Cls_Entidad_Ventas_BLL
         [OperationContract]
-        string Insertar(Cls_Entidad_Ventas_DAL obj_venta_Dal);
+        string Insertar_Venta(string codigo, string fecha, string subtotal,
+            string igv, string total, string cliente);
         [OperationContract]
         List<Cls_Entidad_Ventas_DAL> UltimoCodigo();
         #endregion

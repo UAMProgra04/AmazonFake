@@ -40,9 +40,9 @@ namespace BLL.Entidades_BD
                     obj_venta_Dal.Respuesta = "Error al Insertar Venta";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                System.Console.Write(ex.Message);
+                obj_venta_Dal = null;
             }
             return obj_venta_Dal.Respuesta;
         }

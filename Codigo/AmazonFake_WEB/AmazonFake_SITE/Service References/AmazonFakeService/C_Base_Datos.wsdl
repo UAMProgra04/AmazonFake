@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
       <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DAL.Usuarios" />
+      <xsd:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="I_Base_Datos_Conectar_Base_Datos_InputMessage">
@@ -158,6 +159,48 @@
   <wsdl:message name="I_Base_Datos_View_ID_Users_OutputMessage">
     <wsdl:part name="parameters" element="tns:View_ID_UsersResponse" />
   </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Listar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Listar" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Listar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Insertar_Detalle_Venta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Detalle_Venta" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Insertar_Detalle_Venta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Detalle_VentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Insertar_Producto_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Producto" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Insertar_Producto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_ProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_ListarporCategoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarporCategoria" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_ListarporCategoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarporCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_ListarTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTodos" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_ListarTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Insertar_Venta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Venta" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_Insertar_Venta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_VentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_UltimoCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UltimoCodigo" />
+  </wsdl:message>
+  <wsdl:message name="I_Base_Datos_UltimoCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UltimoCodigoResponse" />
+  </wsdl:message>
   <wsdl:portType name="I_Base_Datos">
     <wsdl:operation name="Conectar_Base_Datos">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos" message="tns:I_Base_Datos_Conectar_Base_Datos_InputMessage" />
@@ -258,6 +301,34 @@
     <wsdl:operation name="View_ID_Users">
       <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/View_ID_Users" message="tns:I_Base_Datos_View_ID_Users_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/View_ID_UsersResponse" message="tns:I_Base_Datos_View_ID_Users_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Listar">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Listar" message="tns:I_Base_Datos_Listar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/ListarResponse" message="tns:I_Base_Datos_Listar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Detalle_Venta">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_Detalle_Venta" message="tns:I_Base_Datos_Insertar_Detalle_Venta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_Detalle_VentaResponse" message="tns:I_Base_Datos_Insertar_Detalle_Venta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Producto">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_Producto" message="tns:I_Base_Datos_Insertar_Producto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_ProductoResponse" message="tns:I_Base_Datos_Insertar_Producto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarporCategoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/ListarporCategoria" message="tns:I_Base_Datos_ListarporCategoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/ListarporCategoriaResponse" message="tns:I_Base_Datos_ListarporCategoria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/ListarTodos" message="tns:I_Base_Datos_ListarTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/ListarTodosResponse" message="tns:I_Base_Datos_ListarTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Venta">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_Venta" message="tns:I_Base_Datos_Insertar_Venta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/Insertar_VentaResponse" message="tns:I_Base_Datos_Insertar_Venta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UltimoCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_Base_Datos/UltimoCodigo" message="tns:I_Base_Datos_UltimoCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_Base_Datos/UltimoCodigoResponse" message="tns:I_Base_Datos_UltimoCodigo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_I_Base_Datos" type="tns:I_Base_Datos">
@@ -480,6 +551,69 @@
     </wsdl:operation>
     <wsdl:operation name="View_ID_Users">
       <soap:operation soapAction="http://tempuri.org/I_Base_Datos/View_ID_Users" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listar">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Listar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Detalle_Venta">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Insertar_Detalle_Venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Producto">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Insertar_Producto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarporCategoria">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/ListarporCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTodos">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/ListarTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Venta">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/Insertar_Venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UltimoCodigo">
+      <soap:operation soapAction="http://tempuri.org/I_Base_Datos/UltimoCodigo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

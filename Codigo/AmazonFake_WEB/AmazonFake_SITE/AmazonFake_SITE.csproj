@@ -188,6 +188,18 @@
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
     <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
     <None Include="Service References\AmazonFakeService\Reference.svcmap">

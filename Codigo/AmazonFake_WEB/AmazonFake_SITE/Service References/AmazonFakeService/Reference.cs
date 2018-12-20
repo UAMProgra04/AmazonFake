@@ -202,6 +202,349 @@ namespace AmazonFake_SITE.AmazonFakeService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cls_Entidad_Categoria_DAL", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD")]
+    [System.SerializableAttribute()]
+    public partial class Cls_Entidad_Categoria_DAL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodcategoriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescategoriaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codcategoria {
+            get {
+                return this.CodcategoriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodcategoriaField, value) != true)) {
+                    this.CodcategoriaField = value;
+                    this.RaisePropertyChanged("Codcategoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descategoria {
+            get {
+                return this.DescategoriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescategoriaField, value) != true)) {
+                    this.DescategoriaField = value;
+                    this.RaisePropertyChanged("Descategoria");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cls_Entidad_Productos_DAL", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD")]
+    [System.SerializableAttribute()]
+    public partial class Cls_Entidad_Productos_DAL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CanproductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodcategoriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodproductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DesproductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImagenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PreproductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RespuestaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Canproducto {
+            get {
+                return this.CanproductoField;
+            }
+            set {
+                if ((this.CanproductoField.Equals(value) != true)) {
+                    this.CanproductoField = value;
+                    this.RaisePropertyChanged("Canproducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codcategoria {
+            get {
+                return this.CodcategoriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodcategoriaField, value) != true)) {
+                    this.CodcategoriaField = value;
+                    this.RaisePropertyChanged("Codcategoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codproducto {
+            get {
+                return this.CodproductoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodproductoField, value) != true)) {
+                    this.CodproductoField = value;
+                    this.RaisePropertyChanged("Codproducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Desproducto {
+            get {
+                return this.DesproductoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DesproductoField, value) != true)) {
+                    this.DesproductoField = value;
+                    this.RaisePropertyChanged("Desproducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Imagen {
+            get {
+                return this.ImagenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImagenField, value) != true)) {
+                    this.ImagenField = value;
+                    this.RaisePropertyChanged("Imagen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Preproducto {
+            get {
+                return this.PreproductoField;
+            }
+            set {
+                if ((this.PreproductoField.Equals(value) != true)) {
+                    this.PreproductoField = value;
+                    this.RaisePropertyChanged("Preproducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Respuesta {
+            get {
+                return this.RespuestaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RespuestaField, value) != true)) {
+                    this.RespuestaField = value;
+                    this.RaisePropertyChanged("Respuesta");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cls_Entidad_Ventas_DAL", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD")]
+    [System.SerializableAttribute()]
+    public partial class Cls_Entidad_Ventas_DAL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClienteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IgvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RespuestaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubtotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cliente {
+            get {
+                return this.ClienteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClienteField, value) != true)) {
+                    this.ClienteField = value;
+                    this.RaisePropertyChanged("Cliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codigo {
+            get {
+                return this.CodigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoField, value) != true)) {
+                    this.CodigoField = value;
+                    this.RaisePropertyChanged("Codigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FechaField, value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Igv {
+            get {
+                return this.IgvField;
+            }
+            set {
+                if ((this.IgvField.Equals(value) != true)) {
+                    this.IgvField = value;
+                    this.RaisePropertyChanged("Igv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Respuesta {
+            get {
+                return this.RespuestaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RespuestaField, value) != true)) {
+                    this.RespuestaField = value;
+                    this.RaisePropertyChanged("Respuesta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Subtotal {
+            get {
+                return this.SubtotalField;
+            }
+            set {
+                if ((this.SubtotalField.Equals(value) != true)) {
+                    this.SubtotalField = value;
+                    this.RaisePropertyChanged("Subtotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AmazonFakeService.I_Base_Datos")]
     public interface I_Base_Datos {
@@ -361,6 +704,48 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_ID_Users", ReplyAction="http://tempuri.org/I_Base_Datos/View_ID_UsersResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_ID_UsersAsync(string Identificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Listar", ReplyAction="http://tempuri.org/I_Base_Datos/ListarResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL> Listar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Listar", ReplyAction="http://tempuri.org/I_Base_Datos/ListarResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL>> ListarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Detalle_Venta", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_Detalle_VentaResponse")]
+        string Insertar_Detalle_Venta(string codigo, string cantidad, string precio, string subtotal, string codproducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Detalle_Venta", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_Detalle_VentaResponse")]
+        System.Threading.Tasks.Task<string> Insertar_Detalle_VentaAsync(string codigo, string cantidad, string precio, string subtotal, string codproducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Producto", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_ProductoResponse")]
+        string Insertar_Producto(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Producto", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_ProductoResponse")]
+        System.Threading.Tasks.Task<string> Insertar_ProductoAsync(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporCategoria", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporCategoriaResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporCategoria", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporCategoriaResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporCategoriaAsync(string codcategoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarTodos", ReplyAction="http://tempuri.org/I_Base_Datos/ListarTodosResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarTodos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarTodos", ReplyAction="http://tempuri.org/I_Base_Datos/ListarTodosResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarTodosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Venta", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_VentaResponse")]
+        string Insertar_Venta(string codigo, string fecha, string subtotal, string igv, string total, string cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Venta", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_VentaResponse")]
+        System.Threading.Tasks.Task<string> Insertar_VentaAsync(string codigo, string fecha, string subtotal, string igv, string total, string cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/UltimoCodigo", ReplyAction="http://tempuri.org/I_Base_Datos/UltimoCodigoResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL> UltimoCodigo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/UltimoCodigo", ReplyAction="http://tempuri.org/I_Base_Datos/UltimoCodigoResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL>> UltimoCodigoAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -933,6 +1318,62 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL>> View_ID_UsersAsync(string Identificacion) {
             return base.Channel.View_ID_UsersAsync(Identificacion);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL> Listar() {
+            return base.Channel.Listar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL>> ListarAsync() {
+            return base.Channel.ListarAsync();
+        }
+        
+        public string Insertar_Detalle_Venta(string codigo, string cantidad, string precio, string subtotal, string codproducto) {
+            return base.Channel.Insertar_Detalle_Venta(codigo, cantidad, precio, subtotal, codproducto);
+        }
+        
+        public System.Threading.Tasks.Task<string> Insertar_Detalle_VentaAsync(string codigo, string cantidad, string precio, string subtotal, string codproducto) {
+            return base.Channel.Insertar_Detalle_VentaAsync(codigo, cantidad, precio, subtotal, codproducto);
+        }
+        
+        public string Insertar_Producto(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto) {
+            return base.Channel.Insertar_Producto(codproducto, desproducto, codcategoria, preproducto, canproducto);
+        }
+        
+        public System.Threading.Tasks.Task<string> Insertar_ProductoAsync(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto) {
+            return base.Channel.Insertar_ProductoAsync(codproducto, desproducto, codcategoria, preproducto, canproducto);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria) {
+            return base.Channel.ListarporCategoria(codcategoria);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporCategoriaAsync(string codcategoria) {
+            return base.Channel.ListarporCategoriaAsync(codcategoria);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarTodos() {
+            return base.Channel.ListarTodos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarTodosAsync() {
+            return base.Channel.ListarTodosAsync();
+        }
+        
+        public string Insertar_Venta(string codigo, string fecha, string subtotal, string igv, string total, string cliente) {
+            return base.Channel.Insertar_Venta(codigo, fecha, subtotal, igv, total, cliente);
+        }
+        
+        public System.Threading.Tasks.Task<string> Insertar_VentaAsync(string codigo, string fecha, string subtotal, string igv, string total, string cliente) {
+            return base.Channel.Insertar_VentaAsync(codigo, fecha, subtotal, igv, total, cliente);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL> UltimoCodigo() {
+            return base.Channel.UltimoCodigo();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL>> UltimoCodigoAsync() {
+            return base.Channel.UltimoCodigoAsync();
         }
     }
 }

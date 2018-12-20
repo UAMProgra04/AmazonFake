@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
   <xs:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DAL.Usuarios" />
+  <xs:import schemaLocation="http://localhost:56826/AmazonFakeService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" />
   <xs:element name="Conectar_Base_Datos">
     <xs:complexType>
       <xs:sequence />
@@ -469,6 +470,111 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DAL.Usuarios" minOccurs="0" name="View_ID_UsersResult" nillable="true" type="q9:ArrayOfCls_Usuarios_DAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Listar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarResult" nillable="true" type="q10:ArrayOfCls_Entidad_Categoria_DAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_Detalle_Venta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="precio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subtotal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codproducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_Detalle_VentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_Detalle_VentaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_Producto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codproducto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="desproducto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codcategoria" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="preproducto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="canproducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_ProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_ProductoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarporCategoria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codcategoria" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarporCategoriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarporCategoriaResult" nillable="true" type="q11:ArrayOfCls_Entidad_Productos_DAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTodos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarTodosResult" nillable="true" type="q12:ArrayOfCls_Entidad_Productos_DAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_Venta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subtotal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="igv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="total" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_VentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_VentaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UltimoCodigo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UltimoCodigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="UltimoCodigoResult" nillable="true" type="q13:ArrayOfCls_Entidad_Ventas_DAL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

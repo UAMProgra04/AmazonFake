@@ -39,7 +39,7 @@ namespace BLL.Entidades_BD
                     obj_producto_Dal.Respuesta = "Error al ingresar Producto";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obj_producto_Dal = null;
             }
@@ -75,7 +75,7 @@ namespace BLL.Entidades_BD
                     obj_producto_Dal.Imagen = (string)(lector[5]);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obj_producto_Dal = null;
             }
@@ -110,7 +110,7 @@ namespace BLL.Entidades_BD
                     lista.Add(obj_producto_Dal);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obj_producto_Dal = null;
             }

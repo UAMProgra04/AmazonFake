@@ -322,6 +322,7 @@ namespace SVC.Contract
 
 
         #region Metodos_Entidades_Base_Datos
+
         #region Cls_Entidad_Categoria_BLL
         public List<Cls_Entidad_Categoria_DAL> Listar()
         {
