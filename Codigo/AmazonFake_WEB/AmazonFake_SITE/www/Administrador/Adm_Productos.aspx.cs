@@ -23,19 +23,22 @@ namespace AmazonFake_SITE.www.Administrador
                 CargarListaProductos();
             }
         }
+        protected void LimpiarCampos()
+        {
+            Text_CodProducto.Text = string.Empty;
+            Text_NomProducto.Text = string.Empty;
+            Text_CodCategoria.Text = string.Empty;
+            Text_PrecioProduc.Text = string.Empty;
+            Text_CantidadStock.Text = string.Empty;
+            Text_ImagenProducto.Text = string.Empty;
+            lblErrorBorrado.Text = string.Empty;
+        }
         protected void CargarListaProductos()
         {
-            //AmazonFakeService.I_Base_DatosClient cliente = new AmazonFakeService.I_Base_DatosClient();
-            /*I_Base_DatosClient cliente = new I_Base_DatosClient();
-            DataTable DataTableClient = cliente.Mostrar_Informacion("SP_VIEW_ALL_Data_PRODUCTO", "PRODUCTO");
-            GV_ALL_PRODUCT.DataSource = null;
-            GV_ALL_PRODUCT.DataSource = DataTableClient;
-            GV_ALL_PRODUCT.DataBind();*/
-
             I_Base_DatosClient cliente = new I_Base_DatosClient();
             string SMsError = string.Empty;
 
-            DataTable myDataTable = cliente.ListarDatos("SP_VIEW_ALL_Data_PRODUCTO", ref SMsError);
+            DataTable myDataTable = cliente.ListarDatos("SP_View_Productos", ref SMsError);
 
             if (SMsError != string.Empty)
             {
@@ -55,7 +58,7 @@ namespace AmazonFake_SITE.www.Administrador
 
         protected void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
-            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            /*I_Base_DatosClient cliente = new I_Base_DatosClient();
             DataTable myDataTable = new DataTable();
             string SMsError = string.Empty;
 
@@ -80,7 +83,36 @@ namespace AmazonFake_SITE.www.Administrador
             else
             {
                 GV_ALL_PRODUCT.DataSource = myDataTable;
+            }*/
+        }
+
+        protected void btn_Agregar_Articulo_Click(object sender, EventArgs e)
+        {
+            if ((Text_CodProducto.Text != string.Empty) &
+                (Text_NomProducto.Text != string.Empty) &
+                (Text_CodCategoria.Text != string.Empty) &
+                (Text_PrecioProduc.Text != string.Empty) &
+                (Text_CantidadStock.Text != string.Empty) &
+                (Text_ImagenProducto.Text != string.Empty))
+            {
+                I_Base_DatosClient cliente = new I_Base_DatosClient();
+                lbl_Resultados.Text = cliente.Insertar_Producto(Text_CodProducto.Text, Text_NomProducto.Text,
+                    Text_CodCategoria.Text, Text_PrecioProduc.Text, Text_CantidadStock.Text, Text_ImagenProducto.Text);
+                CargarListaProductos(); LimpiarCampos();
             }
+            else
+            {
+                lbl_Resultados.Text = "Debe llenar todos los campos con informacion valida";
+                LimpiarCampos();
+            }
+            
+        }
+
+        protected void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            I_Base_DatosClient cliente = new I_Base_DatosClient();
+            lblErrorBorrado.Text = cliente.Eliminar_Producto(Text_eliminar.Text);
+            CargarListaProductos(); LimpiarCampos();
         }
     }
 }

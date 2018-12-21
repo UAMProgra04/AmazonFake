@@ -155,7 +155,8 @@ GO
 use Prog04_Proj02
 go
 
---[dbo].[pa_Categorias_ListasTodos]--
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 create procedure SP_ListasTodos_Categorias
 as
 begin transaction 
@@ -168,7 +169,8 @@ begin catch
 end catch
 go
 
---[dbo].[pa_detalleventa]--
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 create procedure SP_Detalle_Ventas
 	@codigo char(10),
 	@cantidad int,
@@ -186,15 +188,15 @@ begin catch
 	rollback transaction
 end catch
 go
-
---[dbo].[PA_Productos_Bucar_Por_Categorias]--
-create procedure SP_View_Categorias
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+alter procedure SP_View_Categorias
 	@codcategoria char(2)
 as
 begin transaction 
 begin try
 	select codproducto,desproducto,codcategoria,preproducto,canproducto,imagen 
-	from Productos 
+	from PRODUCTOS 
 	where codcategoria = @codcategoria
 	commit transaction
 end try
@@ -203,18 +205,14 @@ begin catch
 end catch
 go
 
---[dbo].[pa_Productos_insertar]--
-create procedure SP_Insert_Productos
-	@codproducto char(2),
-	@desproducto varchar(40),
-	@codcategoria char(2),
-	@preproducto decimal(18,2),
-	@canproducto int
+alter procedure SP_View_NombreProducto
+	@desproducto varchar(40)
 as
 begin transaction 
 begin try
-	insert into Productos(codproducto,desproducto,codcategoria,preproducto,canproducto)
-	values (@codproducto,@desproducto,@codcategoria,@preproducto,@canproducto)
+	select codproducto,desproducto,codcategoria,preproducto,canproducto,imagen 
+	from PRODUCTOS 
+	where desproducto like '%' + @desproducto + '%'
 	commit transaction
 end try
 begin catch
@@ -222,7 +220,57 @@ begin catch
 end catch
 go
 
---[dbo].[pa_productos_ListarTodos]--
+alter procedure SP_View_CodigoProducto
+	@codproducto char(4)
+as
+begin transaction 
+begin try
+	select codproducto,desproducto,codcategoria,preproducto,canproducto,imagen 
+	from PRODUCTOS 
+	where codproducto = @codproducto
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+go
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+alter procedure SP_Insert_Productos
+	@codproducto char(2),
+	@desproducto varchar(40),
+	@codcategoria char(2),
+	@preproducto decimal(18,2),
+	@canproducto int,
+	@Imagen varchar(40)
+as
+begin transaction 
+begin try
+	insert into PRODUCTOS(codproducto,desproducto,codcategoria,preproducto,canproducto,imagen)
+	values (@codproducto,@desproducto,@codcategoria,@preproducto,@canproducto, @Imagen)
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+go
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+create procedure SP_Delete_Productos
+	@desproducto varchar(40)
+as
+begin transaction 
+begin try
+	delete from PRODUCTOS where desproducto = @desproducto
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+go
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 create procedure SP_View_Productos
 as
 begin transaction 
@@ -236,7 +284,8 @@ begin catch
 end catch
 go
 
---[dbo].[pa_ventas]--
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 create procedure SP_Insert_Ventas
 	@codigo char(10),
 	@fecha varchar(50),
@@ -256,7 +305,8 @@ begin catch
 end catch
 go
 
---select count(VEN_Codigo),max (VEN_Codigo) from VENTA--
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 create procedure SP_Count_Ventas
 as
 begin transaction 

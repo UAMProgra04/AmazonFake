@@ -115,9 +115,15 @@ namespace SVC.Interface
         #region Cls_Entidad_Productos_BLL
         [OperationContract]
         string Insertar_Producto(string codproducto, string desproducto, string codcategoria,
-            string preproducto, string canproducto);
+            string preproducto, string canproducto, string imagenproducto);
+        [OperationContract]
+        string Eliminar_Producto(string nombreProducto);
         [OperationContract]
         List<Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria);
+        [OperationContract]
+        List<Cls_Entidad_Productos_DAL> ListarporNombreProducto(string NombreProducto);
+        [OperationContract]
+        List<Cls_Entidad_Productos_DAL> ListarporCodigoProducto(string CodigoProducto);
         [OperationContract]
         List<Cls_Entidad_Productos_DAL> ListarTodos();
         #endregion

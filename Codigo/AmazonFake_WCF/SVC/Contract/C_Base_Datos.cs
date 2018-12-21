@@ -348,7 +348,7 @@ namespace SVC.Contract
 
         #region Cls_Entidad_Productos_BLL
         public string Insertar_Producto(string codproducto, string desproducto, string codcategoria, 
-            string preproducto, string canproducto)
+            string preproducto, string canproducto, string imagenproducto)
         {
             Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
             Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
@@ -357,7 +357,16 @@ namespace SVC.Contract
             obj_Producto_DAL.Codcategoria = codcategoria;
             obj_Producto_DAL.Preproducto = Convert.ToDouble(preproducto);
             obj_Producto_DAL.Canproducto = Convert.ToInt32(canproducto);
+            obj_Producto_DAL.Imagen = imagenproducto;
             return obj_Producto_BLL.Insertar_Producto(obj_Producto_DAL);
+        }
+
+        public string Eliminar_Producto(string nombreProducto)
+        {
+            Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
+            Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
+            obj_Producto_DAL.Desproducto = nombreProducto;
+            return obj_Producto_BLL.Eliminar_Producto(obj_Producto_DAL);
         }
 
         public List<Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria)
@@ -366,6 +375,26 @@ namespace SVC.Contract
             Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
             Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
             obj_Producto_DAL.Codcategoria = codcategoria;
+            lista.Add(obj_Producto_BLL.ListarporCategoria(obj_Producto_DAL));
+            return lista;
+        }
+
+        public List<Cls_Entidad_Productos_DAL> ListarporNombreProducto(string NombreProducto)
+        {
+            List<Cls_Entidad_Productos_DAL> lista = new List<Cls_Entidad_Productos_DAL>();
+            Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
+            Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
+            obj_Producto_DAL.Desproducto = NombreProducto;
+            lista.Add(obj_Producto_BLL.ListarporCategoria(obj_Producto_DAL));
+            return lista;
+        }
+
+        public List<Cls_Entidad_Productos_DAL> ListarporCodigoProducto(string CodigoProducto)
+        {
+            List<Cls_Entidad_Productos_DAL> lista = new List<Cls_Entidad_Productos_DAL>();
+            Cls_Entidad_Productos_BLL obj_Producto_BLL = new Cls_Entidad_Productos_BLL();
+            Cls_Entidad_Productos_DAL obj_Producto_DAL = new Cls_Entidad_Productos_DAL();
+            obj_Producto_DAL.Codproducto = CodigoProducto;
             lista.Add(obj_Producto_BLL.ListarporCategoria(obj_Producto_DAL));
             return lista;
         }

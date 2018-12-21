@@ -15,21 +15,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Envio_Correo_Cliente">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Correo_Target" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Correo_Source" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Correo_Encabezado" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Correo_Mensaje" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Envio_Correo_ClienteResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Mostrar_Informacion">
     <xs:complexType>
       <xs:sequence>
@@ -307,6 +292,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Envio_Correo_Cliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Correo_Target" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo_Source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo_Encabezado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Correo_Mensaje" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Envio_Correo_ClienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Create_Account">
     <xs:complexType>
       <xs:sequence>
@@ -511,6 +511,7 @@
         <xs:element minOccurs="0" name="codcategoria" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="preproducto" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="canproducto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imagenproducto" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -518,6 +519,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Insertar_ProductoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eliminar_Producto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreProducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eliminar_ProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Eliminar_ProductoResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -535,6 +550,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListarporNombreProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NombreProducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarporNombreProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarporNombreProductoResult" nillable="true" type="q12:ArrayOfCls_Entidad_Productos_DAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarporCodigoProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarporCodigoProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarporCodigoProductoResult" nillable="true" type="q13:ArrayOfCls_Entidad_Productos_DAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListarTodos">
     <xs:complexType>
       <xs:sequence />
@@ -543,7 +586,7 @@
   <xs:element name="ListarTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarTodosResult" nillable="true" type="q12:ArrayOfCls_Entidad_Productos_DAL" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="ListarTodosResult" nillable="true" type="q14:ArrayOfCls_Entidad_Productos_DAL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -574,7 +617,7 @@
   <xs:element name="UltimoCodigoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="UltimoCodigoResult" nillable="true" type="q13:ArrayOfCls_Entidad_Ventas_DAL" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DAL.Entidades_BD" minOccurs="0" name="UltimoCodigoResult" nillable="true" type="q15:ArrayOfCls_Entidad_Ventas_DAL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

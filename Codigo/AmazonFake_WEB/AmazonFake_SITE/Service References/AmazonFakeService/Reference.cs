@@ -555,12 +555,6 @@ namespace AmazonFake_SITE.AmazonFakeService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Conectar_Base_Datos", ReplyAction="http://tempuri.org/I_Base_Datos/Conectar_Base_DatosResponse")]
         System.Threading.Tasks.Task<string> Conectar_Base_DatosAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
-        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
-        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Mostrar_Informacion", ReplyAction="http://tempuri.org/I_Base_Datos/Mostrar_InformacionResponse")]
         System.Data.DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos);
         
@@ -638,6 +632,12 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/View_User_Status", ReplyAction="http://tempuri.org/I_Base_Datos/View_User_StatusResponse")]
         System.Threading.Tasks.Task<bool> View_User_StatusAsync(string Correo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Envio_Correo_Cliente", ReplyAction="http://tempuri.org/I_Base_Datos/Envio_Correo_ClienteResponse")]
+        System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Create_Account", ReplyAction="http://tempuri.org/I_Base_Datos/Create_AccountResponse")]
         string Create_Account(string correo, string nombre, string pssword);
@@ -718,16 +718,34 @@ namespace AmazonFake_SITE.AmazonFakeService {
         System.Threading.Tasks.Task<string> Insertar_Detalle_VentaAsync(string codigo, string cantidad, string precio, string subtotal, string codproducto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Producto", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_ProductoResponse")]
-        string Insertar_Producto(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto);
+        string Insertar_Producto(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto, string imagenproducto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Insertar_Producto", ReplyAction="http://tempuri.org/I_Base_Datos/Insertar_ProductoResponse")]
-        System.Threading.Tasks.Task<string> Insertar_ProductoAsync(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto);
+        System.Threading.Tasks.Task<string> Insertar_ProductoAsync(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto, string imagenproducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Eliminar_Producto", ReplyAction="http://tempuri.org/I_Base_Datos/Eliminar_ProductoResponse")]
+        string Eliminar_Producto(string nombreProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/Eliminar_Producto", ReplyAction="http://tempuri.org/I_Base_Datos/Eliminar_ProductoResponse")]
+        System.Threading.Tasks.Task<string> Eliminar_ProductoAsync(string nombreProducto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporCategoria", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporCategoriaResponse")]
         System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporCategoria", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporCategoriaResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporCategoriaAsync(string codcategoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporNombreProducto", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporNombreProductoResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporNombreProducto(string NombreProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporNombreProducto", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporNombreProductoResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporNombreProductoAsync(string NombreProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporCodigoProducto", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporCodigoProductoResponse")]
+        System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporCodigoProducto(string CodigoProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarporCodigoProducto", ReplyAction="http://tempuri.org/I_Base_Datos/ListarporCodigoProductoResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporCodigoProductoAsync(string CodigoProducto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Base_Datos/ListarTodos", ReplyAction="http://tempuri.org/I_Base_Datos/ListarTodosResponse")]
         System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarTodos();
@@ -1059,14 +1077,6 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.Conectar_Base_DatosAsync();
         }
         
-        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
-            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
-        }
-        
-        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
-            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
-        }
-        
         public System.Data.DataTable Mostrar_Informacion(string Nombre_StoreProcedure_BaseDatos, string Nombre_Tabla_BaseDatos) {
             return base.Channel.Mostrar_Informacion(Nombre_StoreProcedure_BaseDatos, Nombre_Tabla_BaseDatos);
         }
@@ -1232,6 +1242,14 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.View_User_StatusAsync(Correo);
         }
         
+        public void Envio_Correo_Cliente(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            base.Channel.Envio_Correo_Cliente(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        }
+        
+        public System.Threading.Tasks.Task Envio_Correo_ClienteAsync(string Correo_Target, string Correo_Source, string Correo_Encabezado, string Correo_Mensaje) {
+            return base.Channel.Envio_Correo_ClienteAsync(Correo_Target, Correo_Source, Correo_Encabezado, Correo_Mensaje);
+        }
+        
         public string Create_Account(string correo, string nombre, string pssword) {
             return base.Channel.Create_Account(correo, nombre, pssword);
         }
@@ -1336,12 +1354,20 @@ namespace AmazonFake_SITE.AmazonFakeService {
             return base.Channel.Insertar_Detalle_VentaAsync(codigo, cantidad, precio, subtotal, codproducto);
         }
         
-        public string Insertar_Producto(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto) {
-            return base.Channel.Insertar_Producto(codproducto, desproducto, codcategoria, preproducto, canproducto);
+        public string Insertar_Producto(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto, string imagenproducto) {
+            return base.Channel.Insertar_Producto(codproducto, desproducto, codcategoria, preproducto, canproducto, imagenproducto);
         }
         
-        public System.Threading.Tasks.Task<string> Insertar_ProductoAsync(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto) {
-            return base.Channel.Insertar_ProductoAsync(codproducto, desproducto, codcategoria, preproducto, canproducto);
+        public System.Threading.Tasks.Task<string> Insertar_ProductoAsync(string codproducto, string desproducto, string codcategoria, string preproducto, string canproducto, string imagenproducto) {
+            return base.Channel.Insertar_ProductoAsync(codproducto, desproducto, codcategoria, preproducto, canproducto, imagenproducto);
+        }
+        
+        public string Eliminar_Producto(string nombreProducto) {
+            return base.Channel.Eliminar_Producto(nombreProducto);
+        }
+        
+        public System.Threading.Tasks.Task<string> Eliminar_ProductoAsync(string nombreProducto) {
+            return base.Channel.Eliminar_ProductoAsync(nombreProducto);
         }
         
         public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporCategoria(string codcategoria) {
@@ -1350,6 +1376,22 @@ namespace AmazonFake_SITE.AmazonFakeService {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporCategoriaAsync(string codcategoria) {
             return base.Channel.ListarporCategoriaAsync(codcategoria);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporNombreProducto(string NombreProducto) {
+            return base.Channel.ListarporNombreProducto(NombreProducto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporNombreProductoAsync(string NombreProducto) {
+            return base.Channel.ListarporNombreProductoAsync(NombreProducto);
+        }
+        
+        public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarporCodigoProducto(string CodigoProducto) {
+            return base.Channel.ListarporCodigoProducto(CodigoProducto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL>> ListarporCodigoProductoAsync(string CodigoProducto) {
+            return base.Channel.ListarporCodigoProductoAsync(CodigoProducto);
         }
         
         public System.Collections.ObjectModel.Collection<AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL> ListarTodos() {

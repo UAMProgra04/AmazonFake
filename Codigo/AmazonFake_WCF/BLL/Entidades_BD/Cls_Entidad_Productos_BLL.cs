@@ -23,11 +23,12 @@ namespace BLL.Entidades_BD
                 obj_cmd.CommandText = "SP_Insert_Productos";
                 obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
                 {
-                    obj_cmd.Parameters.AddWithValue("@codproducto", obj_producto_Dal.Codproducto);
+                    obj_cmd.Parameters.AddWithValue("@codproducto", Convert.ToChar(obj_producto_Dal.Codproducto));
                     obj_cmd.Parameters.AddWithValue("@desproducto", obj_producto_Dal.Desproducto);
-                    obj_cmd.Parameters.AddWithValue("@codcategoria", obj_producto_Dal.Codcategoria);
-                    obj_cmd.Parameters.AddWithValue("@preproducto", obj_producto_Dal.Preproducto);
-                    obj_cmd.Parameters.AddWithValue("@canproducto", obj_producto_Dal.Canproducto);
+                    obj_cmd.Parameters.AddWithValue("@codcategoria", Convert.ToChar(obj_producto_Dal.Codcategoria));
+                    obj_cmd.Parameters.AddWithValue("@preproducto", Convert.ToDecimal(obj_producto_Dal.Preproducto));
+                    obj_cmd.Parameters.AddWithValue("@canproducto", Convert.ToInt32(obj_producto_Dal.Canproducto));
+                    obj_cmd.Parameters.AddWithValue("@Imagen", obj_producto_Dal.Imagen);
                 }
                 int registros = obj_cmd.ExecuteNonQuery();
                 if (registros == 1)
@@ -37,6 +38,36 @@ namespace BLL.Entidades_BD
                 else
                 {
                     obj_producto_Dal.Respuesta = "Error al ingresar Producto";
+                }
+            }
+            catch (Exception)
+            {
+                obj_producto_Dal = null;
+            }
+            return obj_producto_Dal.Respuesta;
+        }
+
+        public string Eliminar_Producto(Cls_Entidad_Productos_DAL obj_producto_Dal)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_Delete_Productos";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos();
+                {
+                    obj_cmd.Parameters.AddWithValue("@desproducto", obj_producto_Dal.Desproducto);
+                }
+                int registros = obj_cmd.ExecuteNonQuery();
+                if (registros == 1)
+                {
+                    obj_producto_Dal.Respuesta = "Producto Eliminado de forma correcta";
+                }
+                else
+                {
+                    obj_producto_Dal.Respuesta = "Error al Eliminar Producto";
                 }
             }
             catch (Exception)
@@ -59,7 +90,79 @@ namespace BLL.Entidades_BD
                 obj_cmd.CommandText = "SP_View_Categorias";
                 obj_cmd.Connection = obj_bll.Conexion_BAseDatos(); ;
                 {
-                    obj_cmd.Parameters.AddWithValue("@codcategoria", obj_Producto_DAL.Codcategoria);
+                    obj_cmd.Parameters.AddWithValue("@codcategoria", Convert.ToChar(obj_Producto_DAL.Codcategoria));
+                }
+
+                lector = obj_cmd.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    obj_producto_Dal = new Cls_Entidad_Productos_DAL();
+                    obj_producto_Dal.Codproducto = (string)(lector[0]);
+                    obj_producto_Dal.Desproducto = (string)(lector[1]);
+                    obj_producto_Dal.Codcategoria = (string)(lector[2]);
+                    obj_producto_Dal.Preproducto = (double)(lector[3]);
+                    obj_producto_Dal.Canproducto = (int)(lector[4]);
+                    obj_producto_Dal.Imagen = (string)(lector[5]);
+                }
+            }
+            catch (Exception)
+            {
+                obj_producto_Dal = null;
+            }
+            return obj_producto_Dal;
+        }
+
+        public Cls_Entidad_Productos_DAL ListarporNombreProducto(Cls_Entidad_Productos_DAL obj_Producto_DAL)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+            Cls_Entidad_Productos_DAL obj_producto_Dal = new Cls_Entidad_Productos_DAL();
+            SqlDataReader lector;
+
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_View_NombreProducto";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos(); ;
+                {
+                    obj_cmd.Parameters.AddWithValue("@desproducto", obj_Producto_DAL.Desproducto);
+                }
+
+                lector = obj_cmd.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    obj_producto_Dal = new Cls_Entidad_Productos_DAL();
+                    obj_producto_Dal.Codproducto = (string)(lector[0]);
+                    obj_producto_Dal.Desproducto = (string)(lector[1]);
+                    obj_producto_Dal.Codcategoria = (string)(lector[2]);
+                    obj_producto_Dal.Preproducto = (double)(lector[3]);
+                    obj_producto_Dal.Canproducto = (int)(lector[4]);
+                    obj_producto_Dal.Imagen = (string)(lector[5]);
+                }
+            }
+            catch (Exception)
+            {
+                obj_producto_Dal = null;
+            }
+            return obj_producto_Dal;
+        }
+
+        public Cls_Entidad_Productos_DAL ListarporCodigoProducto(Cls_Entidad_Productos_DAL obj_Producto_DAL)
+        {
+            Cls_BD_BLL obj_bll = new Cls_BD_BLL();
+            SqlCommand obj_cmd = new SqlCommand();
+            Cls_Entidad_Productos_DAL obj_producto_Dal = new Cls_Entidad_Productos_DAL();
+            SqlDataReader lector;
+
+            try
+            {
+                obj_cmd.CommandType = CommandType.StoredProcedure;
+                obj_cmd.CommandText = "SP_View_CodigoProducto";
+                obj_cmd.Connection = obj_bll.Conexion_BAseDatos(); ;
+                {
+                    obj_cmd.Parameters.AddWithValue("@codproducto", obj_Producto_DAL.Codproducto);
                 }
 
                 lector = obj_cmd.ExecuteReader();
