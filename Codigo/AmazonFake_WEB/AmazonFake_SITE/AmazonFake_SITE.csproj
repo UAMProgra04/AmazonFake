@@ -108,7 +108,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\slick.svg" />
     <Content Include="img\Access\amazonfake_logo.png" />
-    <Content Include="img\borrar.jpg" />
     <Content Include="img\Imagenes\Audifono01.jpg" />
     <Content Include="img\Imagenes\Audifono03.jpg" />
     <Content Include="img\Imagenes\Audifono04.jpg" />
@@ -165,6 +164,7 @@
     <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\AmazonFake_SITE.pubxml" />
     <None Include="Service References\AmazonFakeServiceAlt\service.wsdl" />
     <None Include="Service References\AmazonFakeServiceAlt\service.xsd">
       <SubType>Designer</SubType>
@@ -175,7 +175,7 @@
     <None Include="Service References\AmazonFakeServiceAlt\System.Data.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AmazonFakeService\AmazonFakeService.disco" />
+    <None Include="Service References\AmazonFakeService\AmazonFakeService1.disco" />
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Eliminar_DatosSinIdentityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -194,15 +194,9 @@
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Modifica_DatosSinIdentityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\AmazonFakeService\AmazonFakeService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\AmazonFakeService\AmazonFakeService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -212,8 +206,24 @@
     <Content Include="Service References\AmazonFakeService\AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmazonFakeService\AmazonFakeService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AmazonFakeService\configuration91.svcinfo" />
     <None Include="Service References\AmazonFakeService\configuration.svcinfo" />
+    <None Include="Service References\AmazonFakeService\C_Base_Datos1.wsdl" />
     <None Include="Service References\AmazonFakeService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -228,9 +238,10 @@
     <Content Include="www\Access\Login.aspx" />
     <Content Include="www\Access\PasswordAssistance.aspx" />
     <Content Include="www\Administrador\Adm_Clientes.aspx" />
+    <Content Include="www\Administrador\Adm_Detalle_Ventas.aspx" />
     <Content Include="www\Administrador\Adm_Productos.aspx" />
-    <Content Include="www\Administrador\Adm_Proveedores.aspx" />
     <Content Include="www\Administrador\Adm_Usuarios.aspx" />
+    <Content Include="www\Administrador\Adm_Ventas.aspx" />
     <Content Include="www\Error\Error404.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="www\Usuario\UserChangePassword.aspx" />
@@ -244,16 +255,6 @@
     <Content Include="fonts\slick.ttf" />
     <Content Include="fonts\slick.woff" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
-    <None Include="Service References\AmazonFakeService\AmazonFakeService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmazonFakeService\AmazonFakeService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmazonFakeService\AmazonFakeService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmazonFakeService\C_Base_Datos.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -360,6 +361,13 @@
     <Compile Include="www\Administrador\Adm_Clientes.aspx.designer.cs">
       <DependentUpon>Adm_Clientes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="www\Administrador\Adm_Detalle_Ventas.aspx.cs">
+      <DependentUpon>Adm_Detalle_Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Detalle_Ventas.aspx.designer.cs">
+      <DependentUpon>Adm_Detalle_Ventas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="www\Administrador\Adm_Productos.aspx.cs">
       <DependentUpon>Adm_Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -367,19 +375,19 @@
     <Compile Include="www\Administrador\Adm_Productos.aspx.designer.cs">
       <DependentUpon>Adm_Productos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="www\Administrador\Adm_Proveedores.aspx.cs">
-      <DependentUpon>Adm_Proveedores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="www\Administrador\Adm_Proveedores.aspx.designer.cs">
-      <DependentUpon>Adm_Proveedores.aspx</DependentUpon>
-    </Compile>
     <Compile Include="www\Administrador\Adm_Usuarios.aspx.cs">
       <DependentUpon>Adm_Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="www\Administrador\Adm_Usuarios.aspx.designer.cs">
       <DependentUpon>Adm_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Ventas.aspx.cs">
+      <DependentUpon>Adm_Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="www\Administrador\Adm_Ventas.aspx.designer.cs">
+      <DependentUpon>Adm_Ventas.aspx</DependentUpon>
     </Compile>
     <Compile Include="www\Error\Error404.aspx.cs">
       <DependentUpon>Error404.aspx</DependentUpon>

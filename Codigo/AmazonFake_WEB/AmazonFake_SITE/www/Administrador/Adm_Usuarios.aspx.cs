@@ -15,14 +15,17 @@ namespace AmazonFake_SITE.www.Administrador
         #region Carga_Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UsuarioSession"] == null)
-            {
-                Response.Redirect("~/www/Index.aspx");
-            }
-            else
+            #region Valida_Sesion
+            if (Session["UsuarioSession"] != null &&
+                Session["UsuarioPerfil"].ToString().Equals("0"))
             {
                 CargarListaEmpleados();
             }
+            else
+            {
+                Response.Redirect("~/www/Index.aspx");
+            }
+            #endregion  
         }
         #endregion
 

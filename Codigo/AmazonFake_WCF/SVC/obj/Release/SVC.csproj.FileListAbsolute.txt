@@ -1,0 +1,10 @@
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\SVC.dll.config
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\SVC.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\SVC.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\BLL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\DAL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\BLL.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\bin\Release\DAL.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Release\SVC.csprojResolveAssemblyReference.cache
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Release\SVC.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\SVC\obj\Release\SVC.pdb

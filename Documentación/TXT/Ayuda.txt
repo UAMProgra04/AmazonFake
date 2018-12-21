@@ -1,0 +1,56 @@
+Para publicar el servicio:
+Se le da compilar al proyecto, 
+despues al  SVC -> SVC_SITE se le da click derecho publica
+se selecciona custom profile
+se le da un nombre: WCF_Nombre
+en el deploy: 
+File System: crear sitio manual
+location: ubicacion donde se van a colocar los archivos (crear carpeta)
+
+configuration: release
+settings: selecciona los primeros 2
+
+[se debe conocer el sistema operativo]
+activar el IIS
+en programas y caracteristicas
+activar/desactivar caracteristicas windows
+internet information services y 
+internet information services hosteable web core
+y lo activamos
+
+Simpre un site debe tener un aplication pool relacionado
+de aqui se sacan todas las estadisticas y reportes
+
+
+agregamos sitios:
+sobre carpeta site, click derecho agregar sitio
+la carpeta para alojar los sitios se pubican en:
+C:\inetpub\wwwroot
+
+creamos carpeta y pegamos los archivos
+
+
+#################################################################
+Publicar web 
+actualizamos en el proyecto web la referencia de servicio
+hacemos los pasos de pulicacion del proyecto web como si fuera un wcf
+copiamos la carpeta del proyecto web en
+	C:\inetpub\wwwroot
+luego se le da al IIS agregar web site
+y le ponemos la ruta de la carpeta agregada a la ruta, en este caso:
+	C:\inetpub\wwwroot\nombrede la carpeta
+luego vamos a la configuacion al ISS al archivo ASP y habilitamos 
+	Enable HTML Fallback
+	Enable Paterns Paths
+y salvamos, luego vamos a Default Document y ponemos el nombre de nuestro 
+formulario asp, en este caso:
+	Encript_DesEncript.aspx
+y luego vamos presionamos click derecho  sobre el sitio agregado y refrescamos
+luego le damos a manage website -> browser
+
+#################################################################
+video de como publicar servicio WCF: 
+https://www.youtube.com/watch?v=1MpMJ4v7FqA
+Video ayuda publicar web page:
+https://www.youtube.com/watch?v=AA1ZQCk38s8
+

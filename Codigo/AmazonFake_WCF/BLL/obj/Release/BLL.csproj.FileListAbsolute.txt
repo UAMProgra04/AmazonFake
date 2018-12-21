@@ -1,0 +1,7 @@
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Release\BLL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Release\BLL.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Release\DAL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\bin\Release\DAL.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Release\BLL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\BLL\obj\Release\BLL.pdb

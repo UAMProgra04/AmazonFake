@@ -25,7 +25,8 @@ namespace AmazonFake_SITE
             this.Opc_Administrativa_Clientes.Visible = false;
             this.Opc_Administrativa_Usuarios.Visible = false;
             this.Opc_Administrativa_Productos.Visible = false;
-            this.Opc_Administrativa_Proveedores.Visible = false;
+            this.Opc_Administrativa_Ventas.Visible = false;
+            this.Opc_Administrativa_Detalle_Ventas.Visible = false;
 
             if (Session["UsuarioSession"] != null)
             {
@@ -47,7 +48,15 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Clientes.Visible = false;
                     this.Opc_Administrativa_Usuarios.Visible = false;
                     this.Opc_Administrativa_Productos.Visible = false;
-                    this.Opc_Administrativa_Proveedores.Visible = false;
+                    this.Opc_Administrativa_Ventas.Visible = false;
+                    this.Opc_Administrativa_Detalle_Ventas.Visible = false;
+
+                    this.Opc_Productos_Laptops.Visible = true;
+                    this.Opc_Productos_Telefonos.Visible = true;
+                    this.Opc_Productos_Camaras.Visible = true;
+                    this.Opc_Productos_Tablets.Visible = true;
+                    this.Opc_Productos_Otros.Visible = true;
+
                 }
                 if (Session["UsuarioPerfil"].ToString().Equals("1"))
                 {
@@ -67,7 +76,14 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Clientes.Visible = true;
                     this.Opc_Administrativa_Usuarios.Visible = false;
                     this.Opc_Administrativa_Productos.Visible = true;
-                    this.Opc_Administrativa_Proveedores.Visible = true;
+                    this.Opc_Administrativa_Ventas.Visible = false;
+                    this.Opc_Administrativa_Detalle_Ventas.Visible = false;
+
+                    this.Opc_Productos_Laptops.Visible = false;
+                    this.Opc_Productos_Telefonos.Visible = false;
+                    this.Opc_Productos_Camaras.Visible = false;
+                    this.Opc_Productos_Tablets.Visible = false;
+                    this.Opc_Productos_Otros.Visible = false;
                 }
                 if (Session["UsuarioPerfil"].ToString().Equals("0"))
                 {
@@ -75,7 +91,7 @@ namespace AmazonFake_SITE
                     lbl_NombreUsuario.Text = "Bienvenido " + NombreUsuario;
 
                     this.Opc_Nombre_Usuario.Visible = true;
-                    this.Opc_Cesta.Visible = true;
+                    this.Opc_Cesta.Visible = false;
                     this.Opc_IniciarSesion.Visible = false;
                     this.Opc_CerrarSesion.Visible = true;
 
@@ -87,7 +103,14 @@ namespace AmazonFake_SITE
                     this.Opc_Administrativa_Clientes.Visible = true;
                     this.Opc_Administrativa_Usuarios.Visible = true;
                     this.Opc_Administrativa_Productos.Visible = true;
-                    this.Opc_Administrativa_Proveedores.Visible = true;
+                    this.Opc_Administrativa_Ventas.Visible = true;
+                    this.Opc_Administrativa_Detalle_Ventas.Visible = true;
+
+                    this.Opc_Productos_Laptops.Visible = false;
+                    this.Opc_Productos_Telefonos.Visible = false;
+                    this.Opc_Productos_Camaras.Visible = false;
+                    this.Opc_Productos_Tablets.Visible = false;
+                    this.Opc_Productos_Otros.Visible = false;
                 }
             }
         }

@@ -130,13 +130,22 @@ namespace AmazonFake_SITE {
         protected global::System.Web.UI.WebControls.HyperLink Opc_Administrativa_Productos;
         
         /// <summary>
-        /// Control Opc_Administrativa_Proveedores.
+        /// Control Opc_Administrativa_Ventas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Opc_Administrativa_Proveedores;
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Administrativa_Ventas;
+        
+        /// <summary>
+        /// Control Opc_Administrativa_Detalle_Ventas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Administrativa_Detalle_Ventas;
         
         /// <summary>
         /// Control Opc_Productos_Laptops.

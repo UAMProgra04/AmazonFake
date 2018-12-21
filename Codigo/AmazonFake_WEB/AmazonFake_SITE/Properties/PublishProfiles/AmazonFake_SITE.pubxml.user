@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Www-R\Documents\GitHub\AmazonFake\Web</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AmazonFake.Master">
+      <publishTime>12/20/2018 22:02:00</publishTime>
+    </File>
+    <File Include="ApplicationInsights.config">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="bin/AmazonFake_SITE.dll">
+      <publishTime>12/20/2018 22:42:06</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>12/20/2018 22:42:15</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>12/20/2018 22:42:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="Checkout.aspx">
+      <publishTime>12/20/2018 21:50:08</publishTime>
+    </File>
+    <File Include="css/Access/Access.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/Error/Error.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/font-awesome.min.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/nouislider.min.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/slick-theme.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/slick.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/slick.eot">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/slick.svg">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/slick.ttf">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="fonts/slick.woff">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="img/Access/amazonfake_logo.png">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="img/Imagenes/Audifono01.jpg">
+      <publishTime>12/20/2018 18:51:14</publishTime>
+    </File>
+    <File Include="img/Imagenes/Audifono03.jpg">
+      <publishTime>12/20/2018 18:51:14</publishTime>
+    </File>
+    <File Include="img/Imagenes/Audifono04.jpg">
+      <publishTime>12/20/2018 18:51:14</publishTime>
+    </File>
+    <File Include="img/Imagenes/Audifono05.jpg">
+      <publishTime>12/20/2018 18:51:14</publishTime>
+    </File>
+    <File Include="img/Imagenes/Camara01.jpg">
+      <publishTime>12/20/2018 18:51:23</publishTime>
+    </File>
+    <File Include="img/Imagenes/Camara02.jpg">
+      <publishTime>12/20/2018 18:51:23</publishTime>
+    </File>
+    <File Include="img/Imagenes/Camara03.jpg">
+      <publishTime>12/20/2018 18:51:23</publishTime>
+    </File>
+    <File Include="img/Imagenes/Celular01.jpg">
+      <publishTime>12/20/2018 18:51:30</publishTime>
+    </File>
+    <File Include="img/Imagenes/Celular02.jpg">
+      <publishTime>12/20/2018 18:51:30</publishTime>
+    </File>
+    <File Include="img/Imagenes/Celular03.jpg">
+      <publishTime>12/20/2018 18:51:30</publishTime>
+    </File>
+    <File Include="img/Imagenes/Celular04.jpg">
+      <publishTime>12/20/2018 18:51:30</publishTime>
+    </File>
+    <File Include="img/Imagenes/Laptop01.jpg">
+      <publishTime>12/20/2018 18:51:39</publishTime>
+    </File>
+    <File Include="img/Imagenes/Laptop02.jpg">
+      <publishTime>12/20/2018 18:51:39</publishTime>
+    </File>
+    <File Include="img/Imagenes/Laptop03.jpg">
+      <publishTime>12/20/2018 18:51:39</publishTime>
+    </File>
+    <File Include="img/Imagenes/Laptop04.jpg">
+      <publishTime>12/20/2018 18:51:39</publishTime>
+    </File>
+    <File Include="img/Imagenes/Laptop05.jpg">
+      <publishTime>12/20/2018 18:51:39</publishTime>
+    </File>
+    <File Include="img/Imagenes/Laptop06.jpg">
+      <publishTime>12/20/2018 18:51:39</publishTime>
+    </File>
+    <File Include="img/Imagenes/Tablet01.jpg">
+      <publishTime>12/20/2018 18:51:47</publishTime>
+    </File>
+    <File Include="img/Imagenes/Tablet02.jpg">
+      <publishTime>12/20/2018 18:51:47</publishTime>
+    </File>
+    <File Include="img/Imagenes/Tablet03.jpg">
+      <publishTime>12/20/2018 18:51:47</publishTime>
+    </File>
+    <File Include="img/logo.png">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>12/20/2018 21:49:16</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="js/jquery.min.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="js/jquery.zoom.min.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="js/main.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="js/nouislider.min.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="js/slick.min.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>12/20/2018 22:42:08</publishTime>
+    </File>
+    <File Include="Productos_Camaras.aspx">
+      <publishTime>12/20/2018 21:49:21</publishTime>
+    </File>
+    <File Include="Productos_Laptops.aspx">
+      <publishTime>12/20/2018 21:49:28</publishTime>
+    </File>
+    <File Include="Productos_Otros.aspx">
+      <publishTime>12/20/2018 21:49:34</publishTime>
+    </File>
+    <File Include="Productos_Tablets.aspx">
+      <publishTime>12/20/2018 21:49:39</publishTime>
+    </File>
+    <File Include="Productos_Telefonos.aspx">
+      <publishTime>12/20/2018 21:49:44</publishTime>
+    </File>
+    <File Include="Properties/DataSources/System.Data.DataTable.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Categoria_DAL.datasource">
+      <publishTime>12/20/2018 22:38:33</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Productos_DAL.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Cls_Entidad_Ventas_DAL.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Cls_Usuarios_DAL.datasource">
+      <publishTime>12/20/2018 22:38:33</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Eliminar_DatosSinIdentityResponse.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.FiltrarDatosResponse.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Insertar_DatosConIdentityResponse.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Insertar_DatosSinIdentityResponse.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.ListarDatosResponse.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeService/AmazonFake_SITE.AmazonFakeService.Modifica_DatosSinIdentityResponse.datasource">
+      <publishTime>12/20/2018 22:38:34</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeServiceAlt/AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeServiceAlt/AmazonFake_SITE.AmazonFakeServiceAlt.FiltrarDatosResponse.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeServiceAlt/AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosConIdentityResponse.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeServiceAlt/AmazonFake_SITE.AmazonFakeServiceAlt.Insertar_DatosSinIdentityResponse.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeServiceAlt/AmazonFake_SITE.AmazonFakeServiceAlt.ListarDatosResponse.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="Service References/AmazonFakeServiceAlt/AmazonFake_SITE.AmazonFakeServiceAlt.Modifica_DatosSinIdentityResponse.datasource">
+      <publishTime>12/18/2018 22:20:35</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/20/2018 22:42:06</publishTime>
+    </File>
+    <File Include="www/Access/CreateAccount.aspx">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="www/Access/Login.aspx">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="www/Access/PasswordAssistance.aspx">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="www/Administrador/Adm_Clientes.aspx">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="www/Administrador/Adm_Detalle_Ventas.aspx">
+      <publishTime>12/20/2018 21:58:31</publishTime>
+    </File>
+    <File Include="www/Administrador/Adm_Productos.aspx">
+      <publishTime>12/20/2018 21:27:51</publishTime>
+    </File>
+    <File Include="www/Administrador/Adm_Usuarios.aspx">
+      <publishTime>12/20/2018 16:08:12</publishTime>
+    </File>
+    <File Include="www/Administrador/Adm_Ventas.aspx">
+      <publishTime>12/20/2018 21:58:47</publishTime>
+    </File>
+    <File Include="www/Error/Error404.aspx">
+      <publishTime>12/18/2018 22:20:36</publishTime>
+    </File>
+    <File Include="www/Usuario/UserChangePassword.aspx">
+      <publishTime>12/19/2018 17:48:24</publishTime>
+    </File>
+    <File Include="www/Usuario/UserPerfil.aspx">
+      <publishTime>12/19/2018 17:48:24</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

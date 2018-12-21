@@ -318,3 +318,32 @@ begin catch
 	rollback transaction
 end catch
 go
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+create procedure SP_View_Ventas
+as
+begin transaction 
+begin try
+	SELECT [VEN_Codigo],[VEN_Fecha],[VEN_SuTotal],[VEN_IGV],[VEN_Total],[VEN_Cliente]
+	FROM [dbo].[VENTA]
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+go
+
+
+create procedure SP_View_Detalle_Ventas
+as
+begin transaction 
+begin try
+	SELECT [VEN_Codigo],[DV_Cantidad],[DV_Precio],[DV_SubTotal],[codproducto]
+	FROM [dbo].[DETALLE_VENTA]
+	commit transaction
+end try
+begin catch
+	rollback transaction
+end catch
+go

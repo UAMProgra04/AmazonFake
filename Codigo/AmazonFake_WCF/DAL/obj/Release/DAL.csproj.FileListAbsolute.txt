@@ -1,0 +1,4 @@
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\bin\Release\DAL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\bin\Release\DAL.pdb
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\obj\Release\DAL.dll
+C:\Users\Www-R\Documents\GitHub\AmazonFake\Codigo\AmazonFake_WCF\DAL\obj\Release\DAL.pdb

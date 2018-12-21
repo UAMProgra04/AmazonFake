@@ -14,14 +14,18 @@ namespace AmazonFake_SITE.www.Administrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UsuarioSession"] == null)
-            {
-                Response.Redirect("~/www/Index.aspx");
-            }
-            else
+            #region Valida_Sesion
+            if (Session["UsuarioSession"] != null && (
+                Session["UsuarioPerfil"].ToString().Equals("1") ||
+                Session["UsuarioPerfil"].ToString().Equals("0")))
             {
                 CargarListaProductos();
             }
+            else
+            {
+                Response.Redirect("~/www/Index.aspx");
+            }
+            #endregion
         }
         protected void LimpiarCampos()
         {

@@ -1,0 +1,14 @@
+Usuarios en el sistema:
+tipo 0
+root@amazon.com 
+RootPassword
+
+tipo 1
+marcoarias@amazon.com
+MarcoA01
+
+tipo 2
+carlos@hotmail.com 
+Carlos23
+
+http://localhost:59933/www/Administrador/Adm_Ventas.aspx
