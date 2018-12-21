@@ -139,6 +139,51 @@ namespace AmazonFake_SITE {
         protected global::System.Web.UI.WebControls.HyperLink Opc_Administrativa_Proveedores;
         
         /// <summary>
+        /// Control Opc_Productos_Laptops.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Productos_Laptops;
+        
+        /// <summary>
+        /// Control Opc_Productos_Telefonos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Productos_Telefonos;
+        
+        /// <summary>
+        /// Control Opc_Productos_Camaras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Productos_Camaras;
+        
+        /// <summary>
+        /// Control Opc_Productos_Tablets.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Productos_Tablets;
+        
+        /// <summary>
+        /// Control Opc_Productos_Otros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Opc_Productos_Otros;
+        
+        /// <summary>
         /// Control Opc_Usuarios.
         /// </summary>
         /// <remarks>

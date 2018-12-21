@@ -118,10 +118,21 @@
 						    </li>
 					    </ul>
                     </li>
-				    <li><a href="#">Laptops</a></li>
-				    <li><a href="#">Smartphones</a></li>
-				    <li><a href="#">Cámaras</a></li>
-				    <li><a href="#">Accesorios</a></li>
+				    <li>
+                        <asp:HyperLink ID="Opc_Productos_Laptops" NavigateUrl="~/Productos_Laptops.aspx" runat="server">Laptops</asp:HyperLink>
+				    </li>
+				    <li>
+                        <asp:HyperLink ID="Opc_Productos_Telefonos" NavigateUrl="~/Productos_Telefonos.aspx" runat="server">Smartphones</asp:HyperLink>
+				    </li>
+				    <li>
+                        <asp:HyperLink ID="Opc_Productos_Camaras" NavigateUrl="~/Productos_Camaras.aspx" runat="server">Cámaras</asp:HyperLink>
+				    </li>
+                    <li>
+                         <asp:HyperLink ID="Opc_Productos_Tablets" NavigateUrl="~/Productos_Tablets.aspx" runat="server">Tablets</asp:HyperLink>
+				    </li>
+				    <li>
+                         <asp:HyperLink ID="Opc_Productos_Otros" NavigateUrl="~/Productos_Otros.aspx" runat="server">Accesorios</asp:HyperLink>
+				    </li>
                     <li>
                         <asp:HyperLink ID="Opc_Usuarios" runat="server">Opciones de Usuario</asp:HyperLink>
                         <ul>

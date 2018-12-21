@@ -142,7 +142,11 @@
     </Content>
     <Content Include="AmazonFake.Master" />
     <Content Include="Checkout.aspx" />
-    <Content Include="Product.aspx" />
+    <Content Include="Productos_Camaras.aspx" />
+    <Content Include="Productos_Laptops.aspx" />
+    <Content Include="Productos_Otros.aspx" />
+    <Content Include="Productos_Tablets.aspx" />
+    <Content Include="Productos_Telefonos.aspx" />
     <Content Include="Service References\AmazonFakeServiceAlt\AmazonFake_SITE.AmazonFakeServiceAlt.Eliminar_DatosSinIdentityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -229,7 +233,6 @@
     <Content Include="www\Administrador\Adm_Usuarios.aspx" />
     <Content Include="www\Error\Error404.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="Store.aspx" />
     <Content Include="www\Usuario\UserChangePassword.aspx" />
     <Content Include="www\Usuario\UserPerfil.aspx" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -282,12 +285,40 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="Productos_Camaras.aspx.cs">
+      <DependentUpon>Productos_Camaras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="Productos_Camaras.aspx.designer.cs">
+      <DependentUpon>Productos_Camaras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Laptops.aspx.cs">
+      <DependentUpon>Productos_Laptops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos_Laptops.aspx.designer.cs">
+      <DependentUpon>Productos_Laptops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Otros.aspx.cs">
+      <DependentUpon>Productos_Otros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos_Otros.aspx.designer.cs">
+      <DependentUpon>Productos_Otros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Tablets.aspx.cs">
+      <DependentUpon>Productos_Tablets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos_Tablets.aspx.designer.cs">
+      <DependentUpon>Productos_Tablets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Telefonos.aspx.cs">
+      <DependentUpon>Productos_Telefonos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos_Telefonos.aspx.designer.cs">
+      <DependentUpon>Productos_Telefonos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secure\Cls_Secure.cs" />
@@ -363,13 +394,6 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Store.aspx.cs">
-      <DependentUpon>Store.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Store.aspx.designer.cs">
-      <DependentUpon>Store.aspx</DependentUpon>
     </Compile>
     <Compile Include="www\Usuario\UserChangePassword.aspx.cs">
       <DependentUpon>UserChangePassword.aspx</DependentUpon>
